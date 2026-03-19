@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stories That Connect Us | Lipp Studios</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--brand-blue:#035787;--brand-burgundy:#5f0d23;--brand-dark:#141414;--brand-gold:#d6b13f;--brand-light:#f3f3f0;--brand-white:#ffffff;--brand-text:#1a1a1a;--brand-muted:#5f6368;--brand-teal:#1f6f78;--container:1180px;--shadow-soft:0 8px 24px rgba(0,0,0,0.08);--transition:0.3s ease}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Open Sans',Arial,Helvetica,sans-serif;color:var(--brand-text);background:var(--brand-white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-height:1.2}
+.btn{display:inline-block;background:var(--brand-gold);color:var(--brand-text);font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;line-height:1;padding:14px 26px;border:1px solid #8c7420;text-decoration:none;box-shadow:2px 2px 0 rgba(0,0,0,0.15);transition:var(--transition);cursor:pointer;letter-spacing:0.02em}
+.btn:hover{background:var(--brand-burgundy);color:var(--brand-white);border-color:var(--brand-burgundy)}
+.btn-light{background:transparent;color:var(--brand-white);border:2px solid rgba(255,255,255,0.5);box-shadow:none}.btn-light:hover{background:var(--brand-white);color:var(--brand-dark);border-color:var(--brand-white)}
+.btn-sm{padding:10px 18px;font-size:12px}
+.btn-dark{background:var(--brand-dark);color:var(--brand-white);border-color:var(--brand-dark);box-shadow:none}.btn-dark:hover{background:var(--brand-blue);border-color:var(--brand-blue)}
+.btn-outline{background:transparent;color:var(--brand-blue);border:1px solid var(--brand-blue);box-shadow:none}.btn-outline:hover{background:var(--brand-blue);color:var(--brand-white)}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--brand-dark);padding:0 24px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.header-inner{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
+.header-logo img{height:36px;display:block}
+.header-nav{display:flex;gap:28px;align-items:center}
+.header-nav a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:13px;font-weight:600;letter-spacing:0.02em;transition:color 0.2s}.header-nav a:hover{color:var(--brand-gold)}
+.header-nav .btn{padding:10px 20px;font-size:12px;box-shadow:none;border-color:var(--brand-gold)}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 24px 80px;background:var(--brand-dark);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(3,87,135,0.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(95,13,35,0.1) 0%,transparent 50%);pointer-events:none}
+.hero-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%}
+.hero-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-gold);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--brand-gold)}
+.hero h1{font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:900;color:var(--brand-gold);letter-spacing:-0.02em;margin-bottom:20px}
+.hero h1 em{display:block;font-style:italic;font-weight:700;color:var(--brand-white);font-size:0.72em;margin-top:8px;letter-spacing:0}
+.hero-text{font-size:16px;color:rgba(255,255,255,0.75);max-width:540px;margin-bottom:16px;line-height:1.75}
+.hero-meta{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:36px}
+.hero-quote{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:700;font-style:italic;color:var(--brand-white);line-height:1.5;margin-bottom:16px}
+.hero-quote-attr{font-size:13px;color:var(--brand-gold);font-weight:600}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.hero-stat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);padding:16px;text-align:center}
+.hero-stat .num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--brand-gold)}
+.hero-stat .label{font-size:11px;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin-top:2px}
+
+.gold-strip{background:var(--brand-gold);padding:20px 24px;text-align:center}
+.gold-strip p{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--brand-dark);max-width:var(--container);margin:0 auto}
+.section{padding:80px 24px}.section-dark{background:var(--brand-dark);color:var(--brand-white)}.section-light{background:var(--brand-light)}.section-white{background:var(--brand-white)}
+.section-inner{max-width:var(--container);margin:0 auto}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-blue);margin-bottom:10px}
+.section-dark .eyebrow{color:var(--brand-gold)}
+.section-title{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--brand-text);letter-spacing:-0.02em;margin-bottom:12px}.section-dark .section-title{color:var(--brand-white)}
+.section-subtitle{font-size:16px;color:var(--brand-muted);max-width:640px;margin-bottom:48px;line-height:1.75}.section-dark .section-subtitle{color:rgba(255,255,255,0.6)}
+
+.next-session{background:var(--brand-white);border:2px solid var(--brand-blue);padding:28px 32px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;margin-bottom:48px;box-shadow:var(--shadow-soft)}
+.next-session-date{text-align:center;background:var(--brand-dark);padding:16px 20px;min-width:90px}
+.next-session-date .month{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand-gold)}
+.next-session-date .day{font-family:'Montserrat',sans-serif;font-size:32px;font-weight:900;color:var(--brand-white);line-height:1.1}
+.next-session-date .year{font-size:12px;color:rgba(255,255,255,0.5)}
+.next-session-info h3{font-size:17px;font-weight:700;color:var(--brand-text);margin-bottom:4px}
+.next-session-info p{font-size:14px;color:var(--brand-muted)}
+
+/* SHARED CAROUSEL */
+.c-controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.c-nav{display:flex;gap:8px;align-items:center}
+.c-arrow{width:40px;height:40px;background:var(--brand-dark);color:var(--brand-white);border:none;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);font-family:'Montserrat',sans-serif;font-weight:700}
+.c-arrow:hover{background:var(--brand-blue)}.c-arrow:disabled{opacity:0.3;cursor:default;background:var(--brand-dark)}
+.c-count{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:var(--brand-muted);margin:0 8px}
+.c-dropdown{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;padding:10px 40px 10px 16px;border:1px solid #e0ddd6;background:var(--brand-white) url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%235f6368' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;color:var(--brand-text);cursor:pointer;min-width:280px;appearance:none;-webkit-appearance:none}
+.c-track{overflow:hidden}.c-slide{display:none;animation:fadeIn .35s ease}.c-slide.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* RESOURCE SLIDES */
+.res-slide.active{display:grid;grid-template-columns:400px 1fr;border:1px solid #e0ddd6;background:var(--brand-white)}
+.res-img{background:var(--brand-light);display:flex;align-items:center;justify-content:center;border-right:1px solid #e0ddd6;position:relative}
+.res-img .type-tag{position:absolute;top:16px;left:16px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-white);background:var(--brand-dark);padding:5px 12px}
+.res-img .placeholder{width:120px;height:120px}
+.res-body{padding:40px;display:flex;flex-direction:column;justify-content:center}
+.res-body .meta{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--brand-blue);padding:4px 10px;background:rgba(3,87,135,.07);display:inline-block;margin-bottom:16px}
+.res-body h3{font-size:20px;font-weight:800;color:var(--brand-text);margin-bottom:10px}
+.res-body p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:16px}
+.res-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* CASE STUDY SLIDES */
+.cs-layout{display:grid;grid-template-columns:340px 1fr;border:1px solid #e0ddd6;background:var(--brand-white)}
+.cs-vis{padding:48px 32px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative}
+.cs-vis.bg-dark{background:var(--brand-dark)}.cs-vis.bg-blue{background:var(--brand-blue)}.cs-vis.bg-burgundy{background:var(--brand-burgundy)}.cs-vis.bg-teal{background:var(--brand-teal)}.cs-vis.bg-gold{background:#8c7420}
+.cs-vis .med-tag{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.15);padding:4px 10px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:.08em}
+.cs-vis .img-ph{width:160px;height:160px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);margin-bottom:24px}
+.cs-vis h3{font-size:22px;font-weight:800;color:white;line-height:1.3;margin-bottom:6px}
+.cs-vis .cl{font-size:12px;color:rgba(255,255,255,.6);font-weight:500}
+.cs-body{padding:40px}
+.cs-body h4{font-size:18px;font-weight:700;color:var(--brand-text);margin-bottom:12px}
+.cs-body p{font-size:14px;color:var(--brand-muted);margin-bottom:12px;line-height:1.7}
+.cs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.cs-tag{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;padding:4px 10px;border:1px solid #e0ddd6;color:var(--brand-muted);text-transform:uppercase;letter-spacing:.04em}
+.cs-impact{margin-top:20px;padding-top:16px;border-top:1px solid #e0ddd6}
+.cs-impact .il{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-blue);margin-bottom:6px}
+.cs-impact p{margin-bottom:0}
+.cs-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+
+.story-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story-img{aspect-ratio:1;background:var(--brand-light);border:1px solid #e0ddd6;display:flex;align-items:center;justify-content:center}
+.story-img .placeholder{width:120px;height:120px;background:#ddd8ce}
+.story-copy h2{font-size:28px;font-weight:800;color:var(--brand-text);margin-bottom:16px}
+.story-copy p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:14px}
+.story-copy .qi{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;font-style:italic;color:var(--brand-blue);border-left:3px solid var(--brand-gold);padding-left:16px;margin:20px 0}
+
+.accordion{margin-top:20px}.accordion-item{border:1px solid #e0ddd6;margin-bottom:-1px;background:var(--brand-white)}
+.accordion-header{width:100%;padding:20px 24px;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--brand-text);text-align:left;transition:var(--transition)}
+.accordion-header:hover{background:var(--brand-light)}.accordion-header.active{background:var(--brand-light);color:var(--brand-blue)}
+.ai-icon{font-size:20px;font-weight:400;transition:transform .3s;color:var(--brand-muted);flex-shrink:0;margin-left:16px}
+.accordion-header.active .ai-icon{transform:rotate(45deg);color:var(--brand-blue)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.abi{padding:0 24px 24px}.abi p{font-size:14px;color:var(--brand-muted);line-height:1.75;margin-bottom:12px}.abi p:last-child{margin-bottom:0}
+.section-dark .accordion-item{border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.03)}
+.section-dark .accordion-header{color:var(--brand-white)}.section-dark .accordion-header:hover{background:rgba(255,255,255,.05)}
+.section-dark .accordion-header.active{background:rgba(255,255,255,.06);color:var(--brand-gold)}.section-dark .accordion-header.active .ai-icon{color:var(--brand-gold)}
+.section-dark .abi p{color:rgba(255,255,255,.6)}
+
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.proof-card{background:var(--brand-white);border:1px solid #e0ddd6;padding:28px}
+.proof-card h3{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand-blue);margin-bottom:12px}
+.proof-card p{font-size:14px;color:var(--brand-muted);line-height:1.7}
+.word-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.wt{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;padding:6px 12px;background:rgba(3,87,135,.06);color:var(--brand-blue)}
+.wt.hl{background:var(--brand-gold);color:var(--brand-dark)}
+
+.fw-visual{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;margin:40px 0}
+.fw-col{background:var(--brand-white);padding:28px;border:1px solid #e0ddd6}
+.fw-col h3{font-size:16px;font-weight:800;margin-bottom:4px}
+.fw-col .sub{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.fw-col ul{list-style:none}.fw-col li{font-size:14px;color:var(--brand-muted);padding:5px 0 5px 16px;position:relative}
+.fw-col li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:6px}
+.fw-col.k h3,.fw-col.k .sub{color:var(--brand-blue)}.fw-col.k li::before{background:var(--brand-blue)}
+.fw-col.o h3,.fw-col.o .sub{color:var(--brand-burgundy)}.fw-col.o li::before{background:var(--brand-burgundy)}
+.fw-bridge{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 24px}
+.fw-bridge .arr{font-size:24px;color:var(--brand-gold)}
+.fw-bridge .lbl{writing-mode:vertical-lr;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-gold);margin:12px 0}
+.fw-med{text-align:center;margin-top:20px;background:var(--brand-dark);padding:20px 32px}
+.fw-med .la{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand-gold);margin-bottom:6px}
+.fw-med p{font-size:14px;color:rgba(255,255,255,.7)}
+
+.teal-strip{background:var(--brand-teal);padding:16px 24px}
+.teal-strip h2{max-width:var(--container);margin:0 auto;font-size:20px;font-weight:800;color:var(--brand-white);text-transform:uppercase;letter-spacing:.04em}
+
+.principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.pc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:28px;border-top:3px solid var(--brand-gold)}
+.pc h3{font-size:15px;font-weight:700;color:var(--brand-white);margin-bottom:8px}
+.pc p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.65}
+
+.testimonial-card{max-width:780px;margin:0 auto;text-align:center}
+.testimonial-card blockquote{font-size:20px;font-weight:600;font-style:italic;color:var(--brand-text);line-height:1.65;margin-bottom:20px}
+.testimonial-card cite{font-style:normal;font-size:14px;color:var(--brand-muted);font-weight:600}
+
+.crew-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.crew-card{text-align:center;padding:28px 20px;background:var(--brand-white);border:1px solid #e0ddd6;transition:var(--transition)}
+.crew-card:hover{box-shadow:var(--shadow-soft);transform:translateY(-3px)}
+.crew-avatar{width:80px;height:80px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:white}
+.crew-card:nth-child(1) .crew-avatar{background:var(--brand-dark)}.crew-card:nth-child(2) .crew-avatar{background:var(--brand-blue)}.crew-card:nth-child(3) .crew-avatar{background:var(--brand-burgundy)}.crew-card:nth-child(4) .crew-avatar{background:var(--brand-teal)}.crew-card:nth-child(5) .crew-avatar{background:var(--brand-muted)}
+.crew-card h3{font-size:15px;font-weight:700;color:var(--brand-text);margin-bottom:2px}
+.crew-card .pr{font-size:12px;color:var(--brand-muted);margin-bottom:4px}
+.crew-card .ro{font-size:13px;color:var(--brand-blue);font-weight:600}
+
+.cta-section{background:var(--brand-dark);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,87,135,.12) 0%,transparent 60%);pointer-events:none}
+.cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.cta-section h2{font-size:clamp(28px,3.5vw,40px);font-weight:900;color:var(--brand-gold);margin-bottom:16px;letter-spacing:-.02em}
+.cta-section p{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:36px;line-height:1.75}
+
+.footer{background:var(--brand-dark);padding:32px 24px;border-top:1px solid rgba(255,255,255,.06);text-align:center}
+.footer p{font-size:13px;color:rgba(255,255,255,.4)}.footer a{color:var(--brand-gold);text-decoration:none}.footer a:hover{text-decoration:underline}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}.hero-card{display:none}.header-nav{display:none}
+  .cs-layout{grid-template-columns:1fr}.res-slide.active{grid-template-columns:1fr}
+  .res-img{aspect-ratio:16/10;border-right:none;border-bottom:1px solid #e0ddd6}
+  .fw-visual{grid-template-columns:1fr;gap:12px}.fw-bridge{flex-direction:row;padding:8px 0}.fw-bridge .lbl{writing-mode:horizontal-tb}
+  .next-session{grid-template-columns:1fr;text-align:center}.story-split{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}
+  .c-dropdown{min-width:auto;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-inner">
+  <a href="https://amandalipp.com" class="header-logo"><img src="https://amandalipp.com/wp-content/uploads/2021/04/logo1.png" alt="Amanda Lipp"></a>
+  <nav class="header-nav"><a href="#resources">Resources</a><a href="#portfolio">Case Studies</a><a href="#framework">Framework</a><a href="#approach">Approach</a><a href="#homework">Homework</a><a href="#crew">Crew</a><a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Start a Project</a></nav>
+</div></header>
+
+<!-- HERO -->
+<section class="hero"><div class="hero-inner">
+  <div>
+    <div class="hero-eyebrow">CMHIS &middot; Navigating the Now &middot; March 2026</div>
+    <h1>Stories That Connect Us <em>The Impact of Digital Storytelling in Mental Health</em></h1>
+    <p class="hero-text">Thank you for attending our CMHIS session. This page is your home base for resources, film links, and the frameworks we covered &mdash; plus a look at how we can bring storytelling to your organization.</p>
+    <div class="hero-meta"><span>Hosted by Southwestern Plains Hub</span><span>&middot;</span><span>Presented by Amanda &ldquo;Kay&rdquo; Lipp</span><span>&middot;</span><span>96 Participants</span></div>
+    <div class="hero-actions"><a href="#resources" class="btn">Access Resources</a><a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-light">Work With Us</a></div>
+  </div>
+  <div><div class="hero-card">
+    <div class="hero-quote">&ldquo;A picture is worth a thousand words. A story is worth a thousand feelings.&rdquo;</div>
+    <div class="hero-quote-attr">&mdash; Kay Lipp, Lipp Studios</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">100+</div><div class="label">Films Created</div></div>
+      <div class="hero-stat"><div class="num">22x</div><div class="label">More Memorable</div></div>
+      <div class="hero-stat"><div class="num">150+</div><div class="label">Keynotes</div></div>
+      <div class="hero-stat"><div class="num">10+</div><div class="label">Years</div></div>
+    </div>
+  </div></div>
+</div></section>
+
+<div class="gold-strip"><p>Storytelling isn&rsquo;t just creative &mdash; the research tells us it&rsquo;s more effective. Content with storytelling generates 2&ndash;3x higher engagement.</p></div>
+
+<!-- KAY STORY -->
+<section class="section section-white"><div class="section-inner"><div class="story-split">
+  <div class="story-img"><div class="placeholder"></div></div>
+  <div class="story-copy">
+    <span class="eyebrow">The Origin Story</span>
+    <h2>It Started With a Box of Crayons</h2>
+    <p>At 18, Kay experienced a mental health crisis and spent three months cycling between ICU, inpatient, and outpatient psychiatric services. At one of their lowest points, a thoughtful nurse handed them a box of crayons.</p>
+    <p>Their first storyboards were crayon sketches of other patients&rsquo; stories &mdash; abstract drawings depicting color, chaos, beauty, and hope. What started as crayons in the hospital evolved into over a decade of filmmaking.</p>
+    <div class="qi">&ldquo;I truly don&rsquo;t think I would be here today without this box of crayons.&rdquo;</div>
+    <a href="https://amandalipp.com/about/" class="btn btn-sm btn-outline">About Kay</a>
+  </div>
+</div></div></section>
+
+<!-- RESOURCES CAROUSEL -->
+<section id="resources" class="section section-light"><div class="section-inner">
+  <span class="eyebrow">Session Resources</span>
+  <h2 class="section-title">Films &amp; Toolkits From the Presentation</h2>
+  <p class="section-subtitle">Browse the films, research, and toolkits discussed. Use the dropdown to jump to any project.</p>
+
+  <div class="next-session">
+    <div class="next-session-date"><div class="month">Apr</div><div class="day">15</div><div class="year">2026</div></div>
+    <div class="next-session-info"><h3>Next Session: Designing Digital Stories for Mental Health</h3><p>Session 1 of the 3-part Learning Community &mdash; documentary storytelling deep dive.</p></div>
+    <a href="https://www.cmhisupport.org/event/designing-digital-stories-for-mental-health-from-storyboard-to-real-world-impact/2026-04-15/" class="btn">Apply Now</a>
+  </div>
+
+  <div class="c-controls">
+    <select class="c-dropdown" id="rDD">
+      <option value="0">01 &mdash; Stanford INSPIRE (Animation)</option>
+      <option value="1">02 &mdash; OnTrack NY (Documentary)</option>
+      <option value="2">03 &mdash; Lisa &amp; CJ / ADHD (Animation)</option>
+      <option value="3">04 &mdash; Mobile Crisis Toolkit (Illustration)</option>
+      <option value="4">05 &mdash; Rebuilding Butte (Documentary)</option>
+      <option value="5">06 &mdash; Rigo &amp; Olivia / Rec Therapy (Documentary)</option>
+    </select>
+    <div class="c-nav"><button class="c-arrow" id="rP" disabled>&larr;</button><span class="c-count" id="rC">1 / 6</span><button class="c-arrow" id="rN">&rarr;</button></div>
+  </div>
+  <div class="c-track" id="rTrack">
+    <div class="c-slide res-slide active"><div class="res-img"><div class="type-tag">Animation</div><div class="placeholder" style="width:120px;height:120px;background:#c8d8e4"></div></div><div class="res-body"><span class="meta">Animation &middot; Mimi &amp; Kay &middot; Stanford Medicine</span><h3>Stanford INSPIRE &mdash; CBTp Animated Film</h3><p>Animated film about cognitive behavioral therapy for psychosis, created for clinician training. Now live on the INSPIRE training platform.</p><div class="res-actions"><a href="https://youtu.be/NDXT6UX5fWI" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/bGy-weioB_g" class="btn btn-sm btn-outline">Trailer</a><a href="https://med.stanford.edu/inspire-training.html" class="btn btn-sm btn-dark">INSPIRE Site</a></div></div></div>
+
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#b8c4c4"></div></div><div class="res-body"><span class="meta">Documentary &middot; Columbia Psychiatry &middot; OnTrack NY</span><h3>OnTrack NY &mdash; Youth Psychosis Films</h3><p>Documentary series featuring Amber, Drew, and other young adults sharing lived experiences with early psychosis.</p><div class="res-actions"><a href="https://youtu.be/6Xc1TBjcixc" class="btn btn-sm">Drew&rsquo;s Story</a><a href="https://youtu.be/tyS5hyaeiFc" class="btn btn-sm btn-outline">Ambar&rsquo;s Story</a><a href="https://www.youtube.com/playlist?list=PL5d3NnbGTCHEkyfSCOiQxEH4PBMt7c7cr" class="btn btn-sm btn-dark">Full Playlist</a></div></div></div>
+
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Animation</div><div class="placeholder" style="width:120px;height:120px;background:#d8c8b8"></div></div><div class="res-body"><span class="meta">Animation &middot; Mimi &amp; Kay &middot; NTTAC</span><h3>Lisa &amp; CJ &mdash; ADHD &amp; Neurodiversity</h3><p>Animated film about preschool suspensions, ADHD, and parent advocacy. CJ&rsquo;s neurodiversity depicted as vibrant energy.</p><div class="res-actions"><a href="https://youtu.be/-qGEH5kqlHo" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/YSYriYN97CA" class="btn btn-sm btn-outline">Trailer</a></div></div></div>
+
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Illustration</div><div class="placeholder" style="width:120px;height:120px;background:#c8c4bc"></div></div><div class="res-body"><span class="meta">Illustration &middot; Mimi &amp; Chris &middot; M-TAC / CARS</span><h3>Mobile Crisis Response Toolkit</h3><p>Scenario-based illustrated training tool and best-practices handout for mobile crisis teams responding to psychosis.</p><div class="res-actions"><a href="https://camobilecrisis.org/wp-content/uploads/2025/09/Responding-to-Psychosis-TTA-Tool.pdf" class="btn btn-sm">Illustrated Scenario (PDF) &rarr;</a><a href="https://camobilecrisis.org/wp-content/uploads/2025/09/FEP-TTA-Tool-Cop-Roundup.pdf" class="btn btn-sm btn-outline">Best Practices (PDF)</a></div></div></div>
+
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#d4cfc5"></div></div><div class="res-body"><span class="meta">Documentary &middot; Lipp Studios &middot; Tiny Pine Foundation</span><h3>Rebuilding Butte &mdash; Campfire Documentary</h3><p>25-minute documentary about building tiny homes for survivors of the 2018 Camp Fire.</p><div class="res-actions"><a href="https://youtu.be/fHQH2uz-Reg" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://www.tinyhomefilm.com" class="btn btn-sm btn-outline">Film Website</a></div></div></div>
+
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#c5ccd4"></div></div><div class="res-body"><span class="meta">Documentary &middot; Lipp Studios</span><h3>Recreation Therapy &mdash; Rigo &amp; Olivia</h3><p>Documentary about recreation therapy licensure, featuring Olivia (RT) and Rigo (TBI survivor). Used as a policy advocacy tool.</p><div class="res-actions"><a href="https://youtu.be/ceqZNZbwRV8" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/diVKoU0EoX8" class="btn btn-sm btn-outline">Trailer</a></div></div></div>
+  </div>
+</div></section>
+
+<!-- CASE STUDIES -->
+<div class="teal-strip"><h2>Case Studies</h2></div>
+<section id="portfolio" class="section section-white"><div class="section-inner">
+  <p class="section-subtitle" style="margin-top:0">Explore each project in depth. Use the dropdown to jump to a specific case study.</p>
+  <div class="c-controls">
+    <select class="c-dropdown" id="csDD"><option value="0">01 &mdash; Stanford INSPIRE (Animation)</option><option value="1">02 &mdash; OnTrack NY (Documentary)</option><option value="2">03 &mdash; Lisa &amp; CJ / ADHD (Animation)</option><option value="3">04 &mdash; Mobile Crisis Toolkit (Illustration)</option><option value="4">05 &mdash; Rebuilding Butte (Documentary)</option><option value="5">06 &mdash; Peer Support Films (Animation)</option><option value="6">07 &mdash; Olivia &amp; Rigo / Rec Therapy (Documentary)</option><option value="7">08 &mdash; The UPSIDE Story (Illustration)</option></select>
+    <div class="c-nav"><button class="c-arrow" id="csP" disabled>&larr;</button><span class="c-count" id="csC">1 / 8</span><button class="c-arrow" id="csN">&rarr;</button></div>
+  </div>
+  <div class="c-track" id="csTrack">
+    <div class="c-slide active"><div class="cs-layout"><div class="cs-vis bg-dark"><div class="med-tag">Animation</div><div class="img-ph"></div><h3>Stanford INSPIRE<br>CBTp Training Film</h3><div class="cl">Stanford Medicine</div></div><div class="cs-body"><h4>Engaging clinicians through animation</h4><p>Animated film depicting the CBTp journey through characters Alex and May. Color transitions from gray to vibrant represent empathy. The therapy room window expands into Alex&rsquo;s memories as metaphor.</p><div class="cs-tags"><span class="cs-tag">Psychosis</span><span class="cs-tag">CBTp</span><span class="cs-tag">Clinician Training</span></div><div class="cs-impact"><div class="il">Impact</div><p>Integrated into the INSPIRE training platform for clinician workforce development.</p></div><div class="cs-links"><a href="https://youtu.be/NDXT6UX5fWI" class="btn btn-sm">Watch Film &rarr;</a><a href="https://med.stanford.edu/inspire-training.html" class="btn btn-sm btn-outline">INSPIRE Site</a></div></div></div></div>
+
+    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-blue"><div class="med-tag">Documentary</div><div class="img-ph"></div><h3>OnTrack NY<br>Early Psychosis Films</h3><div class="cl">Columbia Psychiatry</div></div><div class="cs-body"><h4>Real stories that reduce stigma</h4><p>Documentary series featuring Amber, Drew, and others. Drew&rsquo;s film explored mental health and West African cultural stigma through his family&rsquo;s lens.</p><div class="cs-tags"><span class="cs-tag">Stigma Reduction</span><span class="cs-tag">Peer Stories</span><span class="cs-tag">Research-Backed</span></div><div class="cs-impact"><div class="il">Impact</div><p>Peer-reviewed RCT showed measurable stigma reduction. Integrated into Strong 365&rsquo;s NYWell digital ad campaign.</p></div><div class="cs-links"><a href="https://youtu.be/6Xc1TBjcixc" class="btn btn-sm">Drew&rsquo;s Story &rarr;</a><a href="https://linkinghub.elsevier.com/retrieve/pii/S0920996422001505" class="btn btn-sm btn-outline">Research Study</a></div></div></div></div>
+
+    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-burgundy"><div class="med-tag">Animation</div><div class="img-ph"></div><h3>Lisa &amp; CJ<br>ADHD &amp; Neurodiversity</h3><div class="cl">NTTAC</div></div><div class="cs-body"><h4>Depicting neurodiversity as vibrant energy</h4><p>CJ&rsquo;s ADHD represented as a vibrant colored energy aura. Credits transition from animation to real photos. Lisa shares her perspective as parent and doctoral candidate.</p><div class="cs-tags"><span class="cs-tag">ADHD</span><span class="cs-tag">Education Equity</span><span class="cs-tag">Parent Advocacy</span></div><div class="cs-impact"><div class="il">Impact</div><p>Disseminated during ADHD Awareness Month through NTTAC and national list serves.</p></div><div class="cs-links"><a href="https://youtu.be/-qGEH5kqlHo" class="btn btn-sm">Watch Film &rarr;</a></div></div></div></div>
+
+    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-teal"><div class="med-tag">Illustration</div><div class="img-ph"></div><h3>Mobile Crisis<br>Response Toolkit</h3><div class="cl">M-TAC &middot; CARS</div></div><div class="cs-body"><h4>Scenario-based training through illustration</h4><p>Two-part toolkit: visual scenario centering lived experience + didactic strategies handout. Production went from rough sketch to final color through multiple review rounds.</p><div class="cs-tags"><span class="cs-tag">Crisis Response</span><span class="cs-tag">Psychosis</span><span class="cs-tag">Training Tool</span></div><div class="cs-impact"><div class="il">Impact</div><p>Free, publicly available for supervision, team huddles, and trainings.</p></div><div class="cs-links"><a href="https://camobilecrisis.org/wp-content/uploads/2025/09/Responding-to-Psychosis-TTA-Tool.pdf" class="btn btn-sm">View Toolkit (PDF) &rarr;</a></div></div></div></div>
+
+    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-dark"><div class="med-tag">Documentary</div><div class="img-ph"></div><h3>Rebuilding Butte</h3><div class="cl">Tiny Pine Foundation</div></div><div class="cs-body"><h4>From devastation to community healing</h4><p>25-minute documentary following the 2018 Camp Fire. Alyssa taught herself to build from YouTube and now leads other survivors. The build site became its own healing community.</p><div class="cs-tags"><span class="cs-tag">Collective Trauma</span><span class="cs-tag">Housing</span><span class="cs-tag">Fundraising</span></div><div class="cs-impact"><div class="il">Impact</div><p>Continues to raise money for tiny homes. Model for disaster recovery.</p></div><div class="cs-links"><a href="https://youtu.be/fHQH2uz-Reg" class="btn btn-sm">Watch Film &rarr;</a></div></div></div></div>
+
+    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-blue"><div class="med-tag">Animation</div><div class="img-ph"></div><h3>Peer Support<br>Animated Films</h3><div class="cl">Lipp Studios</div></div><div class="cs-body"><h4>Explaining peer support through metaphor</h4><p>Two-part series using an oversized map as metaphor. Flashlight imagery spotlights walking alongside someone. One film becomes hundreds of reusable assets.</p><div class="cs-tags"><span class="cs-tag">Peer Support</span><span class="cs-tag">Youth</span><span class="cs-tag">Parent Specialists</span></div></div></div></div>
+
+    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-gold"><div class="med-tag">Documentary</div><div class="img-ph"></div><h3>Olivia &amp; Rigo<br>Recreation Therapy</h3><div class="cl">Lipp Studios</div></div><div class="cs-body"><h4>Film as a policy advocacy tool</h4><p>Documentary about Olivia (recreation therapist) and Rigo (TBI survivor). Goal: influence policymakers for RT licensure. Later used at a healthcare conference to convince insurers.</p><div class="cs-tags"><span class="cs-tag">Policy Advocacy</span><span class="cs-tag">TBI</span><span class="cs-tag">Licensure</span></div><div class="cs-links"><a href="https://youtu.be/ceqZNZbwRV8" class="btn btn-sm">Watch Film &rarr;</a></div></div></div></div>
+
+    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-burgundy"><div class="med-tag">Illustration</div><div class="img-ph"></div><h3>The UPSIDE Story<br>Youth Advocacy</h3><div class="cl">CARS &middot; SAMHSA</div></div><div class="cs-body"><h4>Color psychology meets youth advocacy</h4><p>Illustrated comic toolkit using a muted blue palette &mdash; blue conveys melancholy but also hope. Features different perspectives of scenes: lights on vs. off, audience reactions, stage views.</p><div class="cs-tags"><span class="cs-tag">Youth Advocacy</span><span class="cs-tag">Color Psychology</span><span class="cs-tag">Comic Format</span></div></div></div></div>
+  </div>
+</div></section>
+
+<!-- PROOF -->
+<section class="section section-light"><div class="section-inner">
+  <span class="eyebrow">From the Session</span>
+  <h2 class="section-title">What the Audience Experienced</h2>
+  <div class="proof-grid">
+    <div class="proof-card"><h3>Word Cloud: Before vs. After</h3><p>Top associations shifted after the presentation:</p><div class="word-tags"><span class="wt hl">understanding</span><span class="wt hl">vulnerability</span><span class="wt">connection</span><span class="wt">empowerment</span><span class="wt">bridge</span></div></div>
+    <div class="proof-card"><h3>Reactions to Animation Clips</h3><p>Responses to the CBTp scene (gray to color):</p><div class="word-tags"><span class="wt">empathy</span><span class="wt">hope</span><span class="wt">world coming to life</span><span class="wt">someone gets me</span><span class="wt">feeling heard</span><span class="wt">darkness to light</span><span class="wt">trust</span></div></div>
+  </div>
+</div></section>
+
+<!-- FRAMEWORK -->
+<section id="framework" class="section section-white"><div class="section-inner">
+  <span class="eyebrow">Our Approach</span>
+  <h2 class="section-title">A Framework for Mental Health Storytelling</h2>
+  <p class="section-subtitle">Storytelling becomes the bridge between knowledge and action.</p>
+  <div class="fw-visual">
+    <div class="fw-col k"><h3>Knowledge or Practice</h3><div class="sub">What are we communicating?</div><ul><li>Evidence-based practice</li><li>Community-defined practice</li><li>Policy communication</li><li>Awareness campaign</li><li>Recovery principles</li></ul></div>
+    <div class="fw-bridge"><div class="arr">&rarr;</div><div class="lbl">Storytelling Bridge</div><div class="arr">&rarr;</div></div>
+    <div class="fw-col o"><h3>Intended Outcome</h3><div class="sub">What is the goal?</div><ul><li>Clinician adoption of training</li><li>Increase referrals</li><li>Influence policy</li><li>Shift attitudes or norms</li><li>Raise money</li></ul></div>
+  </div>
+  <div class="fw-med"><div class="la">The HOW</div><p>Documentary &middot; Animation &middot; Illustration &middot; Entertainment-Education &middot; Contact-Based Stigma</p></div>
+  <div class="accordion" style="margin-top:40px">
+    <div class="accordion-item"><button class="accordion-header">Why Digital Storytelling for Mental Health?<span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>Google processes 8.5+ billion searches/day. YouTube is the 2nd largest search engine. Storytelling content generates 2&ndash;3x higher engagement. People are 22x more likely to remember a fact wrapped in a story.</p></div></div></div>
+    <div class="accordion-item"><button class="accordion-header">Intersecting Fields &amp; Academic Frameworks<span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>Implementation Science, Public Health Communication, Advocacy, Dissemination Science. Key frameworks: Knowledge-to-Action, Entertainment-Education (Moyer-Gus&eacute;), Transportation Theory (Green &amp; Brock, 2000).</p></div></div></div>
+    <div class="accordion-item"><button class="accordion-header">Dissemination: Going Beyond the Film<span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>One film becomes hundreds of assets: stills, snippets, posters, social posts, conference tools, grant evidence, and fundraising materials across training platforms, digital ads, publications, and physical materials.</p></div></div></div>
+  </div>
+</div></section>
+
+<div class="gold-strip"><p>&ldquo;How the film is created is more important than the finished product.&rdquo; &mdash; Kay Lipp</p></div>
+
+<!-- APPROACH -->
+<section id="approach" class="section section-dark"><div class="section-inner">
+  <span class="eyebrow">How We Work</span>
+  <h2 class="section-title">Trauma-Informed &amp; Ethical Storytelling</h2>
+  <p class="section-subtitle">We stand by everything we make.</p>
+  <div class="principles-grid">
+    <div class="pc"><h3>Recovery-Oriented</h3><p>Every production centers hope, agency, and wholeness. We create with people, not about them.</p></div>
+    <div class="pc"><h3>Strategic Sharing</h3><p>Participants maintain ownership and can request changes or deletion. Psychological safety first.</p></div>
+    <div class="pc"><h3>Co-Directorship</h3><p>The storyteller holds the power. They review every iteration and co-create the narrative.</p></div>
+    <div class="pc"><h3>Crisis Protocols</h3><p>Care teams available for debrief. We plan for what can come up during production.</p></div>
+  </div>
+  <div class="accordion" style="margin-top:40px">
+    <div class="accordion-item"><button class="accordion-header">What is Strategic Sharing?<span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>Coined by the Foster Care Alumni Network in the 1990s. Provides education around sharing stories in ways that create impact while remaining psychologically safe for the storyteller.</p></div></div></div>
+    <div class="accordion-item"><button class="accordion-header">How Does Co-Directorship Work?<span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>For OnTrack NY, Kay showed each subject footage after every shot. For Stanford INSPIRE animation, the team collaborated with clinicians and people with lived experience throughout every stage.</p></div></div></div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIAL -->
+<section class="section section-white"><div class="section-inner"><div class="testimonial-card">
+  <blockquote>&ldquo;Amanda &lsquo;Kay&rsquo; (Lipp Studios) helped us think through the product we wanted to develop, allowing us space for creativity while guiding us with their expertise. The process was open, inclusive, and collaborative throughout.&rdquo;</blockquote>
+  <cite>&mdash; Kate Hardy, Clinical Professor, Stanford Medicine</cite>
+</div></div></section>
+
+<!-- HOMEWORK -->
+<section id="homework" class="section section-light"><div class="section-inner">
+  <span class="eyebrow">Your Next Step</span>
+  <h2 class="section-title">Homework / Call to Action</h2>
+  <p class="section-subtitle">Take these questions with you. They&rsquo;ll be the starting point for the Learning Community sessions. Click each step to expand.</p>
+  <div class="accordion">
+    <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">1</span> Clarify Your Goal</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>What is one mental health goal or challenge in your work where better storytelling could make a difference?</p><p style="color:var(--brand-blue);font-style:italic">Examples: buy-in from leadership, community awareness, video for a grant, policy change, increased referrals, fundraising, clinician training adoption.</p></div></div></div>
+    <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">2</span> Clarify Your Audience &amp; Outcome</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>Who most needs to see, feel, or understand this message?</p><p>If this story were successful, what would change? What would people think, feel, or do differently?</p></div></div></div>
+    <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">3</span> Consider Format &amp; Feasibility</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>After today&rsquo;s examples, what kind of story are you most drawn to, given your goal? Why?</p><p style="color:var(--brand-blue);font-style:italic">Documentary? Animation? Illustration? Think about what medium matches your goal, audience, and capacity.</p></div></div></div>
+    <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">4</span> What Constraints Do You Need to Account For?</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>Time, budget, staff, technology, risk &mdash; what are the real-world factors that will shape what&rsquo;s possible?</p><p>Remember: the best film is not the most expensive film. Sometimes less is more.</p></div></div></div>
+  </div>
+  <div style="margin-top:32px;padding:28px;background:var(--brand-white);border:1px solid #e0ddd6">
+    <p style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--brand-text);margin-bottom:8px">Ready to go deeper?</p>
+    <p style="font-size:14px;color:var(--brand-muted);margin-bottom:16px">Bring your answers to the Learning Community sessions. Session 1 covers documentary, Session 2 covers animation &amp; illustration, Session 3 is an open peer exchange.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="https://www.cmhisupport.org/event/designing-digital-stories-for-mental-health-from-storyboard-to-real-world-impact/2026-04-15/" class="btn btn-sm">Apply for Learning Community</a><a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm btn-outline">Or Start a Project With Us</a></div>
+  </div>
+</div></section>
+
+<!-- CREW -->
+<section id="crew" class="section section-white"><div class="section-inner">
+  <span class="eyebrow">The Team</span>
+  <h2 class="section-title">Meet the Crew</h2>
+  <div class="crew-grid">
+    <div class="crew-card"><div class="crew-avatar">K</div><h3>Amanda &ldquo;Kay&rdquo;</h3><div class="pr">they/them</div><div class="ro">Director &amp; Filmmaker</div></div>
+    <div class="crew-card"><div class="crew-avatar">C</div><h3>Chris</h3><div class="pr">he/him</div><div class="ro">Creative Consultant</div></div>
+    <div class="crew-card"><div class="crew-avatar">M</div><h3>Mimi</h3><div class="pr">they/she</div><div class="ro">Lead Animator &amp; Illustrator</div></div>
+    <div class="crew-card"><div class="crew-avatar">M</div><h3>Maya</h3><div class="pr">she/her</div><div class="ro">Sound Design</div></div>
+    <div class="crew-card"><div class="crew-avatar">M</div><h3>Milan</h3><div class="pr"></div><div class="ro">Crew</div></div>
+  </div>
+</div></section>
+
+<section class="cta-section"><div class="cta-inner">
+  <h2>Have a story your organization needs to tell?</h2>
+  <p>We help mental health organizations translate complex topics into films, animations, and illustrated tools that move people to action.</p>
+  <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Start a Conversation</a>
+</div></section>
+
+<footer class="footer">
+  <p><a href="https://amandalipp.com">amandalipp.com</a> &nbsp;&middot;&nbsp; <a href="mailto:amanda@amandalipp.com">amanda@amandalipp.com</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@lippstudios">YouTube</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/amandalipp/">LinkedIn</a></p>
+  <p style="margin-top:8px">Session supported by SAMHSA via the Center for Mental Health Implementation and Support (CMHIS)</p>
+</footer>
+
+<script>
+// Generic carousel builder
+function carousel(trackId, ddId, prevId, nextId, countId) {
+  const slides = document.querySelectorAll('#'+trackId+' .c-slide');
+  const dd = document.getElementById(ddId);
+  const prev = document.getElementById(prevId);
+  const next = document.getElementById(nextId);
+  const count = document.getElementById(countId);
+  let cur = 0; const tot = slides.length;
+  function go(i) {
+    cur = i;
+    slides.forEach(s => s.classList.remove('active'));
+    slides[cur].classList.add('active');
+    dd.value = cur;
+    prev.disabled = cur === 0;
+    next.disabled = cur === tot - 1;
+    count.textContent = (cur+1) + ' / ' + tot;
+  }
+  dd.addEventListener('change', () => go(parseInt(dd.value)));
+  prev.addEventListener('click', () => { if (cur > 0) go(cur - 1); });
+  next.addEventListener('click', () => { if (cur < tot - 1) go(cur + 1); });
+  return { go, getCur: () => cur, tot };
+}
+
+const res = carousel('rTrack', 'rDD', 'rP', 'rN', 'rC');
+const cs = carousel('csTrack', 'csDD', 'csP', 'csN', 'csC');
+
+// Keyboard nav for case studies (default)
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft' && cs.getCur() > 0) cs.go(cs.getCur() - 1);
+  if (e.key === 'ArrowRight' && cs.getCur() < cs.tot - 1) cs.go(cs.getCur() + 1);
+});
+
+// Accordions
+document.querySelectorAll('.accordion-header').forEach(h => {
+  h.addEventListener('click', () => {
+    const b = h.nextElementSibling;
+    const open = h.classList.contains('active');
+    const acc = h.closest('.accordion');
+    acc.querySelectorAll('.accordion-header').forEach(x => {
+      x.classList.remove('active');
+      x.nextElementSibling.style.maxHeight = null;
+    });
+    if (!open) {
+      h.classList.add('active');
+      b.style.maxHeight = b.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+</body>
+</html>
