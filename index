@@ -6,17 +6,46 @@
 <title>Stories That Connect Us | Lipp Studios</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--brand-blue:#035787;--brand-burgundy:#5f0d23;--brand-dark:#141414;--brand-gold:#d6b13f;--brand-light:#f3f3f0;--brand-white:#ffffff;--brand-text:#1a1a1a;--brand-muted:#5f6368;--brand-teal:#1f6f78;--container:1180px;--shadow-soft:0 8px 24px rgba(0,0,0,0.08);--transition:0.3s ease}
+:root{
+  --brand-blue:#035787;
+  --brand-burgundy:#5f0d23;
+  --brand-dark:#141414;
+  --brand-gold:#d6b13f;
+  --brand-light:#f3f3f0;
+  --brand-white:#ffffff;
+  --brand-text:#1a1a1a;
+  --brand-muted:#5f6368;
+  --brand-teal:#1f6f78;
+  --brand-crayon:#e8674a;
+  --brand-crayon-light:rgba(232,103,74,0.18);
+  --container:1180px;
+  --shadow-soft:0 8px 24px rgba(0,0,0,0.08);
+  --transition:0.3s ease
+}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Open Sans',Arial,Helvetica,sans-serif;color:var(--brand-text);background:var(--brand-white);line-height:1.7;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-height:1.2}
+
+/* ── BUTTONS ── */
 .btn{display:inline-block;background:var(--brand-gold);color:var(--brand-text);font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;line-height:1;padding:14px 26px;border:1px solid #8c7420;text-decoration:none;box-shadow:2px 2px 0 rgba(0,0,0,0.15);transition:var(--transition);cursor:pointer;letter-spacing:0.02em}
 .btn:hover{background:var(--brand-burgundy);color:var(--brand-white);border-color:var(--brand-burgundy)}
 .btn-light{background:transparent;color:var(--brand-white);border:2px solid rgba(255,255,255,0.5);box-shadow:none}.btn-light:hover{background:var(--brand-white);color:var(--brand-dark);border-color:var(--brand-white)}
 .btn-sm{padding:10px 18px;font-size:12px}
 .btn-dark{background:var(--brand-dark);color:var(--brand-white);border-color:var(--brand-dark);box-shadow:none}.btn-dark:hover{background:var(--brand-blue);border-color:var(--brand-blue)}
 .btn-outline{background:transparent;color:var(--brand-blue);border:1px solid var(--brand-blue);box-shadow:none}.btn-outline:hover{background:var(--brand-blue);color:var(--brand-white)}
+.btn-crayon{background:var(--brand-crayon);color:var(--brand-white);border-color:var(--brand-crayon);box-shadow:none}.btn-crayon:hover{background:#c9543e;border-color:#c9543e}
 
+/* ── CRAYON HIGHLIGHT ── */
+.crayon-hl{position:relative;display:inline;padding:4px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8cGF0aCBkPSJNNCw2IEM4LDQgMTgsNyAzMiw1IEM0OCwzIDY1LDYgODUsNC41IEMxMDUsMyAxMjUsNiAxNDUsNCBDMTY1LDIuNSAxODAsNS41IDE5Niw0IEMxOTgsNiAxOTcuNSwxMiAxOTcsMTggQzE5OCwyNCAxOTcsMzAgMTk2LDM2IEMxODAsMzcuNSAxNjUsMzUgMTQ1LDM3IEMxMjUsMzUuNSAxMDUsMzcuNSA4NSwzNiBDNjUsMzcgNDgsMzUgMzIsMzYuNSBDMTgsMzggOCwzNSA0LDM2LjUgQzIuNSwzMCAzLDI0IDIuNSwxOCBDMywxMiAyLDggNCw2eiIgZmlsbD0iI2Q2YjEzZiIgb3BhY2l0eT0iMC40NSIvPgo8L3N2Zz4=) center/calc(100% + 12px) calc(100% + 8px) no-repeat;margin:-2px -4px;border:none}
+.crayon-hl-gold{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8cGF0aCBkPSJNNCw2IEM4LDQgMTgsNyAzMiw1IEM0OCwzIDY1LDYgODUsNC41IEMxMDUsMyAxMjUsNiAxNDUsNCBDMTY1LDIuNSAxODAsNS41IDE5Niw0IEMxOTgsNiAxOTcuNSwxMiAxOTcsMTggQzE5OCwyNCAxOTcsMzAgMTk2LDM2IEMxODAsMzcuNSAxNjUsMzUgMTQ1LDM3IEMxMjUsMzUuNSAxMDUsMzcuNSA4NSwzNiBDNjUsMzcgNDgsMzUgMzIsMzYuNSBDMTgsMzggOCwzNSA0LDM2LjUgQzIuNSwzMCAzLDI0IDIuNSwxOCBDMywxMiAyLDggNCw2eiIgZmlsbD0iI2Q2YjEzZiIgb3BhY2l0eT0iMC40NSIvPgo8L3N2Zz4=) center/calc(100% + 12px) calc(100% + 8px) no-repeat}
+.crayon-hl-blue{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8cGF0aCBkPSJNNCw2IEM4LDQgMTgsNyAzMiw1IEM0OCwzIDY1LDYgODUsNC41IEMxMDUsMyAxMjUsNiAxNDUsNCBDMTY1LDIuNSAxODAsNS41IDE5Niw0IEMxOTgsNiAxOTcuNSwxMiAxOTcsMTggQzE5OCwyNCAxOTcsMzAgMTk2LDM2IEMxODAsMzcuNSAxNjUsMzUgMTQ1LDM3IEMxMjUsMzUuNSAxMDUsMzcuNSA4NSwzNiBDNjUsMzcgNDgsMzUgMzIsMzYuNSBDMTgsMzggOCwzNSA0LDM2LjUgQzIuNSwzMCAzLDI0IDIuNSwxOCBDMywxMiAyLDggNCw2eiIgZmlsbD0iIzAzNTc4NyIgb3BhY2l0eT0iMC4xNSIvPgo8L3N2Zz4=) center/calc(100% + 12px) calc(100% + 8px) no-repeat}
+.crayon-hl-strong{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8cGF0aCBkPSJNNCw2IEM4LDQgMTgsNyAzMiw1IEM0OCwzIDY1LDYgODUsNC41IEMxMDUsMyAxMjUsNiAxNDUsNCBDMTY1LDIuNSAxODAsNS41IDE5Niw0IEMxOTgsNiAxOTcuNSwxMiAxOTcsMTggQzE5OCwyNCAxOTcsMzAgMTk2LDM2IEMxODAsMzcuNSAxNjUsMzUgMTQ1LDM3IEMxMjUsMzUuNSAxMDUsMzcuNSA4NSwzNiBDNjUsMzcgNDgsMzUgMzIsMzYuNSBDMTgsMzggOCwzNSA0LDM2LjUgQzIuNSwzMCAzLDI0IDIuNSwxOCBDMywxMiAyLDggNCw2eiIgZmlsbD0iI2U4Njc0YSIgb3BhY2l0eT0iMC44MiIvPgo8L3N2Zz4=) center/calc(100% + 12px) calc(100% + 8px) no-repeat;color:var(--brand-white);padding:4px 10px}
+
+/* ── CRAYON TEXTURE SEPARATOR ── */
+.crayon-sep{display:block;width:100%;overflow:visible;line-height:0;margin:-2px 0;padding:0;position:relative;z-index:2}
+.crayon-sep svg{display:block;width:100%;height:auto}
+
+/* ── HEADER ── */
 .header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--brand-dark);padding:0 24px;border-bottom:1px solid rgba(255,255,255,0.08)}
 .header-inner{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
 .header-logo img{height:36px;display:block}
@@ -24,12 +53,14 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .header-nav a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:13px;font-weight:600;letter-spacing:0.02em;transition:color 0.2s}.header-nav a:hover{color:var(--brand-gold)}
 .header-nav .btn{padding:10px 20px;font-size:12px;box-shadow:none;border-color:var(--brand-gold)}
 
+/* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 24px 80px;background:var(--brand-dark);overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(3,87,135,0.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(95,13,35,0.1) 0%,transparent 50%);pointer-events:none}
 .hero-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%}
 .hero-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-gold);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--brand-gold)}
 .hero h1{font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:900;color:var(--brand-gold);letter-spacing:-0.02em;margin-bottom:20px}
 .hero h1 em{display:block;font-style:italic;font-weight:700;color:var(--brand-white);font-size:0.72em;margin-top:8px;letter-spacing:0}
+.hero h1 .crayon-hl{background:rgba(232,103,74,0.3)}
 .hero-text{font-size:16px;color:rgba(255,255,255,0.75);max-width:540px;margin-bottom:16px;line-height:1.75}
 .hero-meta{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:32px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
@@ -41,8 +72,11 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .hero-stat .num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--brand-gold)}
 .hero-stat .label{font-size:11px;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin-top:2px}
 
+/* ── GOLD / CRAYON STRIPS ── */
 .gold-strip{background:var(--brand-gold);padding:20px 24px;text-align:center}
 .gold-strip p{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--brand-dark);max-width:var(--container);margin:0 auto}
+
+/* ── SECTIONS ── */
 .section{padding:80px 24px}.section-dark{background:var(--brand-dark);color:var(--brand-white)}.section-light{background:var(--brand-light)}.section-white{background:var(--brand-white)}
 .section-inner{max-width:var(--container);margin:0 auto}
 .eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-blue);margin-bottom:10px}
@@ -50,6 +84,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .section-title{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--brand-text);letter-spacing:-0.02em;margin-bottom:12px}.section-dark .section-title{color:var(--brand-white)}
 .section-subtitle{font-size:16px;color:var(--brand-muted);max-width:640px;margin-bottom:48px;line-height:1.75}.section-dark .section-subtitle{color:rgba(255,255,255,0.6)}
 
+/* ── NEXT SESSION ── */
 .next-session{background:var(--brand-white);border:2px solid var(--brand-blue);padding:28px 32px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;margin-bottom:48px;box-shadow:var(--shadow-soft)}
 .next-session-date{text-align:center;background:var(--brand-dark);padding:16px 20px;min-width:90px}
 .next-session-date .month{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand-gold)}
@@ -58,7 +93,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .next-session-info h3{font-size:17px;font-weight:700;color:var(--brand-text);margin-bottom:4px}
 .next-session-info p{font-size:14px;color:var(--brand-muted)}
 
-/* SHARED CAROUSEL */
+/* ── SHARED CAROUSEL ── */
 .c-controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
 .c-nav{display:flex;gap:8px;align-items:center}
 .c-arrow{width:40px;height:40px;background:var(--brand-dark);color:var(--brand-white);border:none;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);font-family:'Montserrat',sans-serif;font-weight:700}
@@ -68,7 +103,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .c-track{overflow:hidden}.c-slide{display:none;animation:fadeIn .35s ease}.c-slide.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* RESOURCE SLIDES */
+/* ── RESOURCE SLIDES ── */
 .res-slide.active{display:grid;grid-template-columns:400px 1fr;border:1px solid #e0ddd6;background:var(--brand-white)}
 .res-img{background:var(--brand-light);display:flex;align-items:center;justify-content:center;border-right:1px solid #e0ddd6;position:relative}
 .res-img .type-tag{position:absolute;top:16px;left:16px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-white);background:var(--brand-dark);padding:5px 12px}
@@ -79,7 +114,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .res-body p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:16px}
 .res-actions{display:flex;gap:10px;flex-wrap:wrap}
 
-/* CASE STUDY SLIDES */
+/* ── CASE STUDY SLIDES ── */
 .cs-layout{display:grid;grid-template-columns:340px 1fr;border:1px solid #e0ddd6;background:var(--brand-white)}
 .cs-vis{padding:48px 32px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative}
 .cs-vis.bg-dark{background:var(--brand-dark)}.cs-vis.bg-blue{background:var(--brand-blue)}.cs-vis.bg-burgundy{background:var(--brand-burgundy)}.cs-vis.bg-teal{background:var(--brand-teal)}.cs-vis.bg-gold{background:#8c7420}
@@ -97,6 +132,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .cs-impact p{margin-bottom:0}
 .cs-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
 
+/* ── STORY SPLIT ── */
 .story-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .story-img{aspect-ratio:1;background:var(--brand-light);border:1px solid #e0ddd6;display:flex;align-items:center;justify-content:center}
 .story-img .placeholder{width:120px;height:120px;background:#ddd8ce}
@@ -104,6 +140,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .story-copy p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:14px}
 .story-copy .qi{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;font-style:italic;color:var(--brand-blue);border-left:3px solid var(--brand-gold);padding-left:16px;margin:20px 0}
 
+/* ── ACCORDION ── */
 .accordion{margin-top:20px}.accordion-item{border:1px solid #e0ddd6;margin-bottom:-1px;background:var(--brand-white)}
 .accordion-header{width:100%;padding:20px 24px;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--brand-text);text-align:left;transition:var(--transition)}
 .accordion-header:hover{background:var(--brand-light)}.accordion-header.active{background:var(--brand-light);color:var(--brand-blue)}
@@ -116,6 +153,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .section-dark .accordion-header.active{background:rgba(255,255,255,.06);color:var(--brand-gold)}.section-dark .accordion-header.active .ai-icon{color:var(--brand-gold)}
 .section-dark .abi p{color:rgba(255,255,255,.6)}
 
+/* ── PROOF GRID ── */
 .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .proof-card{background:var(--brand-white);border:1px solid #e0ddd6;padding:28px}
 .proof-card h3{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand-blue);margin-bottom:12px}
@@ -124,6 +162,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .wt{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;padding:6px 12px;background:rgba(3,87,135,.06);color:var(--brand-blue)}
 .wt.hl{background:var(--brand-gold);color:var(--brand-dark)}
 
+/* ── FRAMEWORK VISUAL ── */
 .fw-visual{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;margin:40px 0}
 .fw-col{background:var(--brand-white);padding:28px;border:1px solid #e0ddd6}
 .fw-col h3{font-size:16px;font-weight:800;margin-bottom:4px}
@@ -139,18 +178,22 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .fw-med .la{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand-gold);margin-bottom:6px}
 .fw-med p{font-size:14px;color:rgba(255,255,255,.7)}
 
+/* ── TEAL STRIP ── */
 .teal-strip{background:var(--brand-teal);padding:16px 24px}
 .teal-strip h2{max-width:var(--container);margin:0 auto;font-size:20px;font-weight:800;color:var(--brand-white);text-transform:uppercase;letter-spacing:.04em}
 
+/* ── PRINCIPLES ── */
 .principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 .pc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:28px;border-top:3px solid var(--brand-gold)}
 .pc h3{font-size:15px;font-weight:700;color:var(--brand-white);margin-bottom:8px}
 .pc p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.65}
 
+/* ── TESTIMONIAL ── */
 .testimonial-card{max-width:780px;margin:0 auto;text-align:center}
 .testimonial-card blockquote{font-size:20px;font-weight:600;font-style:italic;color:var(--brand-text);line-height:1.65;margin-bottom:20px}
 .testimonial-card cite{font-style:normal;font-size:14px;color:var(--brand-muted);font-weight:600}
 
+/* ── CREW ── */
 .crew-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
 .crew-card{text-align:center;padding:28px 20px;background:var(--brand-white);border:1px solid #e0ddd6;transition:var(--transition)}
 .crew-card:hover{box-shadow:var(--shadow-soft);transform:translateY(-3px)}
@@ -160,15 +203,100 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .crew-card .pr{font-size:12px;color:var(--brand-muted);margin-bottom:4px}
 .crew-card .ro{font-size:13px;color:var(--brand-blue);font-weight:600}
 
+/* ── CTA ── */
 .cta-section{background:var(--brand-dark);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,87,135,.12) 0%,transparent 60%);pointer-events:none}
 .cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
 .cta-section h2{font-size:clamp(28px,3.5vw,40px);font-weight:900;color:var(--brand-gold);margin-bottom:16px;letter-spacing:-.02em}
 .cta-section p{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:36px;line-height:1.75}
 
+/* ── FOOTER ── */
 .footer{background:var(--brand-dark);padding:32px 24px;border-top:1px solid rgba(255,255,255,.06);text-align:center}
 .footer p{font-size:13px;color:rgba(255,255,255,.4)}.footer a{color:var(--brand-gold);text-decoration:none}.footer a:hover{text-decoration:underline}
 
+
+/* ═══════════════════════════════════════════
+   NEW SECTIONS — KAY'S FEEDBACK
+   ═══════════════════════════════════════════ */
+
+/* ── LOGO / PARTNER GRID ── */
+.logo-section{padding:60px 24px;background:var(--brand-white)}
+.logo-section-inner{max-width:var(--container);margin:0 auto;text-align:center}
+.logo-section h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--brand-text);margin-bottom:8px}
+.logo-section h2 .crayon-hl{padding:2px 8px}
+.logo-section .logo-sub{font-size:14px;color:var(--brand-muted);margin-bottom:36px}
+.logo-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px 40px;max-width:900px;margin:0 auto}
+.logo-grid img{height:48px;width:auto;opacity:.75;transition:opacity .3s;object-fit:contain}
+.logo-grid img:hover{opacity:1}
+.logo-grid img.logo-wide{height:36px}
+
+/* ── RESOURCES / MEDIA KIT ── */
+.media-section{padding:80px 24px;background:var(--brand-light)}
+.media-inner{max-width:var(--container);margin:0 auto;text-align:center}
+.media-inner h2{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--brand-text);margin-bottom:4px}
+.media-inner .media-sub-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand-muted);margin-bottom:36px}
+.headshot-grid{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.headshot-grid .hs{width:160px;height:200px;background:var(--brand-white);border:1px solid #e0ddd6;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:var(--transition)}
+.headshot-grid .hs:hover{box-shadow:var(--shadow-soft);transform:translateY(-3px)}
+.headshot-grid .hs img{width:100%;height:100%;object-fit:cover}
+.headshot-grid .hs .hs-ph{width:60px;height:60px;background:#ddd8ce;border-radius:50%}
+.media-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.media-btns .btn{min-width:220px;text-align:center}
+
+/* ── KEYNOTE HYBRID SECTION ── */
+.keynote-section{padding:80px 24px;background:var(--brand-white)}
+.keynote-inner{max-width:var(--container);margin:0 auto}
+.keynote-header{text-align:center;margin-bottom:48px}
+.keynote-header h2{font-size:clamp(28px,3.5vw,42px);font-weight:900;color:var(--brand-text);margin-bottom:12px}
+.keynote-header p{font-size:16px;color:var(--brand-muted);max-width:640px;margin:0 auto;line-height:1.75}
+
+.keynote-overview{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:56px}
+.keynote-desc h3{font-size:22px;font-weight:800;color:var(--brand-text);margin-bottom:16px}
+.keynote-desc p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:14px}
+.keynote-desc .qi{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;font-style:italic;color:var(--brand-blue);border-left:3px solid var(--brand-crayon);padding-left:16px;margin:20px 0}
+.keynote-meta-card{background:var(--brand-dark);padding:36px;color:white}
+.keynote-meta-card h4{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-gold);margin-bottom:20px}
+.kmc-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.kmc-item:last-child{border-bottom:none}
+.kmc-item .kmc-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--brand-gold);margin-bottom:2px}
+.kmc-item .kmc-val{font-size:14px;color:rgba(255,255,255,.75)}
+
+/* Audience tabs */
+.aud-tabs-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand-blue);margin-bottom:16px}
+.aud-tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:0}
+.aud-tab{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;padding:14px 24px;border:1px solid #e0ddd6;border-bottom:none;background:var(--brand-light);color:var(--brand-muted);cursor:pointer;transition:var(--transition);position:relative}
+.aud-tab:hover{background:var(--brand-white);color:var(--brand-text)}
+.aud-tab.active{background:var(--brand-white);color:var(--brand-text);border-bottom-color:var(--brand-white);z-index:2}
+.aud-tab.active::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--brand-white)}
+
+/* Audience panels — Dorie Clark style with colored left border */
+.aud-panels{border:1px solid #e0ddd6;background:var(--brand-white)}
+.aud-panel{display:none;padding:40px;animation:fadeIn .35s ease}
+.aud-panel.active{display:block}
+.aud-panel-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.aud-left{border-left:5px solid var(--brand-crayon);padding-left:24px}
+.aud-left h3{font-size:20px;font-weight:800;color:var(--brand-text);margin-bottom:8px}
+.aud-left .aud-subtitle{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--brand-crayon);margin-bottom:16px}
+.aud-left p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:12px}
+.aud-right h4{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--brand-blue);margin-bottom:14px}
+.aud-takeaways{list-style:none;margin-bottom:24px}
+.aud-takeaways li{font-size:14px;color:var(--brand-muted);padding:8px 0 8px 20px;position:relative;line-height:1.6;border-bottom:1px solid #f0ede8}
+.aud-takeaways li::before{content:'';position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--brand-gold)}
+.aud-testimonial{background:var(--brand-light);padding:20px;margin-bottom:20px;border-left:3px solid var(--brand-gold)}
+.aud-testimonial blockquote{font-size:14px;font-style:italic;color:var(--brand-text);line-height:1.65;margin-bottom:8px}
+.aud-testimonial cite{font-size:12px;color:var(--brand-muted);font-style:normal;font-weight:600}
+
+/* Color variants for each audience tab panel */
+.aud-panel[data-audience="workplace"] .aud-left{border-left-color:var(--brand-blue)}
+.aud-panel[data-audience="workplace"] .aud-left .aud-subtitle{color:var(--brand-blue)}
+.aud-panel[data-audience="schools"] .aud-left{border-left-color:var(--brand-teal)}
+.aud-panel[data-audience="schools"] .aud-left .aud-subtitle{color:var(--brand-teal)}
+.aud-panel[data-audience="healthcare"] .aud-left{border-left-color:var(--brand-crayon)}
+.aud-panel[data-audience="healthcare"] .aud-left .aud-subtitle{color:var(--brand-crayon)}
+.aud-panel[data-audience="youth"] .aud-left{border-left-color:var(--brand-gold)}
+.aud-panel[data-audience="youth"] .aud-left .aud-subtitle{color:#8c7420}
+
+/* ── RESPONSIVE ── */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}.hero-card{display:none}.header-nav{display:none}
   .cs-layout{grid-template-columns:1fr}.res-slide.active{grid-template-columns:1fr}
@@ -176,27 +304,42 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   .fw-visual{grid-template-columns:1fr;gap:12px}.fw-bridge{flex-direction:row;padding:8px 0}.fw-bridge .lbl{writing-mode:horizontal-tb}
   .next-session{grid-template-columns:1fr;text-align:center}.story-split{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}
   .c-dropdown{min-width:auto;width:100%}
+  .keynote-overview{grid-template-columns:1fr}
+  .aud-panel-inner{grid-template-columns:1fr}
+  .aud-tabs{flex-direction:column}.aud-tab{border-bottom:1px solid #e0ddd6}
+  .aud-tab.active::after{display:none}
+  .headshot-grid .hs{width:120px;height:150px}
 }
 </style>
 </head>
 <body>
 
+
 <header class="header"><div class="header-inner">
   <a href="https://amandalipp.com" class="header-logo"><img src="https://amandalipp.com/wp-content/uploads/2021/04/logo1.png" alt="Amanda Lipp"></a>
-  <nav class="header-nav"><a href="#resources">Resources</a><a href="#portfolio">Case Studies</a><a href="#framework">Framework</a><a href="#approach">Approach</a><a href="#homework">Homework</a><a href="#crew">Crew</a><a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Start a Project</a></nav>
+  <nav class="header-nav">
+    <a href="#keynote">Keynote</a>
+    <a href="#resources">Resources</a>
+    <a href="#portfolio">Case Studies</a>
+    <a href="#framework">Framework</a>
+    <a href="#approach">Approach</a>
+    <a href="#media">Media Kit</a>
+    <a href="#crew">Crew</a>
+    <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Start a Project</a>
+  </nav>
 </div></header>
 
-<!-- HERO -->
+<!-- ═══════════ HERO ═══════════ -->
 <section class="hero"><div class="hero-inner">
   <div>
     <div class="hero-eyebrow">CMHIS &middot; Navigating the Now &middot; March 2026</div>
-    <h1>Stories That Connect Us <em>The Impact of Digital Storytelling in Mental Health</em></h1>
-    <p class="hero-text">Thank you for attending our CMHIS session. This page is your home base for resources, film links, and the frameworks we covered &mdash; plus a look at how we can bring storytelling to your organization.</p>
+    <h1>Think Outside the <span class="crayon-hl">Crayon Box</span> <em>The Impact of Digital Storytelling in Mental Health</em></h1>
+    <p class="hero-text">Thank you for attending our CMHIS session. This page is your home base for resources, film links, and the frameworks we covered, plus a look at how we can bring storytelling to your organization.</p>
     <div class="hero-meta"><span>Hosted by Southwestern Plains Hub</span><span>&middot;</span><span>Presented by Amanda &ldquo;Kay&rdquo; Lipp</span><span>&middot;</span><span>96 Participants</span></div>
     <div class="hero-actions"><a href="#resources" class="btn">Access Resources</a><a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-light">Work With Us</a></div>
   </div>
   <div><div class="hero-card">
-    <div class="hero-quote">&ldquo;A picture is worth a thousand words. A story is worth a thousand feelings.&rdquo;</div>
+    <div class="hero-quote">&ldquo;A picture is worth a thousand words. A story is worth <span class="crayon-hl" style="background:rgba(232,103,74,0.3)">a thousand feelings.</span>&rdquo;</div>
     <div class="hero-quote-attr">&mdash; Kay Lipp, Lipp Studios</div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="num">100+</div><div class="label">Films Created</div></div>
@@ -207,30 +350,201 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   </div></div>
 </div></section>
 
-<div class="gold-strip"><p>Storytelling isn&rsquo;t just creative &mdash; the research tells us it&rsquo;s more effective. Content with storytelling generates 2&ndash;3x higher engagement.</p></div>
+<!-- CRAYON SEPARATOR -->
 
-<!-- KAY STORY -->
+
+<div class="gold-strip"><p>Storytelling isn&rsquo;t just creative. The research tells us it&rsquo;s <span class="crayon-hl crayon-hl-strong">more effective</span>. Content with storytelling generates 2&ndash;3x higher engagement.</p></div>
+
+<!-- ═══════════ KAY'S ORIGIN STORY ═══════════ -->
 <section class="section section-white"><div class="section-inner"><div class="story-split">
   <div class="story-img"><div class="placeholder"></div></div>
   <div class="story-copy">
     <span class="eyebrow">The Origin Story</span>
-    <h2>It Started With a Box of Crayons</h2>
+    <h2>It Started With a <span class="crayon-hl">Box of Crayons</span></h2>
     <p>At 18, Kay experienced a mental health crisis and spent three months cycling between ICU, inpatient, and outpatient psychiatric services. At one of their lowest points, a thoughtful nurse handed them a box of crayons.</p>
-    <p>Their first storyboards were crayon sketches of other patients&rsquo; stories &mdash; abstract drawings depicting color, chaos, beauty, and hope. What started as crayons in the hospital evolved into over a decade of filmmaking.</p>
-    <div class="qi">&ldquo;I truly don&rsquo;t think I would be here today without this box of crayons.&rdquo;</div>
+    <p>Their first storyboards were crayon sketches of other patients&rsquo; stories: abstract drawings depicting color, chaos, beauty, and hope. What started as crayons in the hospital evolved into over a decade of filmmaking.</p>
+    <div class="qi">&ldquo;I truly don&rsquo;t think I would be here today without this <span class="crayon-hl crayon-hl-gold">box of crayons</span>.&rdquo;</div>
     <a href="https://amandalipp.com/about/" class="btn btn-sm btn-outline">About Kay</a>
   </div>
 </div></div></section>
 
-<!-- RESOURCES CAROUSEL -->
+<div class="crayon-sep"><svg viewBox="770 880 480 14" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" fill="#d6b13f"><g><g><g><path d="M1248.49,885.36c0.7,0.08,0.48-0.36,0.59-0.42C1247.89,884.96,1248.52,885.47,1248.49,885.36z"/><polygon points="1236.8,885.68 1237.02,885.51 1235.28,885.85"/><path d="M1225.93,885.23c1,0.75,3.95,0.02,5.88,0.35l0.31,0.18l0.9-0.53C1230.65,885.19,1227.58,885.49,1225.93,885.23z"/><path d="M1220.17,883.5c0.35,0.29-1.26,0.21,1.35,0.12c-0.13-0.03-0.17-0.05-0.24-0.08C1221.04,883.55,1220.72,883.54,1220.17,883.5z"/><path d="M1221.28,883.55C1222.42,883.56,1220.53,883.29,1221.28,883.55z"/><path d="M1215.97,883.57l1.52-0.21c-0.31-0.17-1.66-0.24-1.15-0.35C1214.78,883.11,1215.1,883.28,1215.97,883.57z"/><path d="M1214.53,884.05l0.79-0.08C1215.18,883.9,1214.97,883.87,1214.53,884.05z"/><path d="M1216.98,883.79l-1.67,0.18c0.22,0.12,0.23,0.35,0.76-0.06C1215.93,884.12,1216.27,883.92,1216.98,883.79z"/><path d="M1217.92,883.92c0.84,0.18,1.94,0.3,0.41,0.51C1221.22,884.41,1220.81,883.9,1217.92,883.92z"/><path d="M1225.34,885.94l1.12,0.25l0.99-0.2C1226.96,886.09,1225.28,885.72,1225.34,885.94z"/><path d="M1206.56,883.02c-0.1,0.15,0.5,0.41,0.61,0.61l1.12-0.16C1207.72,883.36,1206.63,883.25,1206.56,883.02z"/><path d="M1207.17,883.63l-1.67,0.23C1206.99,883.92,1207.26,883.8,1207.17,883.63z"/><polygon points="1214.24,884.84 1216.99,884.36 1213.71,884.83"/><polygon points="1200.18,882.93 1201.13,882.59 1199.44,883.1"/><path d="M1195.95,882.96c0.7-0.29-0.96-0.5-0.22-0.67c-1.15,0.05-2.13,0.3-3.02,0.52C1193.65,882.68,1194.65,882.72,1195.95,882.96z"/><path d="M1191.23,883.13c0.47-0.07,0.96-0.19,1.48-0.32C1192.21,882.87,1191.72,882.97,1191.23,883.13z"/><path d="M1202.66,883.76c-0.13-0.09-0.37-0.34-1.31-0.45l0.65,0.43C1202.2,883.75,1202.42,883.75,1202.66,883.76z"/><path d="M1202.02,883.76l-0.02-0.01c-0.71-0.02-1.21-0.03-1.42-0.04C1200.76,883.72,1201.19,883.73,1202.02,883.76z"/><path d="M1202.82,883.76c-0.06,0-0.11,0-0.17,0C1202.72,883.8,1202.76,883.82,1202.82,883.76z"/><path d="M1209.87,884.37c-0.99,0.22-3.03,0.44-1.06,0.84C1209.52,884.94,1208.39,884.71,1209.87,884.37z"/><path d="M1203.63,884.3l1.77,0.12c-0.03-0.11-0.35-0.28,0.14-0.39L1203.63,884.3z"/><polygon points="1202.76,884.43 1203.63,884.3 1202.97,884.26"/><path d="M1194.26,883.54c-0.77,0.18-1.6,0.2-2.55,0.23c1.01,0.09,2.06,0.13,3.06,0.14C1194.91,883.76,1195.35,883.52,1194.26,883.54z"/><path d="M1198.03,883.67c-0.05,0.01-0.12,0.02-0.17,0.02C1197.97,883.73,1198.05,883.75,1198.03,883.67z"/><path d="M1182.4,883.76c0.05,0.03,0.1,0.05,0.15,0.08c0.01-0.03,0.02-0.05,0.03-0.07L1182.4,883.76z"/><path d="M1194.94,883.98c0.76,0.09,1.22-0.02,1.65-0.15c-0.57,0.04-1.17,0.07-1.82,0.07C1194.71,883.96,1194.7,884,1194.94,883.98z"/><path d="M1188.63,883.32c0.4,0.09,0.85,0.17,1.32,0.24C1189.56,883.42,1188.77,883.21,1188.63,883.32z"/><path d="M1197.61,883.58c0.04-0.01,0.07-0.01,0.11-0.02C1197.47,883.47,1197.5,883.51,1197.61,883.58z"/><path d="M1197.61,883.58c-0.39,0.06-0.7,0.16-1.01,0.25c0.46-0.03,0.9-0.07,1.27-0.13C1197.77,883.67,1197.67,883.62,1197.61,883.58z"/><path d="M1179.59,886.52c0.13-0.4,2.13-0.77,3.86-0.35c1.7-0.3,0.58-1.6-0.9-2.33c-0.05,0.17-0.05,0.33-1.8,0.57c0.61,0.21,3.89,0.49,2.41,0.86c-2.32,0.21-1.9-0.13-3.03-0.34c0.96,0.49-2.94,0.73-2.44,1.46l2.03-0.27C1179.76,886.23,1179.03,886.42,1179.59,886.52z"/><path d="M1185.89,883.87l0.72-0.05c-0.82-0.07-1.41-0.22-2.49-0.53c-1.2,0.2-1.45,0.35-1.53,0.48l3.55,0.04L1185.89,883.87z"/><path d="M1189.84,883.82c-0.56,0.43-2.29,0.61-1.23,1.08c2.11-0.02,1.48-0.36,2.75-0.54c-3.41,0.1,0.98-0.24-1.49-0.49c0.67-0.07,1.27-0.09,1.84-0.11c-0.61-0.05-1.21-0.12-1.77-0.2c0.03,0.01,0.05,0.02,0.08,0.03l0.02,0l0,0.01c0.15,0.05,0.2,0.09,0.03,0.06c-0.01,0.01-0.05,0.01-0.07,0.01C1189.97,883.72,1189.91,883.77,1189.84,883.82c-0.99-0.09-0.16-0.11,0.15-0.16c0.01-0.02,0.04-0.04,0.04-0.06l-0.01-0.01l-3.42,0.23C1187.33,883.87,1188.24,883.87,1189.84,883.82z"/><path d="M1206.98,886.11c-0.11-0.04-0.1-0.07-0.11-0.1C1206.65,886.06,1206.56,886.09,1206.98,886.11z"/><path d="M1205.57,885.83c0.25-0.06,0.46-0.22,1.27-0.17c0.7,0.14-0.01,0.21,0.03,0.35c0.49-0.11,1.71-0.28,0.18-0.52l-0.24,0.05c-1.37-0.18-3.13-0.73-2.89-0.79C1204.31,885.16,1204.66,885.43,1205.57,885.83z"/><path d="M1197.61,884.91l-2.85,0.2l1.45,0.38l-0.07-0.22C1197.76,885.36,1197.41,885.08,1197.61,884.91z"/><polygon points="1182.07,883.55 1182.45,883.09 1180.81,883.74"/><polygon points="1178.37,883.62 1178.51,883.22 1177.53,883.47"/><path d="M969.84,888.64l-0.84,0.09C969.4,888.71,969.66,888.68,969.84,888.64z"/><path d="M975.89,888.85l0.15-0.19C975.77,888.76,975.65,888.83,975.89,888.85z"/><path d="M1087.64,884.99c-1.22-0.36-2.58-0.92-2.43-0.48l0.38,0.43C1086.43,884.86,1087.08,884.9,1087.64,884.99z"/><path d="M1025.51,887.53c0.11,0.04,0.24,0.09,0.35,0.14c0.3-0.15,0.58-0.28,0.83-0.41C1026.34,887.34,1025.94,887.43,1025.51,887.53z"/><path d="M1024.63,889.31l-1.6-0.3C1023.39,889.12,1023.91,889.21,1024.63,889.31z"/><path d="M936.84,888.02l-0.98,0.42C937.38,888.47,936.71,888.23,936.84,888.02z"/><path d="M1140.51,884.3c-1.05-0.15-1.89-0.21-2.62-0.21C1139.15,884.31,1140.18,884.67,1140.51,884.3z"/><path d="M972.36,884.11c-0.51,0.06-0.73,0.15-0.72,0.24C972.17,884.3,972.47,884.22,972.36,884.11z"/><path d="M1134.85,884.14c0.19,0.04,0.37,0.06,0.56,0.09c0.77-0.09,1.54-0.16,2.48-0.15C1136.94,883.92,1135.87,883.82,1134.85,884.14z"/><path d="M817.3,889.67c-0.09-0.01-0.19-0.02-0.27-0.04C817.01,889.7,817.13,889.69,817.3,889.67z"/><path d="M782.4,886.15c0.34-0.01,0.89,0.04,1.41,0.05C783.56,886.16,783.13,886.15,782.4,886.15z"/><path d="M1163.49,883.58C1164.27,883.54,1163.61,883.53,1163.49,883.58z"/><path d="M1167.32,885.25c-0.17,0.05-0.29,0.11-0.31,0.21C1167.07,885.36,1167.18,885.29,1167.32,885.25z"/><path d="M1127.1,886.99c-0.02,0-0.04,0-0.07,0C1127.26,887.07,1127.22,887.05,1127.1,886.99z"/><path d="M1164.67,883.76c-0.3-0.05-0.64-0.09-1-0.12C1163.83,883.68,1164.13,883.72,1164.67,883.76z"/><path d="M1164.51,883.56c0.27,0.01,0.48,0.02,0.69,0.03C1165.29,883.52,1165.2,883.47,1164.51,883.56z"/><path d="M1162.39,883.62c0.45-0.01,0.87,0,1.27,0.03c-0.15-0.03-0.22-0.05-0.18-0.07C1163.26,883.59,1162.93,883.6,1162.39,883.62z"/><path d="M881.32,886.47c-0.05-0.01-0.11-0.02-0.17-0.04C880.37,886.62,880.71,886.59,881.32,886.47z"/><path d="M1067.27,889.61c0.04,0,0.06-0.02,0.09-0.02c-0.04,0-0.08-0.01-0.12-0.02L1067.27,889.61z"/><path d="M1064.45,889.94c1.2-0.54,1.88-0.48,2.79-0.36l-0.93-1.25L1064.45,889.94z"/><path d="M957.69,888.28c-2.57-0.67-5.04-0.03-6.46,0.27c-0.98-0.23,0.82-0.99-2.01-0.86c-3.98,0.13,0.72,1.02-1.67,1.09l-1.71-0.76c-3.06,0.42-5.33-0.09-7.9-0.26c-0.58,0.04-0.87,0.11-1.01,0.18c-2.73-0.37-5.75,0.57-7.81,0.3c0.49-0.14-1.17-0.46-1.42-0.63l-3.73,0.39c1.65-0.16,1.58-0.57,1.89-0.96c-1.17,0.03-1.72,0.24-2.51,0.28c0.49-0.14,0.98-0.28,0.36-0.46l-3.92,0.63c0.23,0.07,0.68,0.1,1.06,0.12c-0.98,0-3.09,0.24-4.49-0.1c0.12-0.15,0.61-0.3,0.73-0.45c1.17,0.45,1.84,0.08,2.45-0.22c-2.7,0.05-0.67-0.11-1.97-0.4c-1.91,0-2.69,0.53-2.19,0.88c-2.15-0.17-2.83-0.27-5.03,0.14l0.42-0.55l-2.02,0.17l1.64-0.67c-3.87-0.37-0.71,0.94-5.01,0.64l-0.01-0.48c-1.65,0.19-2.22,1.01-3.51,0.44c-1.6,0.3,2.75,0.67-1.02,0.79c-0.67-0.25-2.1-0.42-3.19-0.51c-1.2,0.23,0.92,0.56,1.69,0.49c-5.69,0.28-3.55-1.62-8.63-0.93c1.75,0.32-1.44,0.95,2.68,0.89c-1.97,0.3-3.88-0.65-5.93-0.1l1.33-0.63c-0.74,0-1.57,0.23-1.97,0.32l0.16-0.48c-2.52,0.87-4.73-0.32-6.22,0.8c1.03-0.88-1.89,0.08-2.91-0.23c2.08-0.64,5.99-0.09,6.25-0.89c-0.98-0.22-1.84,0.18-2.78-0.04c0.65-0.13,1.61-0.36,1.85-0.52c-3.22-0.39-5.03,0.57-6.98,0.81l3.44-0.25c-0.26,0.8-1.55,0.16-2.5,0.8c-1.73-0.39-3.06,0.26-4.47,0.02c0.37,0,0.4-0.08,0.77-0.09c-3.75,0.1-4.82-1.17-6.31-1.15c-1.47-0.07-4.23,0.43-3.22,0.74c-1.19,0.25,4.97-0.36,2.86,0.72c-2.17-1.13-4.39,0.55-9.08-0.14c2.03-0.48-1.22-0.63,0.6-1c-2.22,0.16-2.3,0.34-3.28,0.7l-0.68-0.35c-2.88,0.91-0.66,0.75-5.05,1.32c1.47-0.33-1.78-0.49-0.66-0.78c-1.22,0.01-2.41,0.16-3.29,0.41l0.16-0.06c-4.45,0.33-3.66-0.36-7.7,0.18l0.41,0.21c-5.31,0.76-11.97,0.59-17.43,1.22l1.94,0.07c-0.59-0.08-3.66,0.57-5.39,0.33c0.34-0.04,0.92-0.18,1.24-0.17c-0.06-0.25-0.75-0.58-2.07-0.56l-0.48,0.41l-0.55-0.26c-2.01,0.12,0.62,0.51-1.39,0.63c-1.24-1.02-8.69,0.39-10.48-0.51c-1.34,0.86,3.83-0.07,2.36,0.72c-0.62-0.08-0.91-0.22-2.22-0.22l0.48,0.45c-6.14,0.01-8.49-0.32-13.96-0.23l0.22-0.1c-1.95-0.22-3-0.14-3.88,0.24c-0.4-0.23,1.01-0.31,0.26-0.52c-3.5,1.09-6.81-1.21-8.94-0.6c0.18-0.46-0.82-1.03-1.61-1.55c-0.79-0.52-1.37-1.04-0.42-1.28l-1.38-0.07c0.52-0.53,4.3,0.47,5.14-0.12c1.42,0.31,2.85,0.66,4.29,0.94c-0.12-0.24,0.61-0.57-0.09-0.68c1.07,0.03,2.01,0.03,0.62-0.36c5.14,1.04,10.46,1,15.72,0.72c5.27-0.28,10.53-0.79,15.72-0.69c0.7-0.1,0.28-0.3,0-0.43c1.94,0.49,1.8-0.43,2.84-0.58l2.84,0.71c1.12-0.33,0.22-0.54,0.29-0.72c5.29-0.49,10.51,0.2,14.75-0.45c1.37,0.27-0.3,0.72,1.5,0.77c-2.47-0.83,5.22-0.59,3.65-1.18c1.77,0.91,6.47,0.01,5.73,1.37c2.15,0.02,1.76-0.62,1.14-0.72c2.5-0.02,4.51-0.07,6.54-0.55c1.38,0.27,11.4-0.63,13.65,0.33c-1.53-0.62,0.11-0.34,1.56-0.66l-1.33-0.55l3.29-0.01c0.67-0.07,0.86-0.05,0.86,0c0.56,0.02-0.13,0.34,1.29,0.45c2.24-0.01,2.34-0.33,3.57-0.65l-0.34-0.08l1.52-0.08c1.12,0-3.94,0.65-0.29,0.88c0.05-0.16,2.18-0.96,3.17-0.56c-1.86,0-1.62,0.4-0.93,0.56l2.61-0.01l-0.87-0.72c7.49-0.08,15.29,0.35,23.28,0.28c-0.11,0.64,5.66,0.03,4.94,0.97l-0.31-0.09c-1.96,0.09,0.57,0.74,2.16,0.64c-1.67-0.3,3-0.94-1.06-1.08l3.14-0.44c1.75-1.8,8.38,0.2,13.15-0.31c-0.34,0.07-0.43,0.16-0.47,0.22c4.24-0.51,9.48,0.66,10.47,0.41l0.36,0.51c3.63-0.66,4.07-0.73,8.37-0.27c-0.06,0.08-0.56,0.2,0.12,0.33c1.05-0.33,2.11-0.66,5.05-0.46l-0.13,0.15l4.61,0.09c-0.09,1.53,7.93-0.65,9.25,1.04c0.92-0.42,4.29-0.44,5.8-0.61c0.01,0.07,0.1,0.14,0.35,0.21c1.79-0.77,5.1,0.4,7.06,0.37c1.28-0.16,0.74-0.44,0.19-0.71c2.51,0.72,7-0.55,7.91-0.25c1.85,0.11,0.68,0.6,1.18,0.95c2.76-0.08-0.43-1.39,3.25-0.7c-0.43,0.06-1.23,0.09-0.92,0.19c1.41,0.16,3.89,1.97,5.31,1.65l-0.92-0.29c2.58-0.34,6.06,1.38,6.5,0.35l-0.23-0.48c4.42,0.71,1.88-0.15,6.37,0.48l-0.06,0.08c1.96-0.06,3.01,0.56,3.99-0.2l-0.67-0.11c2.43-0.02,2.65,0.04,5.13,0.11c0.29-0.07,1.49-0.17,1.83,0c0.12-0.63,5.75-0.22,6.86-0.17c-1.96,0.07-1.04,0.36-0.48,0.62c1.16-0.51,1.96-0.55,3.56-0.16c0.24-0.8,0.57-1.64,3.72-1.66c-0.49,0.12-1.26,0.18-0.94,0.34c0.32,0.17,1.06-0.01,1.3-0.06c0.31,0.17-0.7,0.29-0.35,0.57c2.14-0.74,3.69-0.02,6.78-0.27c-0.98,0.23-0.14,0.39,0.21,0.67c0.25-0.9,4.23,0.81,3.06-0.36c6.05,0.74,15.37,0.1,17.73,0.85c0.64,0.33,2.32-0.21,3.38-0.22l-0.14,0.4c2.95-0.72,2.3-0.27,5.76-1c-1.44,0.47-0.84,0.69,0.61,1.06l2.38-0.83l0.47,0.61c0.98-0.24,2.07-0.15,3.16-0.06c-0.53,0.01-0.24,0.06-0.21,0.17c0.52-0.85,4.78-0.77,5.43-1.18c1.07,0.82,2.85-0.23,3.64,0.54c0.35-0.12,0.8-0.22,1.29-0.3c-0.52-0.36-0.71-0.76,0.25-0.59c0.08-0.01,0.15-0.01,0.23-0.02l0.42,0.48c0.98-0.12,1.98-0.18,2.63-0.2c-0.3-0.04-0.64-0.13-1-0.23c0.42,0.07,0.81,0.16,1.19,0.23c0.13,0,0.26,0,0.35,0c-0.06,0.01-0.13,0.02-0.21,0.03c0.6,0.11,1.22,0.16,2.07-0.02c3.43,0.7,7.6-1.09,11.39-0.13c-0.57-0.1-1.37-0.13-1.58,0.04c3.16-0.09,6.31,0.56,8.3,0.16l-0.15-0.45c2.31-0.24,4.1-0.41,5.97-0.41l0.09-0.51c2.71,0.15,8.52-0.78,10.21,0.24c0.66-0.42,3.76,0.05,5.3-0.11l0.4,0.38c2.01,0.09,3.25-0.07,4.45-0.21c4.1,0.74,7.86-0.14,11.43-0.14l0.04,0.11l3.62-0.34c-0.94,0.37,0.71-0.26,1.8-0.18c1.15-0.21,3.02-0.14,4.38,0.1l2.31-0.02c-2.56,0.3,0.19,0.56,0.34,1l1.47-0.38c0.6,0.21-0.94,0.37,0.15,0.45c0.98-0.25,3.9-0.27,4.81-0.75c-0.15-0.11-0.5-0.21-0.94-0.3c-0.12,0.03-0.12,0.02-0.04-0.01c-0.04-0.01-0.06-0.01-0.1-0.02c0.05,0.01,0.07,0.01,0.12,0.01c0.12-0.05,0.32-0.12,0.4-0.18c1.84,0.08,1.16-0.1,1.09-0.3c2.09,0.68,3.25,0.18,4.86,1c-2.17-0.91,4.78-0.05,3.42-0.92c1.56,0.7,1.06,0.02,2.06,0.62c-2.19-0.18-4.36,0.49-6.11,0.82l1.73,0.41c-1.12,0.81-3.88-0.26-4.91,0.02c0.69-0.2,2.25-0.03,2.31,0.15l-0.47-0.61c-2.47-0.21-4.43,0.29-6.18,0.61c1.66,0.18-2,0.39-0.79,0.81l1.3-0.09c0.6,0.21-0.66,0.41-1.39,0.6c-4.13-0.39-11.68,0.12-13.17-0.33c0.85,0.14,2.39-0.02,3.13-0.21l-1.94-0.22c1.57-0.05,2.82,0.47,5.14,0.24c-0.4-0.38,1.28-0.94-0.49-1.45c-4.45-0.54-3.63,1.07-8.98,1.02c-0.49,0.13,1.11-0.65-1.74-0.4c-3.57,0.46-6.18,1.39-6.16,2.23c1.5-0.27,4.51-0.82,4.98-0.22c-1.5,0.28-4.1,0.47-4.22,0.87c-1.57-0.68,2.84-0.26,0.78-0.81c-1.06,0.04-1.51,0.28-2,0.4c0.7-0.31-0.96-0.48-1.28-0.63c-3.43,0.06-5.4-0.22-9.08-0.21c-0.2-0.1-0.6-0.32-0.5-0.49c-1.79,0.23-4.33,1.33-3.66,1.76c-2.11,0.07-2.22-0.27-4.01-0.04c2.87,0.58-0.56-0.1-0.86,0.59c-1.83,0.11-0.65-0.32-1.49-0.46c-0.3,0.08-1.03,0.32-1.08,0.5c-1.13-0.5,2.16-1.38,0.83-1.96c-0.92-0.36-4.87-0.98-5.15-1.03c-0.86,0.59-0.57,2.96,0.75,3.7c-0.13,0.4-1.74-0.4-2.55-0.43c-2.34-0.61-3.55,0.55-5.49,0.33l1.47-0.38c-0.32-0.16-3.17,0.09-3.62,0.33c-0.08-0.22,1.46-1.17,0.57-1.43c-3.48-0.07-6.77,1.2-6.54,1.87l5.33-0.76c0.19,0.56-3.78,0.61-3.55,1.28l-4.92-0.15c0.62-0.02,2.51-0.2,1.77-0.51c-2.11,0.05-1.09-0.09-2.51-0.33c2.41-0.74,6.82-2.6,8.39-3.49l-2.53,0.41l-0.64-0.32c-3.3,0.48-6.26,2.7-7.12,3.29c-1.9-0.12-1.25-1.33-0.8-1.56c-3.73-0.03-3.67,1.72-7.44,1.58l1.42,0.25c-0.89,0.12-4.12-0.1-3.77,0.12c-0.75-0.31-1.44-1.06-0.61-1.27l-3.33,1.14c0.49-0.12,0.16-1.08,0.37-1.25c-1.34-0.03-2.28,1.12-1.43,1.27c-2.62-0.68-1.97-0.31-4.09-1.11c-0.77,0.07,0.07,1.02,0.64,1.12c-1.75,0.27-2.77,0.15-3.6,0.04c2.89-0.42,0.78-2.15,1.33-2.89l-6.2,2.87c0.21-0.17,0.7-1.09,0.67-1.2c-0.52,0.86-7.64,0.97-11.12,0.84l0.52-0.01c0.71-0.29-2.29-0.53-3.51-0.24c0.21-0.17,0.49-0.12,1.01-0.12c-2.32-0.65-3.02,1.28-5.39,0.51c2.15,0.09,2.57-0.25,2.46-0.59c-1.76,0.3-5.84-0.05-4.99,0.95c-1.13-0.21-2.15-0.09-2.05-0.6l-4.33,0.56c0.32-0.1,0.6-0.39-0.66-0.47c2.43,0.15,4.78-0.76,6.05-0.1c0.07-0.62-0.84-0.95,0.32-1.47c-4.68,0.27-7.25,1.3-10.21,1.99l-4.12-0.49l-0.18,0.28l-0.71-0.72c-0.52,0.16-0.85,0.3-0.95,0.23c-0.09-0.06,0.04-0.16,0.24-0.26c-0.43,0.03-0.83,0.09-1.03,0.16c-0.16-0.38,0.58-0.8,1.36-1.18c0.37,0.13,0.75,0.27,1.13,0.41c0.81-0.35,1.4-0.71,0.27-0.96c-0.16,0.04-0.36,0.09-0.58,0.15c0.52-0.26,0.84-0.48,0.46-0.59l-3.15,0.31c0.36,0.1,0.89,0.31,1.51,0.55c-1.98,0.44-4.24,0.99-2.48,1.49l-2.4-0.45c-2.83,0.67-2.34,0.53-5.78,1.01c-0.18-0.25,0.73-0.45,0.12-0.64c-2.51,0.77-6.09-1.02-6.65-0.33c-2.02,0.14-0.85,0.6-2.14,0.77c0.06-0.08,0.19-0.23-0.19-0.25l-1.54,0.48c-0.61-0.19,1.41-0.33-0.31-0.58c-2.95,0.33-4.68,0.56-7.14,0.26c-3.5,0.04,1.48,1.05-1.48,0.88c-0.43-0.43-0.8-0.93-2.64-1.03c-0.98,0.27-0.86,0.6-2.52,0.74l0.12-0.64c-1.53-0.01-2.76,0.08-2.76-0.41c-1.26,0.24-2.12,0.17-2.78,0.05c-2.33,0.28,1.68,1.34,2.22,1.61c-2.28-0.54-3.86-0.3-5.15-1.1l2.03-0.12c-4.3-0.9-4.12,0.8-6.08-0.61c1.48,0.09,3.26-0.2,2.4-0.57l-2.15,0.27c-0.25-0.18,1.23-0.08,0.25-0.31c-0.61,0.12-1.87,0.42-2.43,0.61l0.03-0.04l-3.87,0c0.73,0.05,0.92-0.18,0.18-0.23l-2.55,0.26c0.78-0.14-0.01-0.36-1.14-0.5c-3.26-0.3-2.66,1.35-5.17,0.62c0.37,0.03,0.43-0.05,0.8-0.03l-1.29-0.33c-0.32,1.36-7.69-0.13-8.01,1.21c-1.84-0.62-0.12-0.33,2.29-0.89l-1.96-0.46C956.16,888.25,956.83,888.38,957.69,888.28z M982.78,888.95c0.41,0.3,1.56,0.01,2.14-0.08C983.94,888.69,983.44,888.42,982.78,888.95z M1028.03,888.38c0.74,0.19,1.4,0.28,1.83,0.12C1029.18,888.37,1028.57,888.35,1028.03,888.38z M1154.84,884.12c0.02-0.01,0.04-0.02,0.06-0.02C1154.01,884.02,1153.56,883.95,1154.84,884.12z M1156.23,884.18c0.68,0.02,1.27,0.01,1.46-0.12c0.11,0.07,0.13,0.13-0.13,0.2C1156.76,884.39,1156.42,884.3,1156.23,884.18z M873.41,883.5l-0.52-0.12C872.57,883.53,872.25,883.67,873.41,883.5z"/><path d="M1024.75,889.1c-0.16-0.08-0.2-0.17-0.24-0.26C1024.28,888.92,1024.28,889.01,1024.75,889.1z"/><path d="M937.02,887.94l-0.09-0.01c-0.05,0.03-0.08,0.06-0.09,0.08L937.02,887.94z"/><path d="M1116.56,889.08c-0.55-0.06-0.85-0.14-1.06-0.23C1115.47,888.96,1115.72,889.06,1116.56,889.08z"/><path d="M1171.6,883.27l-1.7,0.14c0.82-0.03,1.12,0.07,1.53,0.15C1171.4,883.44,1171.07,883.28,1171.6,883.27z"/><path d="M1186.37,886.17c0.25-0.06,0.53-0.01,0.77-0.07l-0.07-0.22C1186.02,885.89,1185.28,886.08,1186.37,886.17z"/><path d="M1173.19,884.86c0.14,0.4,1.2,0.26,2.39,0.17c-0.07,0-0.14,0.01-0.21,0C1175.72,884.46,1174.45,884.66,1173.19,884.86z"/><path d="M1175.86,885.02c0.37-0.02,0.74-0.04,1.1-0.02C1177.1,884.77,1176.51,884.95,1175.86,885.02z"/><path d="M1160.91,883.94c0.57,0.1,0.35-0.52,0.67-0.36C1162.21,883.05,1157.83,884.26,1160.91,883.94z"/><polygon points="1174.17,886.19 1173.74,885.69 1173.07,886.1"/><path d="M1164.77,885.92l1.9,0.12c-0.03-0.08,0.21-0.14,0.51-0.18C1166.01,885.85,1164.72,885.77,1164.77,885.92z"/><path d="M1167.18,885.86c0.61,0,1.19-0.02,1.53-0.1C1168.38,885.76,1167.67,885.79,1167.18,885.86z"/><polygon points="1171.57,886.36 1171.01,886.26 1169.67,886.24"/><path d="M1144.34,886.14l-2.07,0.18c-0.21,0.18,0.36,0.27,1.13,0.19C1143.89,886.38,1144.66,886.3,1144.34,886.14z"/><path d="M1150.63,887.4c-0.56-0.09-0.6-0.21-0.92-0.37l-0.05,0.62L1150.63,887.4z"/><path d="M1144.59,887.65c-0.2,0.18-3,0.55-0.37,0.46C1144.42,887.94,1146.5,887.76,1144.59,887.65z"/><polygon points="1113.32,887.43 1113.85,887.41 1113.76,886.39"/><path d="M1085.79,890.2c2.46,0.23,0.58-0.63,2.8-0.35c0.58-0.25-1.82-0.23-1.23-0.45C1085.89,889.67,1085.11,889.54,1085.79,890.2z"/><path d="M1087.37,889.41c0.24-0.04,0.49-0.09,0.76-0.16C1087.7,889.31,1087.49,889.36,1087.37,889.41z"/><path d="M776.78,885.13c-0.51-0.11-1.01-0.25-1.51-0.39l0.95,0.47L776.78,885.13z"/><path d="M773.74,885.51l-0.27-0.69l-1.01,0.46C772.81,885.29,773.49,885.33,773.74,885.51z"/><path d="M989.27,890.3l0.12-0.15c-0.24-0.18-0.61-0.2-1.35-0.24L989.27,890.3z"/><polygon points="967.83,889.21 968.2,889.24 967.53,888.63"/><path d="M949.81,889.33c0.73,0.05,1.59-0.05,2.33,0C950.53,889.38,949.64,888.6,949.81,889.33z"/></g></g></g></svg></div>
+
+<!-- ═══════════ LOGO / PARTNERS ═══════════ -->
+<section class="logo-section" id="partners">
+  <div class="logo-section-inner">
+    <h2>Trusted <span class="crayon-hl">Partners</span> &amp; Collaborators</h2>
+    <p class="logo-sub">Organizations that have brought storytelling to life with Lipp Studios</p>
+    <div class="logo-grid">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-1.png" alt="Partner logo">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200.png" alt="Partner logo">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_199.png" alt="Partner logo" class="logo-wide">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-4.png" alt="Partner logo">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-2.png" alt="Partner logo" class="logo-wide">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-3.png" alt="Partner logo">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-7.png" alt="Partner logo">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-5.png" alt="Partner logo">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-6.png" alt="Partner logo">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-8.png" alt="Partner logo">
+    </div>
+  </div>
+</section>
+
+<div class="crayon-sep"><svg viewBox="770 880 480 14" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" fill="#d6b13f"><g><g><g><path d="M1248.49,885.36c0.7,0.08,0.48-0.36,0.59-0.42C1247.89,884.96,1248.52,885.47,1248.49,885.36z"/><polygon points="1236.8,885.68 1237.02,885.51 1235.28,885.85"/><path d="M1225.93,885.23c1,0.75,3.95,0.02,5.88,0.35l0.31,0.18l0.9-0.53C1230.65,885.19,1227.58,885.49,1225.93,885.23z"/><path d="M1220.17,883.5c0.35,0.29-1.26,0.21,1.35,0.12c-0.13-0.03-0.17-0.05-0.24-0.08C1221.04,883.55,1220.72,883.54,1220.17,883.5z"/><path d="M1221.28,883.55C1222.42,883.56,1220.53,883.29,1221.28,883.55z"/><path d="M1215.97,883.57l1.52-0.21c-0.31-0.17-1.66-0.24-1.15-0.35C1214.78,883.11,1215.1,883.28,1215.97,883.57z"/><path d="M1214.53,884.05l0.79-0.08C1215.18,883.9,1214.97,883.87,1214.53,884.05z"/><path d="M1216.98,883.79l-1.67,0.18c0.22,0.12,0.23,0.35,0.76-0.06C1215.93,884.12,1216.27,883.92,1216.98,883.79z"/><path d="M1217.92,883.92c0.84,0.18,1.94,0.3,0.41,0.51C1221.22,884.41,1220.81,883.9,1217.92,883.92z"/><path d="M1225.34,885.94l1.12,0.25l0.99-0.2C1226.96,886.09,1225.28,885.72,1225.34,885.94z"/><path d="M1206.56,883.02c-0.1,0.15,0.5,0.41,0.61,0.61l1.12-0.16C1207.72,883.36,1206.63,883.25,1206.56,883.02z"/><path d="M1207.17,883.63l-1.67,0.23C1206.99,883.92,1207.26,883.8,1207.17,883.63z"/><polygon points="1214.24,884.84 1216.99,884.36 1213.71,884.83"/><polygon points="1200.18,882.93 1201.13,882.59 1199.44,883.1"/><path d="M1195.95,882.96c0.7-0.29-0.96-0.5-0.22-0.67c-1.15,0.05-2.13,0.3-3.02,0.52C1193.65,882.68,1194.65,882.72,1195.95,882.96z"/><path d="M1191.23,883.13c0.47-0.07,0.96-0.19,1.48-0.32C1192.21,882.87,1191.72,882.97,1191.23,883.13z"/><path d="M1202.66,883.76c-0.13-0.09-0.37-0.34-1.31-0.45l0.65,0.43C1202.2,883.75,1202.42,883.75,1202.66,883.76z"/><path d="M1202.02,883.76l-0.02-0.01c-0.71-0.02-1.21-0.03-1.42-0.04C1200.76,883.72,1201.19,883.73,1202.02,883.76z"/><path d="M1202.82,883.76c-0.06,0-0.11,0-0.17,0C1202.72,883.8,1202.76,883.82,1202.82,883.76z"/><path d="M1209.87,884.37c-0.99,0.22-3.03,0.44-1.06,0.84C1209.52,884.94,1208.39,884.71,1209.87,884.37z"/><path d="M1203.63,884.3l1.77,0.12c-0.03-0.11-0.35-0.28,0.14-0.39L1203.63,884.3z"/><polygon points="1202.76,884.43 1203.63,884.3 1202.97,884.26"/><path d="M1194.26,883.54c-0.77,0.18-1.6,0.2-2.55,0.23c1.01,0.09,2.06,0.13,3.06,0.14C1194.91,883.76,1195.35,883.52,1194.26,883.54z"/><path d="M1198.03,883.67c-0.05,0.01-0.12,0.02-0.17,0.02C1197.97,883.73,1198.05,883.75,1198.03,883.67z"/><path d="M1182.4,883.76c0.05,0.03,0.1,0.05,0.15,0.08c0.01-0.03,0.02-0.05,0.03-0.07L1182.4,883.76z"/><path d="M1194.94,883.98c0.76,0.09,1.22-0.02,1.65-0.15c-0.57,0.04-1.17,0.07-1.82,0.07C1194.71,883.96,1194.7,884,1194.94,883.98z"/><path d="M1188.63,883.32c0.4,0.09,0.85,0.17,1.32,0.24C1189.56,883.42,1188.77,883.21,1188.63,883.32z"/><path d="M1197.61,883.58c0.04-0.01,0.07-0.01,0.11-0.02C1197.47,883.47,1197.5,883.51,1197.61,883.58z"/><path d="M1197.61,883.58c-0.39,0.06-0.7,0.16-1.01,0.25c0.46-0.03,0.9-0.07,1.27-0.13C1197.77,883.67,1197.67,883.62,1197.61,883.58z"/><path d="M1179.59,886.52c0.13-0.4,2.13-0.77,3.86-0.35c1.7-0.3,0.58-1.6-0.9-2.33c-0.05,0.17-0.05,0.33-1.8,0.57c0.61,0.21,3.89,0.49,2.41,0.86c-2.32,0.21-1.9-0.13-3.03-0.34c0.96,0.49-2.94,0.73-2.44,1.46l2.03-0.27C1179.76,886.23,1179.03,886.42,1179.59,886.52z"/><path d="M1185.89,883.87l0.72-0.05c-0.82-0.07-1.41-0.22-2.49-0.53c-1.2,0.2-1.45,0.35-1.53,0.48l3.55,0.04L1185.89,883.87z"/><path d="M1189.84,883.82c-0.56,0.43-2.29,0.61-1.23,1.08c2.11-0.02,1.48-0.36,2.75-0.54c-3.41,0.1,0.98-0.24-1.49-0.49c0.67-0.07,1.27-0.09,1.84-0.11c-0.61-0.05-1.21-0.12-1.77-0.2c0.03,0.01,0.05,0.02,0.08,0.03l0.02,0l0,0.01c0.15,0.05,0.2,0.09,0.03,0.06c-0.01,0.01-0.05,0.01-0.07,0.01C1189.97,883.72,1189.91,883.77,1189.84,883.82c-0.99-0.09-0.16-0.11,0.15-0.16c0.01-0.02,0.04-0.04,0.04-0.06l-0.01-0.01l-3.42,0.23C1187.33,883.87,1188.24,883.87,1189.84,883.82z"/><path d="M1206.98,886.11c-0.11-0.04-0.1-0.07-0.11-0.1C1206.65,886.06,1206.56,886.09,1206.98,886.11z"/><path d="M1205.57,885.83c0.25-0.06,0.46-0.22,1.27-0.17c0.7,0.14-0.01,0.21,0.03,0.35c0.49-0.11,1.71-0.28,0.18-0.52l-0.24,0.05c-1.37-0.18-3.13-0.73-2.89-0.79C1204.31,885.16,1204.66,885.43,1205.57,885.83z"/><path d="M1197.61,884.91l-2.85,0.2l1.45,0.38l-0.07-0.22C1197.76,885.36,1197.41,885.08,1197.61,884.91z"/><polygon points="1182.07,883.55 1182.45,883.09 1180.81,883.74"/><polygon points="1178.37,883.62 1178.51,883.22 1177.53,883.47"/><path d="M969.84,888.64l-0.84,0.09C969.4,888.71,969.66,888.68,969.84,888.64z"/><path d="M975.89,888.85l0.15-0.19C975.77,888.76,975.65,888.83,975.89,888.85z"/><path d="M1087.64,884.99c-1.22-0.36-2.58-0.92-2.43-0.48l0.38,0.43C1086.43,884.86,1087.08,884.9,1087.64,884.99z"/><path d="M1025.51,887.53c0.11,0.04,0.24,0.09,0.35,0.14c0.3-0.15,0.58-0.28,0.83-0.41C1026.34,887.34,1025.94,887.43,1025.51,887.53z"/><path d="M1024.63,889.31l-1.6-0.3C1023.39,889.12,1023.91,889.21,1024.63,889.31z"/><path d="M936.84,888.02l-0.98,0.42C937.38,888.47,936.71,888.23,936.84,888.02z"/><path d="M1140.51,884.3c-1.05-0.15-1.89-0.21-2.62-0.21C1139.15,884.31,1140.18,884.67,1140.51,884.3z"/><path d="M972.36,884.11c-0.51,0.06-0.73,0.15-0.72,0.24C972.17,884.3,972.47,884.22,972.36,884.11z"/><path d="M1134.85,884.14c0.19,0.04,0.37,0.06,0.56,0.09c0.77-0.09,1.54-0.16,2.48-0.15C1136.94,883.92,1135.87,883.82,1134.85,884.14z"/><path d="M817.3,889.67c-0.09-0.01-0.19-0.02-0.27-0.04C817.01,889.7,817.13,889.69,817.3,889.67z"/><path d="M782.4,886.15c0.34-0.01,0.89,0.04,1.41,0.05C783.56,886.16,783.13,886.15,782.4,886.15z"/><path d="M1163.49,883.58C1164.27,883.54,1163.61,883.53,1163.49,883.58z"/><path d="M1167.32,885.25c-0.17,0.05-0.29,0.11-0.31,0.21C1167.07,885.36,1167.18,885.29,1167.32,885.25z"/><path d="M1127.1,886.99c-0.02,0-0.04,0-0.07,0C1127.26,887.07,1127.22,887.05,1127.1,886.99z"/><path d="M1164.67,883.76c-0.3-0.05-0.64-0.09-1-0.12C1163.83,883.68,1164.13,883.72,1164.67,883.76z"/><path d="M1164.51,883.56c0.27,0.01,0.48,0.02,0.69,0.03C1165.29,883.52,1165.2,883.47,1164.51,883.56z"/><path d="M1162.39,883.62c0.45-0.01,0.87,0,1.27,0.03c-0.15-0.03-0.22-0.05-0.18-0.07C1163.26,883.59,1162.93,883.6,1162.39,883.62z"/><path d="M881.32,886.47c-0.05-0.01-0.11-0.02-0.17-0.04C880.37,886.62,880.71,886.59,881.32,886.47z"/><path d="M1067.27,889.61c0.04,0,0.06-0.02,0.09-0.02c-0.04,0-0.08-0.01-0.12-0.02L1067.27,889.61z"/><path d="M1064.45,889.94c1.2-0.54,1.88-0.48,2.79-0.36l-0.93-1.25L1064.45,889.94z"/><path d="M957.69,888.28c-2.57-0.67-5.04-0.03-6.46,0.27c-0.98-0.23,0.82-0.99-2.01-0.86c-3.98,0.13,0.72,1.02-1.67,1.09l-1.71-0.76c-3.06,0.42-5.33-0.09-7.9-0.26c-0.58,0.04-0.87,0.11-1.01,0.18c-2.73-0.37-5.75,0.57-7.81,0.3c0.49-0.14-1.17-0.46-1.42-0.63l-3.73,0.39c1.65-0.16,1.58-0.57,1.89-0.96c-1.17,0.03-1.72,0.24-2.51,0.28c0.49-0.14,0.98-0.28,0.36-0.46l-3.92,0.63c0.23,0.07,0.68,0.1,1.06,0.12c-0.98,0-3.09,0.24-4.49-0.1c0.12-0.15,0.61-0.3,0.73-0.45c1.17,0.45,1.84,0.08,2.45-0.22c-2.7,0.05-0.67-0.11-1.97-0.4c-1.91,0-2.69,0.53-2.19,0.88c-2.15-0.17-2.83-0.27-5.03,0.14l0.42-0.55l-2.02,0.17l1.64-0.67c-3.87-0.37-0.71,0.94-5.01,0.64l-0.01-0.48c-1.65,0.19-2.22,1.01-3.51,0.44c-1.6,0.3,2.75,0.67-1.02,0.79c-0.67-0.25-2.1-0.42-3.19-0.51c-1.2,0.23,0.92,0.56,1.69,0.49c-5.69,0.28-3.55-1.62-8.63-0.93c1.75,0.32-1.44,0.95,2.68,0.89c-1.97,0.3-3.88-0.65-5.93-0.1l1.33-0.63c-0.74,0-1.57,0.23-1.97,0.32l0.16-0.48c-2.52,0.87-4.73-0.32-6.22,0.8c1.03-0.88-1.89,0.08-2.91-0.23c2.08-0.64,5.99-0.09,6.25-0.89c-0.98-0.22-1.84,0.18-2.78-0.04c0.65-0.13,1.61-0.36,1.85-0.52c-3.22-0.39-5.03,0.57-6.98,0.81l3.44-0.25c-0.26,0.8-1.55,0.16-2.5,0.8c-1.73-0.39-3.06,0.26-4.47,0.02c0.37,0,0.4-0.08,0.77-0.09c-3.75,0.1-4.82-1.17-6.31-1.15c-1.47-0.07-4.23,0.43-3.22,0.74c-1.19,0.25,4.97-0.36,2.86,0.72c-2.17-1.13-4.39,0.55-9.08-0.14c2.03-0.48-1.22-0.63,0.6-1c-2.22,0.16-2.3,0.34-3.28,0.7l-0.68-0.35c-2.88,0.91-0.66,0.75-5.05,1.32c1.47-0.33-1.78-0.49-0.66-0.78c-1.22,0.01-2.41,0.16-3.29,0.41l0.16-0.06c-4.45,0.33-3.66-0.36-7.7,0.18l0.41,0.21c-5.31,0.76-11.97,0.59-17.43,1.22l1.94,0.07c-0.59-0.08-3.66,0.57-5.39,0.33c0.34-0.04,0.92-0.18,1.24-0.17c-0.06-0.25-0.75-0.58-2.07-0.56l-0.48,0.41l-0.55-0.26c-2.01,0.12,0.62,0.51-1.39,0.63c-1.24-1.02-8.69,0.39-10.48-0.51c-1.34,0.86,3.83-0.07,2.36,0.72c-0.62-0.08-0.91-0.22-2.22-0.22l0.48,0.45c-6.14,0.01-8.49-0.32-13.96-0.23l0.22-0.1c-1.95-0.22-3-0.14-3.88,0.24c-0.4-0.23,1.01-0.31,0.26-0.52c-3.5,1.09-6.81-1.21-8.94-0.6c0.18-0.46-0.82-1.03-1.61-1.55c-0.79-0.52-1.37-1.04-0.42-1.28l-1.38-0.07c0.52-0.53,4.3,0.47,5.14-0.12c1.42,0.31,2.85,0.66,4.29,0.94c-0.12-0.24,0.61-0.57-0.09-0.68c1.07,0.03,2.01,0.03,0.62-0.36c5.14,1.04,10.46,1,15.72,0.72c5.27-0.28,10.53-0.79,15.72-0.69c0.7-0.1,0.28-0.3,0-0.43c1.94,0.49,1.8-0.43,2.84-0.58l2.84,0.71c1.12-0.33,0.22-0.54,0.29-0.72c5.29-0.49,10.51,0.2,14.75-0.45c1.37,0.27-0.3,0.72,1.5,0.77c-2.47-0.83,5.22-0.59,3.65-1.18c1.77,0.91,6.47,0.01,5.73,1.37c2.15,0.02,1.76-0.62,1.14-0.72c2.5-0.02,4.51-0.07,6.54-0.55c1.38,0.27,11.4-0.63,13.65,0.33c-1.53-0.62,0.11-0.34,1.56-0.66l-1.33-0.55l3.29-0.01c0.67-0.07,0.86-0.05,0.86,0c0.56,0.02-0.13,0.34,1.29,0.45c2.24-0.01,2.34-0.33,3.57-0.65l-0.34-0.08l1.52-0.08c1.12,0-3.94,0.65-0.29,0.88c0.05-0.16,2.18-0.96,3.17-0.56c-1.86,0-1.62,0.4-0.93,0.56l2.61-0.01l-0.87-0.72c7.49-0.08,15.29,0.35,23.28,0.28c-0.11,0.64,5.66,0.03,4.94,0.97l-0.31-0.09c-1.96,0.09,0.57,0.74,2.16,0.64c-1.67-0.3,3-0.94-1.06-1.08l3.14-0.44c1.75-1.8,8.38,0.2,13.15-0.31c-0.34,0.07-0.43,0.16-0.47,0.22c4.24-0.51,9.48,0.66,10.47,0.41l0.36,0.51c3.63-0.66,4.07-0.73,8.37-0.27c-0.06,0.08-0.56,0.2,0.12,0.33c1.05-0.33,2.11-0.66,5.05-0.46l-0.13,0.15l4.61,0.09c-0.09,1.53,7.93-0.65,9.25,1.04c0.92-0.42,4.29-0.44,5.8-0.61c0.01,0.07,0.1,0.14,0.35,0.21c1.79-0.77,5.1,0.4,7.06,0.37c1.28-0.16,0.74-0.44,0.19-0.71c2.51,0.72,7-0.55,7.91-0.25c1.85,0.11,0.68,0.6,1.18,0.95c2.76-0.08-0.43-1.39,3.25-0.7c-0.43,0.06-1.23,0.09-0.92,0.19c1.41,0.16,3.89,1.97,5.31,1.65l-0.92-0.29c2.58-0.34,6.06,1.38,6.5,0.35l-0.23-0.48c4.42,0.71,1.88-0.15,6.37,0.48l-0.06,0.08c1.96-0.06,3.01,0.56,3.99-0.2l-0.67-0.11c2.43-0.02,2.65,0.04,5.13,0.11c0.29-0.07,1.49-0.17,1.83,0c0.12-0.63,5.75-0.22,6.86-0.17c-1.96,0.07-1.04,0.36-0.48,0.62c1.16-0.51,1.96-0.55,3.56-0.16c0.24-0.8,0.57-1.64,3.72-1.66c-0.49,0.12-1.26,0.18-0.94,0.34c0.32,0.17,1.06-0.01,1.3-0.06c0.31,0.17-0.7,0.29-0.35,0.57c2.14-0.74,3.69-0.02,6.78-0.27c-0.98,0.23-0.14,0.39,0.21,0.67c0.25-0.9,4.23,0.81,3.06-0.36c6.05,0.74,15.37,0.1,17.73,0.85c0.64,0.33,2.32-0.21,3.38-0.22l-0.14,0.4c2.95-0.72,2.3-0.27,5.76-1c-1.44,0.47-0.84,0.69,0.61,1.06l2.38-0.83l0.47,0.61c0.98-0.24,2.07-0.15,3.16-0.06c-0.53,0.01-0.24,0.06-0.21,0.17c0.52-0.85,4.78-0.77,5.43-1.18c1.07,0.82,2.85-0.23,3.64,0.54c0.35-0.12,0.8-0.22,1.29-0.3c-0.52-0.36-0.71-0.76,0.25-0.59c0.08-0.01,0.15-0.01,0.23-0.02l0.42,0.48c0.98-0.12,1.98-0.18,2.63-0.2c-0.3-0.04-0.64-0.13-1-0.23c0.42,0.07,0.81,0.16,1.19,0.23c0.13,0,0.26,0,0.35,0c-0.06,0.01-0.13,0.02-0.21,0.03c0.6,0.11,1.22,0.16,2.07-0.02c3.43,0.7,7.6-1.09,11.39-0.13c-0.57-0.1-1.37-0.13-1.58,0.04c3.16-0.09,6.31,0.56,8.3,0.16l-0.15-0.45c2.31-0.24,4.1-0.41,5.97-0.41l0.09-0.51c2.71,0.15,8.52-0.78,10.21,0.24c0.66-0.42,3.76,0.05,5.3-0.11l0.4,0.38c2.01,0.09,3.25-0.07,4.45-0.21c4.1,0.74,7.86-0.14,11.43-0.14l0.04,0.11l3.62-0.34c-0.94,0.37,0.71-0.26,1.8-0.18c1.15-0.21,3.02-0.14,4.38,0.1l2.31-0.02c-2.56,0.3,0.19,0.56,0.34,1l1.47-0.38c0.6,0.21-0.94,0.37,0.15,0.45c0.98-0.25,3.9-0.27,4.81-0.75c-0.15-0.11-0.5-0.21-0.94-0.3c-0.12,0.03-0.12,0.02-0.04-0.01c-0.04-0.01-0.06-0.01-0.1-0.02c0.05,0.01,0.07,0.01,0.12,0.01c0.12-0.05,0.32-0.12,0.4-0.18c1.84,0.08,1.16-0.1,1.09-0.3c2.09,0.68,3.25,0.18,4.86,1c-2.17-0.91,4.78-0.05,3.42-0.92c1.56,0.7,1.06,0.02,2.06,0.62c-2.19-0.18-4.36,0.49-6.11,0.82l1.73,0.41c-1.12,0.81-3.88-0.26-4.91,0.02c0.69-0.2,2.25-0.03,2.31,0.15l-0.47-0.61c-2.47-0.21-4.43,0.29-6.18,0.61c1.66,0.18-2,0.39-0.79,0.81l1.3-0.09c0.6,0.21-0.66,0.41-1.39,0.6c-4.13-0.39-11.68,0.12-13.17-0.33c0.85,0.14,2.39-0.02,3.13-0.21l-1.94-0.22c1.57-0.05,2.82,0.47,5.14,0.24c-0.4-0.38,1.28-0.94-0.49-1.45c-4.45-0.54-3.63,1.07-8.98,1.02c-0.49,0.13,1.11-0.65-1.74-0.4c-3.57,0.46-6.18,1.39-6.16,2.23c1.5-0.27,4.51-0.82,4.98-0.22c-1.5,0.28-4.1,0.47-4.22,0.87c-1.57-0.68,2.84-0.26,0.78-0.81c-1.06,0.04-1.51,0.28-2,0.4c0.7-0.31-0.96-0.48-1.28-0.63c-3.43,0.06-5.4-0.22-9.08-0.21c-0.2-0.1-0.6-0.32-0.5-0.49c-1.79,0.23-4.33,1.33-3.66,1.76c-2.11,0.07-2.22-0.27-4.01-0.04c2.87,0.58-0.56-0.1-0.86,0.59c-1.83,0.11-0.65-0.32-1.49-0.46c-0.3,0.08-1.03,0.32-1.08,0.5c-1.13-0.5,2.16-1.38,0.83-1.96c-0.92-0.36-4.87-0.98-5.15-1.03c-0.86,0.59-0.57,2.96,0.75,3.7c-0.13,0.4-1.74-0.4-2.55-0.43c-2.34-0.61-3.55,0.55-5.49,0.33l1.47-0.38c-0.32-0.16-3.17,0.09-3.62,0.33c-0.08-0.22,1.46-1.17,0.57-1.43c-3.48-0.07-6.77,1.2-6.54,1.87l5.33-0.76c0.19,0.56-3.78,0.61-3.55,1.28l-4.92-0.15c0.62-0.02,2.51-0.2,1.77-0.51c-2.11,0.05-1.09-0.09-2.51-0.33c2.41-0.74,6.82-2.6,8.39-3.49l-2.53,0.41l-0.64-0.32c-3.3,0.48-6.26,2.7-7.12,3.29c-1.9-0.12-1.25-1.33-0.8-1.56c-3.73-0.03-3.67,1.72-7.44,1.58l1.42,0.25c-0.89,0.12-4.12-0.1-3.77,0.12c-0.75-0.31-1.44-1.06-0.61-1.27l-3.33,1.14c0.49-0.12,0.16-1.08,0.37-1.25c-1.34-0.03-2.28,1.12-1.43,1.27c-2.62-0.68-1.97-0.31-4.09-1.11c-0.77,0.07,0.07,1.02,0.64,1.12c-1.75,0.27-2.77,0.15-3.6,0.04c2.89-0.42,0.78-2.15,1.33-2.89l-6.2,2.87c0.21-0.17,0.7-1.09,0.67-1.2c-0.52,0.86-7.64,0.97-11.12,0.84l0.52-0.01c0.71-0.29-2.29-0.53-3.51-0.24c0.21-0.17,0.49-0.12,1.01-0.12c-2.32-0.65-3.02,1.28-5.39,0.51c2.15,0.09,2.57-0.25,2.46-0.59c-1.76,0.3-5.84-0.05-4.99,0.95c-1.13-0.21-2.15-0.09-2.05-0.6l-4.33,0.56c0.32-0.1,0.6-0.39-0.66-0.47c2.43,0.15,4.78-0.76,6.05-0.1c0.07-0.62-0.84-0.95,0.32-1.47c-4.68,0.27-7.25,1.3-10.21,1.99l-4.12-0.49l-0.18,0.28l-0.71-0.72c-0.52,0.16-0.85,0.3-0.95,0.23c-0.09-0.06,0.04-0.16,0.24-0.26c-0.43,0.03-0.83,0.09-1.03,0.16c-0.16-0.38,0.58-0.8,1.36-1.18c0.37,0.13,0.75,0.27,1.13,0.41c0.81-0.35,1.4-0.71,0.27-0.96c-0.16,0.04-0.36,0.09-0.58,0.15c0.52-0.26,0.84-0.48,0.46-0.59l-3.15,0.31c0.36,0.1,0.89,0.31,1.51,0.55c-1.98,0.44-4.24,0.99-2.48,1.49l-2.4-0.45c-2.83,0.67-2.34,0.53-5.78,1.01c-0.18-0.25,0.73-0.45,0.12-0.64c-2.51,0.77-6.09-1.02-6.65-0.33c-2.02,0.14-0.85,0.6-2.14,0.77c0.06-0.08,0.19-0.23-0.19-0.25l-1.54,0.48c-0.61-0.19,1.41-0.33-0.31-0.58c-2.95,0.33-4.68,0.56-7.14,0.26c-3.5,0.04,1.48,1.05-1.48,0.88c-0.43-0.43-0.8-0.93-2.64-1.03c-0.98,0.27-0.86,0.6-2.52,0.74l0.12-0.64c-1.53-0.01-2.76,0.08-2.76-0.41c-1.26,0.24-2.12,0.17-2.78,0.05c-2.33,0.28,1.68,1.34,2.22,1.61c-2.28-0.54-3.86-0.3-5.15-1.1l2.03-0.12c-4.3-0.9-4.12,0.8-6.08-0.61c1.48,0.09,3.26-0.2,2.4-0.57l-2.15,0.27c-0.25-0.18,1.23-0.08,0.25-0.31c-0.61,0.12-1.87,0.42-2.43,0.61l0.03-0.04l-3.87,0c0.73,0.05,0.92-0.18,0.18-0.23l-2.55,0.26c0.78-0.14-0.01-0.36-1.14-0.5c-3.26-0.3-2.66,1.35-5.17,0.62c0.37,0.03,0.43-0.05,0.8-0.03l-1.29-0.33c-0.32,1.36-7.69-0.13-8.01,1.21c-1.84-0.62-0.12-0.33,2.29-0.89l-1.96-0.46C956.16,888.25,956.83,888.38,957.69,888.28z M982.78,888.95c0.41,0.3,1.56,0.01,2.14-0.08C983.94,888.69,983.44,888.42,982.78,888.95z M1028.03,888.38c0.74,0.19,1.4,0.28,1.83,0.12C1029.18,888.37,1028.57,888.35,1028.03,888.38z M1154.84,884.12c0.02-0.01,0.04-0.02,0.06-0.02C1154.01,884.02,1153.56,883.95,1154.84,884.12z M1156.23,884.18c0.68,0.02,1.27,0.01,1.46-0.12c0.11,0.07,0.13,0.13-0.13,0.2C1156.76,884.39,1156.42,884.3,1156.23,884.18z M873.41,883.5l-0.52-0.12C872.57,883.53,872.25,883.67,873.41,883.5z"/><path d="M1024.75,889.1c-0.16-0.08-0.2-0.17-0.24-0.26C1024.28,888.92,1024.28,889.01,1024.75,889.1z"/><path d="M937.02,887.94l-0.09-0.01c-0.05,0.03-0.08,0.06-0.09,0.08L937.02,887.94z"/><path d="M1116.56,889.08c-0.55-0.06-0.85-0.14-1.06-0.23C1115.47,888.96,1115.72,889.06,1116.56,889.08z"/><path d="M1171.6,883.27l-1.7,0.14c0.82-0.03,1.12,0.07,1.53,0.15C1171.4,883.44,1171.07,883.28,1171.6,883.27z"/><path d="M1186.37,886.17c0.25-0.06,0.53-0.01,0.77-0.07l-0.07-0.22C1186.02,885.89,1185.28,886.08,1186.37,886.17z"/><path d="M1173.19,884.86c0.14,0.4,1.2,0.26,2.39,0.17c-0.07,0-0.14,0.01-0.21,0C1175.72,884.46,1174.45,884.66,1173.19,884.86z"/><path d="M1175.86,885.02c0.37-0.02,0.74-0.04,1.1-0.02C1177.1,884.77,1176.51,884.95,1175.86,885.02z"/><path d="M1160.91,883.94c0.57,0.1,0.35-0.52,0.67-0.36C1162.21,883.05,1157.83,884.26,1160.91,883.94z"/><polygon points="1174.17,886.19 1173.74,885.69 1173.07,886.1"/><path d="M1164.77,885.92l1.9,0.12c-0.03-0.08,0.21-0.14,0.51-0.18C1166.01,885.85,1164.72,885.77,1164.77,885.92z"/><path d="M1167.18,885.86c0.61,0,1.19-0.02,1.53-0.1C1168.38,885.76,1167.67,885.79,1167.18,885.86z"/><polygon points="1171.57,886.36 1171.01,886.26 1169.67,886.24"/><path d="M1144.34,886.14l-2.07,0.18c-0.21,0.18,0.36,0.27,1.13,0.19C1143.89,886.38,1144.66,886.3,1144.34,886.14z"/><path d="M1150.63,887.4c-0.56-0.09-0.6-0.21-0.92-0.37l-0.05,0.62L1150.63,887.4z"/><path d="M1144.59,887.65c-0.2,0.18-3,0.55-0.37,0.46C1144.42,887.94,1146.5,887.76,1144.59,887.65z"/><polygon points="1113.32,887.43 1113.85,887.41 1113.76,886.39"/><path d="M1085.79,890.2c2.46,0.23,0.58-0.63,2.8-0.35c0.58-0.25-1.82-0.23-1.23-0.45C1085.89,889.67,1085.11,889.54,1085.79,890.2z"/><path d="M1087.37,889.41c0.24-0.04,0.49-0.09,0.76-0.16C1087.7,889.31,1087.49,889.36,1087.37,889.41z"/><path d="M776.78,885.13c-0.51-0.11-1.01-0.25-1.51-0.39l0.95,0.47L776.78,885.13z"/><path d="M773.74,885.51l-0.27-0.69l-1.01,0.46C772.81,885.29,773.49,885.33,773.74,885.51z"/><path d="M989.27,890.3l0.12-0.15c-0.24-0.18-0.61-0.2-1.35-0.24L989.27,890.3z"/><polygon points="967.83,889.21 968.2,889.24 967.53,888.63"/><path d="M949.81,889.33c0.73,0.05,1.59-0.05,2.33,0C950.53,889.38,949.64,888.6,949.81,889.33z"/></g></g></g></svg></div>
+
+<!-- ═══════════ SIGNATURE KEYNOTE — HYBRID ═══════════ -->
+<section id="keynote" class="keynote-section">
+  <div class="keynote-inner">
+    <div class="keynote-header">
+      <span class="eyebrow">Signature Keynote</span>
+      <h2>Think Outside the <span class="crayon-hl">Crayon Box</span></h2>
+      <p>One powerful talk, adapted for your audience. Kay weaves lived experience, filmmaking, and research into a keynote that moves people to action.</p>
+    </div>
+
+    <div class="keynote-overview">
+      <div class="keynote-desc">
+        <h3>The Talk</h3>
+        <p>In a world where shame and stigma around mental health can secretly suffocate success and happiness, changing the narrative is key. When vulnerability and adversity is seen as an opportunity to expand, it can create a ripple effect in organizations rooted in trust and authenticity.</p>
+        <p>Using the <span class="crayon-hl crayon-hl-gold">&ldquo;crayon box method,&rdquo;</span> Kay takes audiences through powerful lessons that inspire us to think differently about mental health. They use crayons as a creative and fun metaphor to dig deep and think &ldquo;outside the box&rdquo; of mental health.</p>
+        <div class="qi">&ldquo;This keynote is <span class="crayon-hl">adapted for your audience</span>.&rdquo;</div>
+        <p>Kay speaks across Fortune 500, school district leaders, universities, healthcare systems, and nonprofits.</p>
+      </div>
+      <div class="keynote-meta-card">
+        <h4>At a Glance</h4>
+        <div class="kmc-item"><div class="kmc-label">Format</div><div class="kmc-val">Keynote (45&ndash;90 min), Workshop, or Breakout</div></div>
+        <div class="kmc-item"><div class="kmc-label">Audiences</div><div class="kmc-val">Corporate, Education, Healthcare, Youth</div></div>
+        <div class="kmc-item"><div class="kmc-label">Includes</div><div class="kmc-val">Film clips, crayon activities, live storytelling</div></div>
+        <div class="kmc-item"><div class="kmc-label">Capacity</div><div class="kmc-val">50 to 5,000+</div></div>
+        <div class="kmc-item"><div class="kmc-label">Virtual</div><div class="kmc-val">Available for hybrid or fully remote events</div></div>
+        <div style="margin-top:24px"><a href="https://amandalipp.com/have-a-project-in-mind/" class="btn" style="width:100%;text-align:center;box-shadow:none;border-color:var(--brand-gold)">Book This Keynote</a></div>
+      </div>
+    </div>
+
+    <!-- Audience-specific tabs -->
+    <div class="aud-tabs-label">Choose Your Audience Lens</div>
+    <div class="aud-tabs" id="audTabs">
+      <button class="aud-tab active" data-target="workplace">Mental Health in the Workplace</button>
+      <button class="aud-tab" data-target="schools">Mental Health in Schools</button>
+      <button class="aud-tab" data-target="healthcare">Lived Experience in Healthcare</button>
+      <button class="aud-tab" data-target="youth">Youth Leadership</button>
+    </div>
+
+    <div class="aud-panels" id="audPanels">
+      <!-- WORKPLACE -->
+      <div class="aud-panel active" data-audience="workplace">
+        <div class="aud-panel-inner">
+          <div class="aud-left">
+            <div class="aud-subtitle">For Corporate &amp; Workplace Events</div>
+            <h3>Mental Health in the <span class="crayon-hl crayon-hl-blue">Workplace</span></h3>
+            <p>When we feel safe and seen, we unlock community, confidence, and innovation. Kay helps leaders build cultures where vulnerability is a strength, not a liability.</p>
+            <p>This adaptation speaks directly to HR leaders, ERG organizers, and executive teams navigating mental health as a workplace priority.</p>
+          </div>
+          <div class="aud-right">
+            <h4>Your Team Will Learn How To</h4>
+            <ul class="aud-takeaways">
+              <li>Create psychologically safe environments that boost retention and engagement</li>
+              <li>Use the &ldquo;crayon box method&rdquo; to reframe adversity as organizational strength</li>
+              <li>Build sustainable mental health initiatives beyond awareness month</li>
+            </ul>
+            <div class="aud-testimonial">
+              <blockquote>&ldquo;Kay&rsquo;s keynote was the highlight of our leadership summit. Our team left with tools they could use immediately.&rdquo;</blockquote>
+              <cite>&mdash; VP of People, Fortune 500 Company</cite>
+            </div>
+            <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm">Book for Your Team</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCHOOLS -->
+      <div class="aud-panel" data-audience="schools">
+        <div class="aud-panel-inner">
+          <div class="aud-left">
+            <div class="aud-subtitle">For Education &amp; School Districts</div>
+            <h3>Mental Health in <span class="crayon-hl" style="background:rgba(31,111,120,0.15)">Schools</span></h3>
+            <p>Students, educators, and administrators are navigating unprecedented mental health challenges. Kay helps school communities create cultures of support through storytelling.</p>
+            <p>This adaptation is designed for school district convenings, educator PD days, and student assemblies.</p>
+          </div>
+          <div class="aud-right">
+            <h4>Educators Will Learn How To</h4>
+            <ul class="aud-takeaways">
+              <li>Recognize the signs and create safe spaces for student disclosure</li>
+              <li>Integrate storytelling approaches into social-emotional learning</li>
+              <li>Build sustainable peer support programs within school communities</li>
+            </ul>
+            <div class="aud-testimonial">
+              <blockquote>&ldquo;Our students were completely engaged. Kay met them exactly where they are.&rdquo;</blockquote>
+              <cite>&mdash; Superintendent, Bay Area School District</cite>
+            </div>
+            <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm">Book for Your School</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEALTHCARE -->
+      <div class="aud-panel" data-audience="healthcare">
+        <div class="aud-panel-inner">
+          <div class="aud-left">
+            <div class="aud-subtitle">For Healthcare &amp; Clinical Settings</div>
+            <h3>Lived Experience in <span class="crayon-hl">Healthcare</span></h3>
+            <p>Healthcare systems are increasingly integrating lived experience into care models. Kay bridges the gap between clinical best practices and the human stories that make them real.</p>
+            <p>Designed for grand rounds, peer specialist teams, and healthcare leadership conferences.</p>
+          </div>
+          <div class="aud-right">
+            <h4>Clinicians Will Learn How To</h4>
+            <ul class="aud-takeaways">
+              <li>Center lived experience without re-traumatizing participants</li>
+              <li>Use digital storytelling as an implementation science tool</li>
+              <li>Bridge the gap between evidence-based practices and community-defined values</li>
+            </ul>
+            <div class="aud-testimonial">
+              <blockquote>&ldquo;Kay helped us think through the product we wanted to develop, allowing us space for creativity while guiding us with their expertise.&rdquo;</blockquote>
+              <cite>&mdash; Kate Hardy, Clinical Professor, Stanford Medicine</cite>
+            </div>
+            <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm">Book for Your Conference</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- YOUTH -->
+      <div class="aud-panel" data-audience="youth">
+        <div class="aud-panel-inner">
+          <div class="aud-left">
+            <div class="aud-subtitle">For Youth &amp; Young Adult Programs</div>
+            <h3><span class="crayon-hl crayon-hl-gold">Youth</span> Leadership</h3>
+            <p>Young people are leading the conversation on mental health. Kay empowers youth to own their stories and become advocates in their communities.</p>
+            <p>Designed for youth summits, TAY programs, college orientations, and young adult leadership events.</p>
+          </div>
+          <div class="aud-right">
+            <h4>Young Leaders Will Learn How To</h4>
+            <ul class="aud-takeaways">
+              <li>Share their story strategically: with purpose, power, and psychological safety</li>
+              <li>Use creative tools (film, illustration, social media) for mental health advocacy</li>
+              <li>Build peer support networks rooted in lived experience</li>
+            </ul>
+            <div class="aud-testimonial">
+              <blockquote>&ldquo;This was the most impactful session of our entire conference. The students are still talking about it.&rdquo;</blockquote>
+              <cite>&mdash; Program Director, Youth Leadership Initiative</cite>
+            </div>
+            <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm">Book for Youth Event</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ═══════════ RESOURCES CAROUSEL ═══════════ -->
 <section id="resources" class="section section-light"><div class="section-inner">
   <span class="eyebrow">Session Resources</span>
-  <h2 class="section-title">Films &amp; Toolkits From the Presentation</h2>
+  <h2 class="section-title">Films &amp; Toolkits From the <span class="crayon-hl">Presentation</span></h2>
   <p class="section-subtitle">Browse the films, research, and toolkits discussed. Use the dropdown to jump to any project.</p>
 
   <div class="next-session">
     <div class="next-session-date"><div class="month">Apr</div><div class="day">15</div><div class="year">2026</div></div>
-    <div class="next-session-info"><h3>Next Session: Designing Digital Stories for Mental Health</h3><p>Session 1 of the 3-part Learning Community &mdash; documentary storytelling deep dive.</p></div>
+    <div class="next-session-info"><h3>Next Session: Designing Digital Stories for Mental Health</h3><p>Session 1 of the 3-part Learning Community: documentary storytelling deep dive.</p></div>
     <a href="https://www.cmhisupport.org/event/designing-digital-stories-for-mental-health-from-storyboard-to-real-world-impact/2026-04-15/" class="btn">Apply Now</a>
   </div>
 
@@ -246,21 +560,23 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
     <div class="c-nav"><button class="c-arrow" id="rP" disabled>&larr;</button><span class="c-count" id="rC">1 / 6</span><button class="c-arrow" id="rN">&rarr;</button></div>
   </div>
   <div class="c-track" id="rTrack">
-    <div class="c-slide res-slide active"><div class="res-img"><div class="type-tag">Animation</div><div class="placeholder" style="width:120px;height:120px;background:#c8d8e4"></div></div><div class="res-body"><span class="meta">Animation &middot; Mimi &amp; Kay &middot; Stanford Medicine</span><h3>Stanford INSPIRE &mdash; CBTp Animated Film</h3><p>Animated film about cognitive behavioral therapy for psychosis, created for clinician training. Now live on the INSPIRE training platform.</p><div class="res-actions"><a href="https://youtu.be/NDXT6UX5fWI" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/bGy-weioB_g" class="btn btn-sm btn-outline">Trailer</a><a href="https://med.stanford.edu/inspire-training.html" class="btn btn-sm btn-dark">INSPIRE Site</a></div></div></div>
+    <div class="c-slide res-slide active"><div class="res-img"><div class="type-tag">Animation</div><div class="placeholder" style="width:120px;height:120px;background:#c8d8e4"></div></div><div class="res-body"><span class="meta">Animation &middot; Mimi &amp; Kay &middot; Stanford Medicine</span><h3>Stanford INSPIRE: CBTp Animated Film</h3><p>Animated film about cognitive behavioral therapy for psychosis, created for clinician training. Now live on the INSPIRE training platform.</p><div class="res-actions"><a href="https://youtu.be/NDXT6UX5fWI" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/bGy-weioB_g" class="btn btn-sm btn-outline">Trailer</a><a href="https://med.stanford.edu/inspire-training.html" class="btn btn-sm btn-dark">INSPIRE Site</a></div></div></div>
 
-    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#b8c4c4"></div></div><div class="res-body"><span class="meta">Documentary &middot; Columbia Psychiatry &middot; OnTrack NY</span><h3>OnTrack NY &mdash; Youth Psychosis Films</h3><p>Documentary series featuring Amber, Drew, and other young adults sharing lived experiences with early psychosis.</p><div class="res-actions"><a href="https://youtu.be/6Xc1TBjcixc" class="btn btn-sm">Drew&rsquo;s Story</a><a href="https://youtu.be/tyS5hyaeiFc" class="btn btn-sm btn-outline">Ambar&rsquo;s Story</a><a href="https://www.youtube.com/playlist?list=PL5d3NnbGTCHEkyfSCOiQxEH4PBMt7c7cr" class="btn btn-sm btn-dark">Full Playlist</a></div></div></div>
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#b8c4c4"></div></div><div class="res-body"><span class="meta">Documentary &middot; Columbia Psychiatry &middot; OnTrack NY</span><h3>OnTrack NY: Youth Psychosis Films</h3><p>Documentary series featuring Amber, Drew, and other young adults sharing lived experiences with early psychosis.</p><div class="res-actions"><a href="https://youtu.be/6Xc1TBjcixc" class="btn btn-sm">Drew&rsquo;s Story</a><a href="https://youtu.be/tyS5hyaeiFc" class="btn btn-sm btn-outline">Ambar&rsquo;s Story</a><a href="https://www.youtube.com/playlist?list=PL5d3NnbGTCHEkyfSCOiQxEH4PBMt7c7cr" class="btn btn-sm btn-dark">Full Playlist</a></div></div></div>
 
-    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Animation</div><div class="placeholder" style="width:120px;height:120px;background:#d8c8b8"></div></div><div class="res-body"><span class="meta">Animation &middot; Mimi &amp; Kay &middot; NTTAC</span><h3>Lisa &amp; CJ &mdash; ADHD &amp; Neurodiversity</h3><p>Animated film about preschool suspensions, ADHD, and parent advocacy. CJ&rsquo;s neurodiversity depicted as vibrant energy.</p><div class="res-actions"><a href="https://youtu.be/-qGEH5kqlHo" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/YSYriYN97CA" class="btn btn-sm btn-outline">Trailer</a></div></div></div>
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Animation</div><div class="placeholder" style="width:120px;height:120px;background:#d8c8b8"></div></div><div class="res-body"><span class="meta">Animation &middot; Mimi &amp; Kay &middot; NTTAC</span><h3>Lisa &amp; CJ: ADHD &amp; Neurodiversity</h3><p>Animated film about preschool suspensions, ADHD, and parent advocacy. CJ&rsquo;s neurodiversity depicted as vibrant energy.</p><div class="res-actions"><a href="https://youtu.be/-qGEH5kqlHo" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/YSYriYN97CA" class="btn btn-sm btn-outline">Trailer</a></div></div></div>
 
     <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Illustration</div><div class="placeholder" style="width:120px;height:120px;background:#c8c4bc"></div></div><div class="res-body"><span class="meta">Illustration &middot; Mimi &amp; Chris &middot; M-TAC / CARS</span><h3>Mobile Crisis Response Toolkit</h3><p>Scenario-based illustrated training tool and best-practices handout for mobile crisis teams responding to psychosis.</p><div class="res-actions"><a href="https://camobilecrisis.org/wp-content/uploads/2025/09/Responding-to-Psychosis-TTA-Tool.pdf" class="btn btn-sm">Illustrated Scenario (PDF) &rarr;</a><a href="https://camobilecrisis.org/wp-content/uploads/2025/09/FEP-TTA-Tool-Cop-Roundup.pdf" class="btn btn-sm btn-outline">Best Practices (PDF)</a></div></div></div>
 
-    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#d4cfc5"></div></div><div class="res-body"><span class="meta">Documentary &middot; Lipp Studios &middot; Tiny Pine Foundation</span><h3>Rebuilding Butte &mdash; Campfire Documentary</h3><p>25-minute documentary about building tiny homes for survivors of the 2018 Camp Fire.</p><div class="res-actions"><a href="https://youtu.be/fHQH2uz-Reg" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://www.tinyhomefilm.com" class="btn btn-sm btn-outline">Film Website</a></div></div></div>
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#d4cfc5"></div></div><div class="res-body"><span class="meta">Documentary &middot; Lipp Studios &middot; Tiny Pine Foundation</span><h3>Rebuilding Butte: Campfire Documentary</h3><p>25-minute documentary about building tiny homes for survivors of the 2018 Camp Fire.</p><div class="res-actions"><a href="https://youtu.be/fHQH2uz-Reg" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://www.tinyhomefilm.com" class="btn btn-sm btn-outline">Film Website</a></div></div></div>
 
-    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#c5ccd4"></div></div><div class="res-body"><span class="meta">Documentary &middot; Lipp Studios</span><h3>Recreation Therapy &mdash; Rigo &amp; Olivia</h3><p>Documentary about recreation therapy licensure, featuring Olivia (RT) and Rigo (TBI survivor). Used as a policy advocacy tool.</p><div class="res-actions"><a href="https://youtu.be/ceqZNZbwRV8" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/diVKoU0EoX8" class="btn btn-sm btn-outline">Trailer</a></div></div></div>
+    <div class="c-slide res-slide"><div class="res-img"><div class="type-tag">Documentary</div><div class="placeholder" style="width:120px;height:120px;background:#c5ccd4"></div></div><div class="res-body"><span class="meta">Documentary &middot; Lipp Studios</span><h3>Recreation Therapy: Rigo &amp; Olivia</h3><p>Documentary about recreation therapy licensure, featuring Olivia (RT) and Rigo (TBI survivor). Used as a policy advocacy tool.</p><div class="res-actions"><a href="https://youtu.be/ceqZNZbwRV8" class="btn btn-sm">Watch Full Film &rarr;</a><a href="https://youtu.be/diVKoU0EoX8" class="btn btn-sm btn-outline">Trailer</a></div></div></div>
   </div>
 </div></section>
 
-<!-- CASE STUDIES -->
+
+
+<!-- ═══════════ CASE STUDIES ═══════════ -->
 <div class="teal-strip"><h2>Case Studies</h2></div>
 <section id="portfolio" class="section section-white"><div class="section-inner">
   <p class="section-subtitle" style="margin-top:0">Explore each project in depth. Use the dropdown to jump to a specific case study.</p>
@@ -283,24 +599,28 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 
     <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-gold"><div class="med-tag">Documentary</div><div class="img-ph"></div><h3>Olivia &amp; Rigo<br>Recreation Therapy</h3><div class="cl">Lipp Studios</div></div><div class="cs-body"><h4>Film as a policy advocacy tool</h4><p>Documentary about Olivia (recreation therapist) and Rigo (TBI survivor). Goal: influence policymakers for RT licensure. Later used at a healthcare conference to convince insurers.</p><div class="cs-tags"><span class="cs-tag">Policy Advocacy</span><span class="cs-tag">TBI</span><span class="cs-tag">Licensure</span></div><div class="cs-links"><a href="https://youtu.be/ceqZNZbwRV8" class="btn btn-sm">Watch Film &rarr;</a></div></div></div></div>
 
-    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-burgundy"><div class="med-tag">Illustration</div><div class="img-ph"></div><h3>The UPSIDE Story<br>Youth Advocacy</h3><div class="cl">CARS &middot; SAMHSA</div></div><div class="cs-body"><h4>Color psychology meets youth advocacy</h4><p>Illustrated comic toolkit using a muted blue palette &mdash; blue conveys melancholy but also hope. Features different perspectives of scenes: lights on vs. off, audience reactions, stage views.</p><div class="cs-tags"><span class="cs-tag">Youth Advocacy</span><span class="cs-tag">Color Psychology</span><span class="cs-tag">Comic Format</span></div></div></div></div>
+    <div class="c-slide"><div class="cs-layout"><div class="cs-vis bg-burgundy"><div class="med-tag">Illustration</div><div class="img-ph"></div><h3>The UPSIDE Story<br>Youth Advocacy</h3><div class="cl">CARS &middot; SAMHSA</div></div><div class="cs-body"><h4>Color psychology meets youth advocacy</h4><p>Illustrated comic toolkit using a muted blue palette: blue conveys melancholy but also hope. Features different perspectives of scenes: lights on vs. off, audience reactions, stage views.</p><div class="cs-tags"><span class="cs-tag">Youth Advocacy</span><span class="cs-tag">Color Psychology</span><span class="cs-tag">Comic Format</span></div></div></div></div>
   </div>
 </div></section>
 
-<!-- PROOF -->
+
+
+<!-- ═══════════ PROOF ═══════════ -->
 <section class="section section-light"><div class="section-inner">
   <span class="eyebrow">From the Session</span>
-  <h2 class="section-title">What the Audience Experienced</h2>
+  <h2 class="section-title">What the Audience <span class="crayon-hl">Experienced</span></h2>
   <div class="proof-grid">
     <div class="proof-card"><h3>Word Cloud: Before vs. After</h3><p>Top associations shifted after the presentation:</p><div class="word-tags"><span class="wt hl">understanding</span><span class="wt hl">vulnerability</span><span class="wt">connection</span><span class="wt">empowerment</span><span class="wt">bridge</span></div></div>
     <div class="proof-card"><h3>Reactions to Animation Clips</h3><p>Responses to the CBTp scene (gray to color):</p><div class="word-tags"><span class="wt">empathy</span><span class="wt">hope</span><span class="wt">world coming to life</span><span class="wt">someone gets me</span><span class="wt">feeling heard</span><span class="wt">darkness to light</span><span class="wt">trust</span></div></div>
   </div>
 </div></section>
 
-<!-- FRAMEWORK -->
+
+
+<!-- ═══════════ FRAMEWORK ═══════════ -->
 <section id="framework" class="section section-white"><div class="section-inner">
   <span class="eyebrow">Our Approach</span>
-  <h2 class="section-title">A Framework for Mental Health Storytelling</h2>
+  <h2 class="section-title">A Framework for Mental Health <span class="crayon-hl">Storytelling</span></h2>
   <p class="section-subtitle">Storytelling becomes the bridge between knowledge and action.</p>
   <div class="fw-visual">
     <div class="fw-col k"><h3>Knowledge or Practice</h3><div class="sub">What are we communicating?</div><ul><li>Evidence-based practice</li><li>Community-defined practice</li><li>Policy communication</li><li>Awareness campaign</li><li>Recovery principles</li></ul></div>
@@ -315,9 +635,9 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   </div>
 </div></section>
 
-<div class="gold-strip"><p>&ldquo;How the film is created is more important than the finished product.&rdquo; &mdash; Kay Lipp</p></div>
+<div class="gold-strip"><p>&ldquo;How the film is created is <span class="crayon-hl crayon-hl-strong">more important</span> than the finished product.&rdquo; &mdash; Kay Lipp</p></div>
 
-<!-- APPROACH -->
+<!-- ═══════════ APPROACH ═══════════ -->
 <section id="approach" class="section section-dark"><div class="section-inner">
   <span class="eyebrow">How We Work</span>
   <h2 class="section-title">Trauma-Informed &amp; Ethical Storytelling</h2>
@@ -334,22 +654,24 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   </div>
 </div></section>
 
-<!-- TESTIMONIAL -->
+
+
+<!-- ═══════════ TESTIMONIAL ═══════════ -->
 <section class="section section-white"><div class="section-inner"><div class="testimonial-card">
   <blockquote>&ldquo;Amanda &lsquo;Kay&rsquo; (Lipp Studios) helped us think through the product we wanted to develop, allowing us space for creativity while guiding us with their expertise. The process was open, inclusive, and collaborative throughout.&rdquo;</blockquote>
   <cite>&mdash; Kate Hardy, Clinical Professor, Stanford Medicine</cite>
 </div></div></section>
 
-<!-- HOMEWORK -->
+<!-- ═══════════ HOMEWORK ═══════════ -->
 <section id="homework" class="section section-light"><div class="section-inner">
   <span class="eyebrow">Your Next Step</span>
-  <h2 class="section-title">Homework / Call to Action</h2>
+  <h2 class="section-title">Homework / <span class="crayon-hl">Call to Action</span></h2>
   <p class="section-subtitle">Take these questions with you. They&rsquo;ll be the starting point for the Learning Community sessions. Click each step to expand.</p>
   <div class="accordion">
     <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">1</span> Clarify Your Goal</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>What is one mental health goal or challenge in your work where better storytelling could make a difference?</p><p style="color:var(--brand-blue);font-style:italic">Examples: buy-in from leadership, community awareness, video for a grant, policy change, increased referrals, fundraising, clinician training adoption.</p></div></div></div>
     <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">2</span> Clarify Your Audience &amp; Outcome</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>Who most needs to see, feel, or understand this message?</p><p>If this story were successful, what would change? What would people think, feel, or do differently?</p></div></div></div>
     <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">3</span> Consider Format &amp; Feasibility</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>After today&rsquo;s examples, what kind of story are you most drawn to, given your goal? Why?</p><p style="color:var(--brand-blue);font-style:italic">Documentary? Animation? Illustration? Think about what medium matches your goal, audience, and capacity.</p></div></div></div>
-    <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">4</span> What Constraints Do You Need to Account For?</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>Time, budget, staff, technology, risk &mdash; what are the real-world factors that will shape what&rsquo;s possible?</p><p>Remember: the best film is not the most expensive film. Sometimes less is more.</p></div></div></div>
+    <div class="accordion-item"><button class="accordion-header"><span style="display:flex;align-items:center;gap:14px"><span style="flex-shrink:0;width:36px;height:36px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--brand-dark)">4</span> What Constraints Do You Need to Account For?</span><span class="ai-icon">+</span></button><div class="accordion-body"><div class="abi"><p>Time, budget, staff, technology, risk: what are the real-world factors that will shape what&rsquo;s possible?</p><p>Remember: the best film is not the most expensive film. Sometimes less is more.</p></div></div></div>
   </div>
   <div style="margin-top:32px;padding:28px;background:var(--brand-white);border:1px solid #e0ddd6">
     <p style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--brand-text);margin-bottom:8px">Ready to go deeper?</p>
@@ -358,10 +680,32 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   </div>
 </div></section>
 
-<!-- CREW -->
+<div class="crayon-sep"><svg viewBox="770 880 480 14" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" fill="#d6b13f"><g><g><g><path d="M1248.49,885.36c0.7,0.08,0.48-0.36,0.59-0.42C1247.89,884.96,1248.52,885.47,1248.49,885.36z"/><polygon points="1236.8,885.68 1237.02,885.51 1235.28,885.85"/><path d="M1225.93,885.23c1,0.75,3.95,0.02,5.88,0.35l0.31,0.18l0.9-0.53C1230.65,885.19,1227.58,885.49,1225.93,885.23z"/><path d="M1220.17,883.5c0.35,0.29-1.26,0.21,1.35,0.12c-0.13-0.03-0.17-0.05-0.24-0.08C1221.04,883.55,1220.72,883.54,1220.17,883.5z"/><path d="M1221.28,883.55C1222.42,883.56,1220.53,883.29,1221.28,883.55z"/><path d="M1215.97,883.57l1.52-0.21c-0.31-0.17-1.66-0.24-1.15-0.35C1214.78,883.11,1215.1,883.28,1215.97,883.57z"/><path d="M1214.53,884.05l0.79-0.08C1215.18,883.9,1214.97,883.87,1214.53,884.05z"/><path d="M1216.98,883.79l-1.67,0.18c0.22,0.12,0.23,0.35,0.76-0.06C1215.93,884.12,1216.27,883.92,1216.98,883.79z"/><path d="M1217.92,883.92c0.84,0.18,1.94,0.3,0.41,0.51C1221.22,884.41,1220.81,883.9,1217.92,883.92z"/><path d="M1225.34,885.94l1.12,0.25l0.99-0.2C1226.96,886.09,1225.28,885.72,1225.34,885.94z"/><path d="M1206.56,883.02c-0.1,0.15,0.5,0.41,0.61,0.61l1.12-0.16C1207.72,883.36,1206.63,883.25,1206.56,883.02z"/><path d="M1207.17,883.63l-1.67,0.23C1206.99,883.92,1207.26,883.8,1207.17,883.63z"/><polygon points="1214.24,884.84 1216.99,884.36 1213.71,884.83"/><polygon points="1200.18,882.93 1201.13,882.59 1199.44,883.1"/><path d="M1195.95,882.96c0.7-0.29-0.96-0.5-0.22-0.67c-1.15,0.05-2.13,0.3-3.02,0.52C1193.65,882.68,1194.65,882.72,1195.95,882.96z"/><path d="M1191.23,883.13c0.47-0.07,0.96-0.19,1.48-0.32C1192.21,882.87,1191.72,882.97,1191.23,883.13z"/><path d="M1202.66,883.76c-0.13-0.09-0.37-0.34-1.31-0.45l0.65,0.43C1202.2,883.75,1202.42,883.75,1202.66,883.76z"/><path d="M1202.02,883.76l-0.02-0.01c-0.71-0.02-1.21-0.03-1.42-0.04C1200.76,883.72,1201.19,883.73,1202.02,883.76z"/><path d="M1202.82,883.76c-0.06,0-0.11,0-0.17,0C1202.72,883.8,1202.76,883.82,1202.82,883.76z"/><path d="M1209.87,884.37c-0.99,0.22-3.03,0.44-1.06,0.84C1209.52,884.94,1208.39,884.71,1209.87,884.37z"/><path d="M1203.63,884.3l1.77,0.12c-0.03-0.11-0.35-0.28,0.14-0.39L1203.63,884.3z"/><polygon points="1202.76,884.43 1203.63,884.3 1202.97,884.26"/><path d="M1194.26,883.54c-0.77,0.18-1.6,0.2-2.55,0.23c1.01,0.09,2.06,0.13,3.06,0.14C1194.91,883.76,1195.35,883.52,1194.26,883.54z"/><path d="M1198.03,883.67c-0.05,0.01-0.12,0.02-0.17,0.02C1197.97,883.73,1198.05,883.75,1198.03,883.67z"/><path d="M1182.4,883.76c0.05,0.03,0.1,0.05,0.15,0.08c0.01-0.03,0.02-0.05,0.03-0.07L1182.4,883.76z"/><path d="M1194.94,883.98c0.76,0.09,1.22-0.02,1.65-0.15c-0.57,0.04-1.17,0.07-1.82,0.07C1194.71,883.96,1194.7,884,1194.94,883.98z"/><path d="M1188.63,883.32c0.4,0.09,0.85,0.17,1.32,0.24C1189.56,883.42,1188.77,883.21,1188.63,883.32z"/><path d="M1197.61,883.58c0.04-0.01,0.07-0.01,0.11-0.02C1197.47,883.47,1197.5,883.51,1197.61,883.58z"/><path d="M1197.61,883.58c-0.39,0.06-0.7,0.16-1.01,0.25c0.46-0.03,0.9-0.07,1.27-0.13C1197.77,883.67,1197.67,883.62,1197.61,883.58z"/><path d="M1179.59,886.52c0.13-0.4,2.13-0.77,3.86-0.35c1.7-0.3,0.58-1.6-0.9-2.33c-0.05,0.17-0.05,0.33-1.8,0.57c0.61,0.21,3.89,0.49,2.41,0.86c-2.32,0.21-1.9-0.13-3.03-0.34c0.96,0.49-2.94,0.73-2.44,1.46l2.03-0.27C1179.76,886.23,1179.03,886.42,1179.59,886.52z"/><path d="M1185.89,883.87l0.72-0.05c-0.82-0.07-1.41-0.22-2.49-0.53c-1.2,0.2-1.45,0.35-1.53,0.48l3.55,0.04L1185.89,883.87z"/><path d="M1189.84,883.82c-0.56,0.43-2.29,0.61-1.23,1.08c2.11-0.02,1.48-0.36,2.75-0.54c-3.41,0.1,0.98-0.24-1.49-0.49c0.67-0.07,1.27-0.09,1.84-0.11c-0.61-0.05-1.21-0.12-1.77-0.2c0.03,0.01,0.05,0.02,0.08,0.03l0.02,0l0,0.01c0.15,0.05,0.2,0.09,0.03,0.06c-0.01,0.01-0.05,0.01-0.07,0.01C1189.97,883.72,1189.91,883.77,1189.84,883.82c-0.99-0.09-0.16-0.11,0.15-0.16c0.01-0.02,0.04-0.04,0.04-0.06l-0.01-0.01l-3.42,0.23C1187.33,883.87,1188.24,883.87,1189.84,883.82z"/><path d="M1206.98,886.11c-0.11-0.04-0.1-0.07-0.11-0.1C1206.65,886.06,1206.56,886.09,1206.98,886.11z"/><path d="M1205.57,885.83c0.25-0.06,0.46-0.22,1.27-0.17c0.7,0.14-0.01,0.21,0.03,0.35c0.49-0.11,1.71-0.28,0.18-0.52l-0.24,0.05c-1.37-0.18-3.13-0.73-2.89-0.79C1204.31,885.16,1204.66,885.43,1205.57,885.83z"/><path d="M1197.61,884.91l-2.85,0.2l1.45,0.38l-0.07-0.22C1197.76,885.36,1197.41,885.08,1197.61,884.91z"/><polygon points="1182.07,883.55 1182.45,883.09 1180.81,883.74"/><polygon points="1178.37,883.62 1178.51,883.22 1177.53,883.47"/><path d="M969.84,888.64l-0.84,0.09C969.4,888.71,969.66,888.68,969.84,888.64z"/><path d="M975.89,888.85l0.15-0.19C975.77,888.76,975.65,888.83,975.89,888.85z"/><path d="M1087.64,884.99c-1.22-0.36-2.58-0.92-2.43-0.48l0.38,0.43C1086.43,884.86,1087.08,884.9,1087.64,884.99z"/><path d="M1025.51,887.53c0.11,0.04,0.24,0.09,0.35,0.14c0.3-0.15,0.58-0.28,0.83-0.41C1026.34,887.34,1025.94,887.43,1025.51,887.53z"/><path d="M1024.63,889.31l-1.6-0.3C1023.39,889.12,1023.91,889.21,1024.63,889.31z"/><path d="M936.84,888.02l-0.98,0.42C937.38,888.47,936.71,888.23,936.84,888.02z"/><path d="M1140.51,884.3c-1.05-0.15-1.89-0.21-2.62-0.21C1139.15,884.31,1140.18,884.67,1140.51,884.3z"/><path d="M972.36,884.11c-0.51,0.06-0.73,0.15-0.72,0.24C972.17,884.3,972.47,884.22,972.36,884.11z"/><path d="M1134.85,884.14c0.19,0.04,0.37,0.06,0.56,0.09c0.77-0.09,1.54-0.16,2.48-0.15C1136.94,883.92,1135.87,883.82,1134.85,884.14z"/><path d="M817.3,889.67c-0.09-0.01-0.19-0.02-0.27-0.04C817.01,889.7,817.13,889.69,817.3,889.67z"/><path d="M782.4,886.15c0.34-0.01,0.89,0.04,1.41,0.05C783.56,886.16,783.13,886.15,782.4,886.15z"/><path d="M1163.49,883.58C1164.27,883.54,1163.61,883.53,1163.49,883.58z"/><path d="M1167.32,885.25c-0.17,0.05-0.29,0.11-0.31,0.21C1167.07,885.36,1167.18,885.29,1167.32,885.25z"/><path d="M1127.1,886.99c-0.02,0-0.04,0-0.07,0C1127.26,887.07,1127.22,887.05,1127.1,886.99z"/><path d="M1164.67,883.76c-0.3-0.05-0.64-0.09-1-0.12C1163.83,883.68,1164.13,883.72,1164.67,883.76z"/><path d="M1164.51,883.56c0.27,0.01,0.48,0.02,0.69,0.03C1165.29,883.52,1165.2,883.47,1164.51,883.56z"/><path d="M1162.39,883.62c0.45-0.01,0.87,0,1.27,0.03c-0.15-0.03-0.22-0.05-0.18-0.07C1163.26,883.59,1162.93,883.6,1162.39,883.62z"/><path d="M881.32,886.47c-0.05-0.01-0.11-0.02-0.17-0.04C880.37,886.62,880.71,886.59,881.32,886.47z"/><path d="M1067.27,889.61c0.04,0,0.06-0.02,0.09-0.02c-0.04,0-0.08-0.01-0.12-0.02L1067.27,889.61z"/><path d="M1064.45,889.94c1.2-0.54,1.88-0.48,2.79-0.36l-0.93-1.25L1064.45,889.94z"/><path d="M957.69,888.28c-2.57-0.67-5.04-0.03-6.46,0.27c-0.98-0.23,0.82-0.99-2.01-0.86c-3.98,0.13,0.72,1.02-1.67,1.09l-1.71-0.76c-3.06,0.42-5.33-0.09-7.9-0.26c-0.58,0.04-0.87,0.11-1.01,0.18c-2.73-0.37-5.75,0.57-7.81,0.3c0.49-0.14-1.17-0.46-1.42-0.63l-3.73,0.39c1.65-0.16,1.58-0.57,1.89-0.96c-1.17,0.03-1.72,0.24-2.51,0.28c0.49-0.14,0.98-0.28,0.36-0.46l-3.92,0.63c0.23,0.07,0.68,0.1,1.06,0.12c-0.98,0-3.09,0.24-4.49-0.1c0.12-0.15,0.61-0.3,0.73-0.45c1.17,0.45,1.84,0.08,2.45-0.22c-2.7,0.05-0.67-0.11-1.97-0.4c-1.91,0-2.69,0.53-2.19,0.88c-2.15-0.17-2.83-0.27-5.03,0.14l0.42-0.55l-2.02,0.17l1.64-0.67c-3.87-0.37-0.71,0.94-5.01,0.64l-0.01-0.48c-1.65,0.19-2.22,1.01-3.51,0.44c-1.6,0.3,2.75,0.67-1.02,0.79c-0.67-0.25-2.1-0.42-3.19-0.51c-1.2,0.23,0.92,0.56,1.69,0.49c-5.69,0.28-3.55-1.62-8.63-0.93c1.75,0.32-1.44,0.95,2.68,0.89c-1.97,0.3-3.88-0.65-5.93-0.1l1.33-0.63c-0.74,0-1.57,0.23-1.97,0.32l0.16-0.48c-2.52,0.87-4.73-0.32-6.22,0.8c1.03-0.88-1.89,0.08-2.91-0.23c2.08-0.64,5.99-0.09,6.25-0.89c-0.98-0.22-1.84,0.18-2.78-0.04c0.65-0.13,1.61-0.36,1.85-0.52c-3.22-0.39-5.03,0.57-6.98,0.81l3.44-0.25c-0.26,0.8-1.55,0.16-2.5,0.8c-1.73-0.39-3.06,0.26-4.47,0.02c0.37,0,0.4-0.08,0.77-0.09c-3.75,0.1-4.82-1.17-6.31-1.15c-1.47-0.07-4.23,0.43-3.22,0.74c-1.19,0.25,4.97-0.36,2.86,0.72c-2.17-1.13-4.39,0.55-9.08-0.14c2.03-0.48-1.22-0.63,0.6-1c-2.22,0.16-2.3,0.34-3.28,0.7l-0.68-0.35c-2.88,0.91-0.66,0.75-5.05,1.32c1.47-0.33-1.78-0.49-0.66-0.78c-1.22,0.01-2.41,0.16-3.29,0.41l0.16-0.06c-4.45,0.33-3.66-0.36-7.7,0.18l0.41,0.21c-5.31,0.76-11.97,0.59-17.43,1.22l1.94,0.07c-0.59-0.08-3.66,0.57-5.39,0.33c0.34-0.04,0.92-0.18,1.24-0.17c-0.06-0.25-0.75-0.58-2.07-0.56l-0.48,0.41l-0.55-0.26c-2.01,0.12,0.62,0.51-1.39,0.63c-1.24-1.02-8.69,0.39-10.48-0.51c-1.34,0.86,3.83-0.07,2.36,0.72c-0.62-0.08-0.91-0.22-2.22-0.22l0.48,0.45c-6.14,0.01-8.49-0.32-13.96-0.23l0.22-0.1c-1.95-0.22-3-0.14-3.88,0.24c-0.4-0.23,1.01-0.31,0.26-0.52c-3.5,1.09-6.81-1.21-8.94-0.6c0.18-0.46-0.82-1.03-1.61-1.55c-0.79-0.52-1.37-1.04-0.42-1.28l-1.38-0.07c0.52-0.53,4.3,0.47,5.14-0.12c1.42,0.31,2.85,0.66,4.29,0.94c-0.12-0.24,0.61-0.57-0.09-0.68c1.07,0.03,2.01,0.03,0.62-0.36c5.14,1.04,10.46,1,15.72,0.72c5.27-0.28,10.53-0.79,15.72-0.69c0.7-0.1,0.28-0.3,0-0.43c1.94,0.49,1.8-0.43,2.84-0.58l2.84,0.71c1.12-0.33,0.22-0.54,0.29-0.72c5.29-0.49,10.51,0.2,14.75-0.45c1.37,0.27-0.3,0.72,1.5,0.77c-2.47-0.83,5.22-0.59,3.65-1.18c1.77,0.91,6.47,0.01,5.73,1.37c2.15,0.02,1.76-0.62,1.14-0.72c2.5-0.02,4.51-0.07,6.54-0.55c1.38,0.27,11.4-0.63,13.65,0.33c-1.53-0.62,0.11-0.34,1.56-0.66l-1.33-0.55l3.29-0.01c0.67-0.07,0.86-0.05,0.86,0c0.56,0.02-0.13,0.34,1.29,0.45c2.24-0.01,2.34-0.33,3.57-0.65l-0.34-0.08l1.52-0.08c1.12,0-3.94,0.65-0.29,0.88c0.05-0.16,2.18-0.96,3.17-0.56c-1.86,0-1.62,0.4-0.93,0.56l2.61-0.01l-0.87-0.72c7.49-0.08,15.29,0.35,23.28,0.28c-0.11,0.64,5.66,0.03,4.94,0.97l-0.31-0.09c-1.96,0.09,0.57,0.74,2.16,0.64c-1.67-0.3,3-0.94-1.06-1.08l3.14-0.44c1.75-1.8,8.38,0.2,13.15-0.31c-0.34,0.07-0.43,0.16-0.47,0.22c4.24-0.51,9.48,0.66,10.47,0.41l0.36,0.51c3.63-0.66,4.07-0.73,8.37-0.27c-0.06,0.08-0.56,0.2,0.12,0.33c1.05-0.33,2.11-0.66,5.05-0.46l-0.13,0.15l4.61,0.09c-0.09,1.53,7.93-0.65,9.25,1.04c0.92-0.42,4.29-0.44,5.8-0.61c0.01,0.07,0.1,0.14,0.35,0.21c1.79-0.77,5.1,0.4,7.06,0.37c1.28-0.16,0.74-0.44,0.19-0.71c2.51,0.72,7-0.55,7.91-0.25c1.85,0.11,0.68,0.6,1.18,0.95c2.76-0.08-0.43-1.39,3.25-0.7c-0.43,0.06-1.23,0.09-0.92,0.19c1.41,0.16,3.89,1.97,5.31,1.65l-0.92-0.29c2.58-0.34,6.06,1.38,6.5,0.35l-0.23-0.48c4.42,0.71,1.88-0.15,6.37,0.48l-0.06,0.08c1.96-0.06,3.01,0.56,3.99-0.2l-0.67-0.11c2.43-0.02,2.65,0.04,5.13,0.11c0.29-0.07,1.49-0.17,1.83,0c0.12-0.63,5.75-0.22,6.86-0.17c-1.96,0.07-1.04,0.36-0.48,0.62c1.16-0.51,1.96-0.55,3.56-0.16c0.24-0.8,0.57-1.64,3.72-1.66c-0.49,0.12-1.26,0.18-0.94,0.34c0.32,0.17,1.06-0.01,1.3-0.06c0.31,0.17-0.7,0.29-0.35,0.57c2.14-0.74,3.69-0.02,6.78-0.27c-0.98,0.23-0.14,0.39,0.21,0.67c0.25-0.9,4.23,0.81,3.06-0.36c6.05,0.74,15.37,0.1,17.73,0.85c0.64,0.33,2.32-0.21,3.38-0.22l-0.14,0.4c2.95-0.72,2.3-0.27,5.76-1c-1.44,0.47-0.84,0.69,0.61,1.06l2.38-0.83l0.47,0.61c0.98-0.24,2.07-0.15,3.16-0.06c-0.53,0.01-0.24,0.06-0.21,0.17c0.52-0.85,4.78-0.77,5.43-1.18c1.07,0.82,2.85-0.23,3.64,0.54c0.35-0.12,0.8-0.22,1.29-0.3c-0.52-0.36-0.71-0.76,0.25-0.59c0.08-0.01,0.15-0.01,0.23-0.02l0.42,0.48c0.98-0.12,1.98-0.18,2.63-0.2c-0.3-0.04-0.64-0.13-1-0.23c0.42,0.07,0.81,0.16,1.19,0.23c0.13,0,0.26,0,0.35,0c-0.06,0.01-0.13,0.02-0.21,0.03c0.6,0.11,1.22,0.16,2.07-0.02c3.43,0.7,7.6-1.09,11.39-0.13c-0.57-0.1-1.37-0.13-1.58,0.04c3.16-0.09,6.31,0.56,8.3,0.16l-0.15-0.45c2.31-0.24,4.1-0.41,5.97-0.41l0.09-0.51c2.71,0.15,8.52-0.78,10.21,0.24c0.66-0.42,3.76,0.05,5.3-0.11l0.4,0.38c2.01,0.09,3.25-0.07,4.45-0.21c4.1,0.74,7.86-0.14,11.43-0.14l0.04,0.11l3.62-0.34c-0.94,0.37,0.71-0.26,1.8-0.18c1.15-0.21,3.02-0.14,4.38,0.1l2.31-0.02c-2.56,0.3,0.19,0.56,0.34,1l1.47-0.38c0.6,0.21-0.94,0.37,0.15,0.45c0.98-0.25,3.9-0.27,4.81-0.75c-0.15-0.11-0.5-0.21-0.94-0.3c-0.12,0.03-0.12,0.02-0.04-0.01c-0.04-0.01-0.06-0.01-0.1-0.02c0.05,0.01,0.07,0.01,0.12,0.01c0.12-0.05,0.32-0.12,0.4-0.18c1.84,0.08,1.16-0.1,1.09-0.3c2.09,0.68,3.25,0.18,4.86,1c-2.17-0.91,4.78-0.05,3.42-0.92c1.56,0.7,1.06,0.02,2.06,0.62c-2.19-0.18-4.36,0.49-6.11,0.82l1.73,0.41c-1.12,0.81-3.88-0.26-4.91,0.02c0.69-0.2,2.25-0.03,2.31,0.15l-0.47-0.61c-2.47-0.21-4.43,0.29-6.18,0.61c1.66,0.18-2,0.39-0.79,0.81l1.3-0.09c0.6,0.21-0.66,0.41-1.39,0.6c-4.13-0.39-11.68,0.12-13.17-0.33c0.85,0.14,2.39-0.02,3.13-0.21l-1.94-0.22c1.57-0.05,2.82,0.47,5.14,0.24c-0.4-0.38,1.28-0.94-0.49-1.45c-4.45-0.54-3.63,1.07-8.98,1.02c-0.49,0.13,1.11-0.65-1.74-0.4c-3.57,0.46-6.18,1.39-6.16,2.23c1.5-0.27,4.51-0.82,4.98-0.22c-1.5,0.28-4.1,0.47-4.22,0.87c-1.57-0.68,2.84-0.26,0.78-0.81c-1.06,0.04-1.51,0.28-2,0.4c0.7-0.31-0.96-0.48-1.28-0.63c-3.43,0.06-5.4-0.22-9.08-0.21c-0.2-0.1-0.6-0.32-0.5-0.49c-1.79,0.23-4.33,1.33-3.66,1.76c-2.11,0.07-2.22-0.27-4.01-0.04c2.87,0.58-0.56-0.1-0.86,0.59c-1.83,0.11-0.65-0.32-1.49-0.46c-0.3,0.08-1.03,0.32-1.08,0.5c-1.13-0.5,2.16-1.38,0.83-1.96c-0.92-0.36-4.87-0.98-5.15-1.03c-0.86,0.59-0.57,2.96,0.75,3.7c-0.13,0.4-1.74-0.4-2.55-0.43c-2.34-0.61-3.55,0.55-5.49,0.33l1.47-0.38c-0.32-0.16-3.17,0.09-3.62,0.33c-0.08-0.22,1.46-1.17,0.57-1.43c-3.48-0.07-6.77,1.2-6.54,1.87l5.33-0.76c0.19,0.56-3.78,0.61-3.55,1.28l-4.92-0.15c0.62-0.02,2.51-0.2,1.77-0.51c-2.11,0.05-1.09-0.09-2.51-0.33c2.41-0.74,6.82-2.6,8.39-3.49l-2.53,0.41l-0.64-0.32c-3.3,0.48-6.26,2.7-7.12,3.29c-1.9-0.12-1.25-1.33-0.8-1.56c-3.73-0.03-3.67,1.72-7.44,1.58l1.42,0.25c-0.89,0.12-4.12-0.1-3.77,0.12c-0.75-0.31-1.44-1.06-0.61-1.27l-3.33,1.14c0.49-0.12,0.16-1.08,0.37-1.25c-1.34-0.03-2.28,1.12-1.43,1.27c-2.62-0.68-1.97-0.31-4.09-1.11c-0.77,0.07,0.07,1.02,0.64,1.12c-1.75,0.27-2.77,0.15-3.6,0.04c2.89-0.42,0.78-2.15,1.33-2.89l-6.2,2.87c0.21-0.17,0.7-1.09,0.67-1.2c-0.52,0.86-7.64,0.97-11.12,0.84l0.52-0.01c0.71-0.29-2.29-0.53-3.51-0.24c0.21-0.17,0.49-0.12,1.01-0.12c-2.32-0.65-3.02,1.28-5.39,0.51c2.15,0.09,2.57-0.25,2.46-0.59c-1.76,0.3-5.84-0.05-4.99,0.95c-1.13-0.21-2.15-0.09-2.05-0.6l-4.33,0.56c0.32-0.1,0.6-0.39-0.66-0.47c2.43,0.15,4.78-0.76,6.05-0.1c0.07-0.62-0.84-0.95,0.32-1.47c-4.68,0.27-7.25,1.3-10.21,1.99l-4.12-0.49l-0.18,0.28l-0.71-0.72c-0.52,0.16-0.85,0.3-0.95,0.23c-0.09-0.06,0.04-0.16,0.24-0.26c-0.43,0.03-0.83,0.09-1.03,0.16c-0.16-0.38,0.58-0.8,1.36-1.18c0.37,0.13,0.75,0.27,1.13,0.41c0.81-0.35,1.4-0.71,0.27-0.96c-0.16,0.04-0.36,0.09-0.58,0.15c0.52-0.26,0.84-0.48,0.46-0.59l-3.15,0.31c0.36,0.1,0.89,0.31,1.51,0.55c-1.98,0.44-4.24,0.99-2.48,1.49l-2.4-0.45c-2.83,0.67-2.34,0.53-5.78,1.01c-0.18-0.25,0.73-0.45,0.12-0.64c-2.51,0.77-6.09-1.02-6.65-0.33c-2.02,0.14-0.85,0.6-2.14,0.77c0.06-0.08,0.19-0.23-0.19-0.25l-1.54,0.48c-0.61-0.19,1.41-0.33-0.31-0.58c-2.95,0.33-4.68,0.56-7.14,0.26c-3.5,0.04,1.48,1.05-1.48,0.88c-0.43-0.43-0.8-0.93-2.64-1.03c-0.98,0.27-0.86,0.6-2.52,0.74l0.12-0.64c-1.53-0.01-2.76,0.08-2.76-0.41c-1.26,0.24-2.12,0.17-2.78,0.05c-2.33,0.28,1.68,1.34,2.22,1.61c-2.28-0.54-3.86-0.3-5.15-1.1l2.03-0.12c-4.3-0.9-4.12,0.8-6.08-0.61c1.48,0.09,3.26-0.2,2.4-0.57l-2.15,0.27c-0.25-0.18,1.23-0.08,0.25-0.31c-0.61,0.12-1.87,0.42-2.43,0.61l0.03-0.04l-3.87,0c0.73,0.05,0.92-0.18,0.18-0.23l-2.55,0.26c0.78-0.14-0.01-0.36-1.14-0.5c-3.26-0.3-2.66,1.35-5.17,0.62c0.37,0.03,0.43-0.05,0.8-0.03l-1.29-0.33c-0.32,1.36-7.69-0.13-8.01,1.21c-1.84-0.62-0.12-0.33,2.29-0.89l-1.96-0.46C956.16,888.25,956.83,888.38,957.69,888.28z M982.78,888.95c0.41,0.3,1.56,0.01,2.14-0.08C983.94,888.69,983.44,888.42,982.78,888.95z M1028.03,888.38c0.74,0.19,1.4,0.28,1.83,0.12C1029.18,888.37,1028.57,888.35,1028.03,888.38z M1154.84,884.12c0.02-0.01,0.04-0.02,0.06-0.02C1154.01,884.02,1153.56,883.95,1154.84,884.12z M1156.23,884.18c0.68,0.02,1.27,0.01,1.46-0.12c0.11,0.07,0.13,0.13-0.13,0.2C1156.76,884.39,1156.42,884.3,1156.23,884.18z M873.41,883.5l-0.52-0.12C872.57,883.53,872.25,883.67,873.41,883.5z"/><path d="M1024.75,889.1c-0.16-0.08-0.2-0.17-0.24-0.26C1024.28,888.92,1024.28,889.01,1024.75,889.1z"/><path d="M937.02,887.94l-0.09-0.01c-0.05,0.03-0.08,0.06-0.09,0.08L937.02,887.94z"/><path d="M1116.56,889.08c-0.55-0.06-0.85-0.14-1.06-0.23C1115.47,888.96,1115.72,889.06,1116.56,889.08z"/><path d="M1171.6,883.27l-1.7,0.14c0.82-0.03,1.12,0.07,1.53,0.15C1171.4,883.44,1171.07,883.28,1171.6,883.27z"/><path d="M1186.37,886.17c0.25-0.06,0.53-0.01,0.77-0.07l-0.07-0.22C1186.02,885.89,1185.28,886.08,1186.37,886.17z"/><path d="M1173.19,884.86c0.14,0.4,1.2,0.26,2.39,0.17c-0.07,0-0.14,0.01-0.21,0C1175.72,884.46,1174.45,884.66,1173.19,884.86z"/><path d="M1175.86,885.02c0.37-0.02,0.74-0.04,1.1-0.02C1177.1,884.77,1176.51,884.95,1175.86,885.02z"/><path d="M1160.91,883.94c0.57,0.1,0.35-0.52,0.67-0.36C1162.21,883.05,1157.83,884.26,1160.91,883.94z"/><polygon points="1174.17,886.19 1173.74,885.69 1173.07,886.1"/><path d="M1164.77,885.92l1.9,0.12c-0.03-0.08,0.21-0.14,0.51-0.18C1166.01,885.85,1164.72,885.77,1164.77,885.92z"/><path d="M1167.18,885.86c0.61,0,1.19-0.02,1.53-0.1C1168.38,885.76,1167.67,885.79,1167.18,885.86z"/><polygon points="1171.57,886.36 1171.01,886.26 1169.67,886.24"/><path d="M1144.34,886.14l-2.07,0.18c-0.21,0.18,0.36,0.27,1.13,0.19C1143.89,886.38,1144.66,886.3,1144.34,886.14z"/><path d="M1150.63,887.4c-0.56-0.09-0.6-0.21-0.92-0.37l-0.05,0.62L1150.63,887.4z"/><path d="M1144.59,887.65c-0.2,0.18-3,0.55-0.37,0.46C1144.42,887.94,1146.5,887.76,1144.59,887.65z"/><polygon points="1113.32,887.43 1113.85,887.41 1113.76,886.39"/><path d="M1085.79,890.2c2.46,0.23,0.58-0.63,2.8-0.35c0.58-0.25-1.82-0.23-1.23-0.45C1085.89,889.67,1085.11,889.54,1085.79,890.2z"/><path d="M1087.37,889.41c0.24-0.04,0.49-0.09,0.76-0.16C1087.7,889.31,1087.49,889.36,1087.37,889.41z"/><path d="M776.78,885.13c-0.51-0.11-1.01-0.25-1.51-0.39l0.95,0.47L776.78,885.13z"/><path d="M773.74,885.51l-0.27-0.69l-1.01,0.46C772.81,885.29,773.49,885.33,773.74,885.51z"/><path d="M989.27,890.3l0.12-0.15c-0.24-0.18-0.61-0.2-1.35-0.24L989.27,890.3z"/><polygon points="967.83,889.21 968.2,889.24 967.53,888.63"/><path d="M949.81,889.33c0.73,0.05,1.59-0.05,2.33,0C950.53,889.38,949.64,888.6,949.81,889.33z"/></g></g></g></svg></div>
+
+<!-- ═══════════ MEDIA KIT / RESOURCES ═══════════ -->
+<section id="media" class="media-section">
+  <div class="media-inner">
+    <span class="eyebrow" style="text-align:center;display:block">Resources</span>
+    <h2><span class="crayon-hl">Headshots</span> &amp; Media</h2>
+    <p class="media-sub-label">For press, event programs, and promotional materials</p>
+    <div class="headshot-grid">
+      <div class="hs"><div class="hs-ph"></div></div>
+      <div class="hs"><div class="hs-ph"></div></div>
+      <div class="hs"><div class="hs-ph"></div></div>
+      <div class="hs"><div class="hs-ph"></div></div>
+      <div class="hs"><div class="hs-ph"></div></div>
+    </div>
+    <div class="media-btns">
+      <a href="#" class="btn btn-outline">Download Bio &raquo;</a>
+      <a href="#" class="btn btn-outline">Download Media Guide &raquo;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CREW ═══════════ -->
 <section id="crew" class="section section-white"><div class="section-inner">
   <span class="eyebrow">The Team</span>
-  <h2 class="section-title">Meet the Crew</h2>
+  <h2 class="section-title">Meet the <span class="crayon-hl crayon-hl-gold">Crew</span></h2>
   <div class="crew-grid">
     <div class="crew-card"><div class="crew-avatar">K</div><h3>Amanda &ldquo;Kay&rdquo;</h3><div class="pr">they/them</div><div class="ro">Director &amp; Filmmaker</div></div>
     <div class="crew-card"><div class="crew-avatar">C</div><h3>Chris</h3><div class="pr">he/him</div><div class="ro">Creative Consultant</div></div>
@@ -376,6 +720,8 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   <p>We help mental health organizations translate complex topics into films, animations, and illustrated tools that move people to action.</p>
   <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Start a Conversation</a>
 </div></section>
+
+
 
 <footer class="footer">
   <p><a href="https://amandalipp.com">amandalipp.com</a> &nbsp;&middot;&nbsp; <a href="mailto:amanda@amandalipp.com">amanda@amandalipp.com</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@lippstudios">YouTube</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/amandalipp/">LinkedIn</a></p>
@@ -409,7 +755,7 @@ function carousel(trackId, ddId, prevId, nextId, countId) {
 const res = carousel('rTrack', 'rDD', 'rP', 'rN', 'rC');
 const cs = carousel('csTrack', 'csDD', 'csP', 'csN', 'csC');
 
-// Keyboard nav for case studies (default)
+// Keyboard nav for case studies
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft' && cs.getCur() > 0) cs.go(cs.getCur() - 1);
   if (e.key === 'ArrowRight' && cs.getCur() < cs.tot - 1) cs.go(cs.getCur() + 1);
@@ -429,6 +775,19 @@ document.querySelectorAll('.accordion-header').forEach(h => {
       h.classList.add('active');
       b.style.maxHeight = b.scrollHeight + 'px';
     }
+  });
+});
+
+// Audience tabs for keynote section
+document.querySelectorAll('.aud-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.target;
+    // Deactivate all tabs
+    document.querySelectorAll('.aud-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.aud-panel').forEach(p => p.classList.remove('active'));
+    // Activate clicked
+    tab.classList.add('active');
+    document.querySelector('.aud-panel[data-audience="'+target+'"]').classList.add('active');
   });
 });
 </script>
