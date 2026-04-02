@@ -325,6 +325,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
     <a href="#approach">Approach</a>
     <a href="#media">Media Kit</a>
     <a href="#crew">Crew</a>
+    <a href="speaking.html" class="btn btn-dark">Speaking</a>
     <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Start a Project</a>
   </nav>
 </div></header>
