@@ -22,7 +22,7 @@
   --transition:0.3s ease
 }
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Open Sans',Arial,Helvetica,sans-serif;color:var(--brand-text);background:var(--brand-white);line-height:1.7;-webkit-font-smoothing:antialiased}
+body{font-family:'Open Sans',Arial,Helvetica,sans-serif;color:var(--brand-text);background:var(--brand-white);line-height:1.7;-webkit-font-smoothing:antialiased;margin-bottom:56px}
 h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-height:1.2}
 
 /* ── BUTTONS ── */
@@ -32,11 +32,11 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .btn-sm{padding:10px 18px;font-size:12px}
 .btn-outline{background:transparent;color:var(--brand-blue);border:1px solid var(--brand-blue);box-shadow:none}.btn-outline:hover{background:var(--brand-blue);color:var(--brand-white)}
 
-/* ── CRAYON HIGHLIGHT ── */
-.crayon-hl{position:relative;display:inline;padding:4px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone;background:rgba(214,177,63,0.45);margin:-2px -4px}
-.crayon-hl-blue{background:rgba(3,87,135,0.18)}
-.crayon-hl-teal{background:rgba(31,111,120,0.18)}
-.crayon-hl-crayon{background:rgba(232,103,74,0.25)}
+/* ── CRAYON HIGHLIGHT (richer SVG-based from original) ── */
+.crayon-hl{position:relative;display:inline;padding:4px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8cGF0aCBkPSJNNCw2IEM4LDQgMTgsNyAzMiw1IEM0OCwzIDY1LDYgODUsNC41IEMxMDUsMyAxMjUsNiAxNDUsNCBDMTY1LDIuNSAxODAsNS41IDE5Niw0IEMxOTgsNiAxOTcuNSwxMiAxOTcsMTggQzE5OCwyNCAxOTcsMzAgMTk2LDM2IEMxODAsMzcuNSAxNjUsMzUgMTQ1LDM3IEMxMjUsMzUuNSAxMDUsMzcuNSA4NSwzNiBDNjUsMzcgNDgsMzUgMzIsMzYuNSBDMTgsMzggOCwzNSA0LDM2LjUgQzIuNSwzMCAzLDI0IDIuNSwxOCBDMywxMiAyLDggNCw2eiIgZmlsbD0iI2Q2YjEzZiIgb3BhY2l0eT0iMC40NSIvPgo8L3N2Zz4=") center/calc(100% + 12px) calc(100% + 8px) no-repeat;margin:-2px -4px;border:none}
+.crayon-hl-crayon{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8cGF0aCBkPSJNNCw2IEM4LDQgMTgsNyAzMiw1IEM0OCwzIDY1LDYgODUsNC41IEMxMDUsMyAxMjUsNiAxNDUsNCBDMTY1LDIuNSAxODAsNS41IDE5Niw0IEMxOTgsNiAxOTcuNSwxMiAxOTcsMTggQzE5OCwyNCAxOTcsMzAgMTk2LDM2IEMxODAsMzcuNSAxNjUsMzUgMTQ1LDM3IEMxMjUsMzUuNSAxMDUsMzcuNSA4NSwzNiBDNjUsMzcgNDgsMzUgMzIsMzYuNSBDMTgsMzggOCwzNSA0LDM2LjUgQzIuNSwzMCAzLDI0IDIuNSwxOCBDMywxMiAyLDggNCw2eiIgZmlsbD0iI2U4Njc0YSIgb3BhY2l0eT0iMC4zIi8+Cjwvc3ZnPg==") center/calc(100% + 12px) calc(100% + 8px) no-repeat}
+.crayon-hl-blue{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8cGF0aCBkPSJNNCw2IEM4LDQgMTgsNyAzMiw1IEM0OCwzIDY1LDYgODUsNC41IEMxMDUsMyAxMjUsNiAxNDUsNCBDMTY1LDIuNSAxODAsNS41IDE5Niw0IEMxOTgsNiAxOTcuNSwxMiAxOTcsMTggQzE5OCwyNCAxOTcsMzAgMTk2LDM2IEMxODAsMzcuNSAxNjUsMzUgMTQ1LDM3IEMxMjUsMzUuNSAxMDUsMzcuNSA4NSwzNiBDNjUsMzcgNDgsMzUgMzIsMzYuNSBDMTgsMzggOCwzNSA0LDM2LjUgQzIuNSwzMCAzLDI0IDIuNSwxOCBDMywxMiAyLDggNCw2eiIgZmlsbD0iIzAzNTc4NyIgb3BhY2l0eT0iMC4xNSIvPgo8L3N2Zz4=") center/calc(100% + 12px) calc(100% + 8px) no-repeat}
+.crayon-hl-strong{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8cGF0aCBkPSJNNCw2IEM4LDQgMTgsNyAzMiw1IEM0OCwzIDY1LDYgODUsNC41IEMxMDUsMyAxMjUsNiAxNDUsNCBDMTY1LDIuNSAxODAsNS41IDE5Niw0IEMxOTgsNiAxOTcuNSwxMiAxOTcsMTggQzE5OCwyNCAxOTcsMzAgMTk2LDM2IEMxODAsMzcuNSAxNjUsMzUgMTQ1LDM3IEMxMjUsMzUuNSAxMDUsMzcuNSA4NSwzNiBDNjUsMzcgNDgsMzUgMzIsMzYuNSBDMTgsMzggOCwzNSA0LDM2LjUgQzIuNSwzMCAzLDI0IDIuNSwxOCBDMywxMiAyLDggNCw2eiIgZmlsbD0iI2U4Njc0YSIgb3BhY2l0eT0iMC44MiIvPgo8L3N2Zz4=") center/calc(100% + 12px) calc(100% + 8px) no-repeat;color:var(--brand-white)}
 
 /* ── HEADER ── */
 .header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--brand-dark);padding:0 24px;border-bottom:1px solid rgba(255,255,255,0.08)}
@@ -48,21 +48,30 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .header-nav .btn{padding:10px 20px;font-size:12px;box-shadow:none;border-color:var(--brand-gold)}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:60vh;display:flex;align-items:center;padding:140px 24px 80px;background:var(--brand-dark);overflow:hidden}
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;padding:140px 24px 80px;background:var(--brand-dark);overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(3,87,135,0.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(95,13,35,0.1) 0%,transparent 50%);pointer-events:none}
-.hero-inner{max-width:var(--container);margin:0 auto;position:relative;z-index:1;width:100%;text-align:center}
+.hero-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%}
 .hero-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-gold);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--brand-gold)}
 .hero h1{font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:900;color:var(--brand-gold);letter-spacing:-0.02em;margin-bottom:20px}
 .hero h1 em{display:block;font-style:italic;font-weight:700;color:var(--brand-white);font-size:0.6em;margin-top:12px;letter-spacing:0}
-.hero-text{font-size:17px;color:rgba(255,255,255,0.78);max-width:720px;margin:0 auto 28px;line-height:1.75}
-.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:32px}
-.hero-stat{text-align:center}
-.hero-stat .num{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900;color:var(--brand-gold)}
-.hero-stat .label{font-size:11px;color:rgba(255,255,255,0.55);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-top:4px}
+.hero-text{font-size:16px;color:rgba(255,255,255,0.78);max-width:620px;margin-bottom:28px;line-height:1.75}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:620px}
+.hero-stat{text-align:left}
+.hero-stat .num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--brand-gold);line-height:1}
+.hero-stat .label{font-size:10px;color:rgba(255,255,255,0.55);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-top:6px}
+.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:36px}
+.hero-quote{font-family:'Montserrat',sans-serif;font-size:21px;font-weight:700;font-style:italic;color:var(--brand-white);line-height:1.5;margin-bottom:18px}
+.hero-quote-attr{font-size:13px;color:var(--brand-gold);font-weight:600}
 
 /* ── INTRO BAND ── */
 .intro-band{background:var(--brand-gold);padding:22px 24px;text-align:center}
 .intro-band p{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--brand-dark);max-width:var(--container);margin:0 auto}
+
+/* ── CRAYON SEPARATOR ── */
+.crayon-sep{display:block;width:100%;line-height:0;padding:0;position:relative;z-index:2;background:var(--brand-white)}
+.crayon-sep svg{display:block;width:100%;height:auto}
+.crayon-sep-light{background:var(--brand-light)}
 
 /* ── SECTIONS ── */
 .section{padding:80px 24px}.section-light{background:var(--brand-light)}.section-white{background:var(--brand-white)}
@@ -70,6 +79,31 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-blue);margin-bottom:10px;display:block}
 .section-title{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--brand-text);letter-spacing:-0.02em;margin-bottom:12px}
 .section-subtitle{font-size:16px;color:var(--brand-muted);max-width:720px;margin-bottom:48px;line-height:1.75}
+
+/* ── ORIGIN STORY ── */
+.story-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story-img{aspect-ratio:4/5;background:var(--brand-light);border:1px solid #e0ddd6;overflow:hidden}
+.story-img img{width:100%;height:100%;object-fit:cover;display:block}
+.story-copy h2{font-size:clamp(24px,3vw,32px);font-weight:800;color:var(--brand-text);margin-bottom:16px}
+.story-copy p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:14px}
+.story-copy .qi{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;font-style:italic;color:var(--brand-blue);border-left:3px solid var(--brand-gold);padding-left:16px;margin:20px 0}
+
+/* ── LOGO / PARTNER GRID ── */
+.logo-section{padding:60px 24px;background:var(--brand-white)}
+.logo-section-inner{max-width:var(--container);margin:0 auto;text-align:center}
+.logo-section h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--brand-text);margin-bottom:8px}
+.logo-section .logo-sub{font-size:14px;color:var(--brand-muted);margin-bottom:36px}
+.logo-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px 40px;max-width:900px;margin:0 auto}
+.logo-grid img{height:48px;width:auto;opacity:.75;transition:opacity .3s;object-fit:contain}
+.logo-grid img:hover{opacity:1}
+.logo-grid img.logo-wide{height:36px}
+
+/* ── QUOTE STRIP ── */
+.quote-strip{background:var(--brand-light);padding:48px 24px}
+.quote-strip-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.quote-strip blockquote{font-size:18px;font-weight:600;font-style:italic;color:var(--brand-text);line-height:1.65}
+.quote-strip cite{font-style:normal;font-size:13px;color:var(--brand-muted);font-weight:600;display:block;margin-top:8px}
+.quote-strip .quote-logo{height:60px;width:auto;opacity:.9}
 
 /* ── TALK CARDS ── */
 .talks-grid{display:grid;grid-template-columns:1fr;gap:24px}
@@ -92,23 +126,65 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .fs-item .lbl{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand-muted);margin-bottom:6px}
 .fs-item .val{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--brand-text)}
 
+/* ── GOLD STRIP (little things) ── */
+.gold-strip{background:var(--brand-gold);padding:28px 24px;text-align:center}
+.gold-strip p{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--brand-dark);max-width:var(--container);margin:0 auto;line-height:1.5}
+
+/* ── VIDEO ── */
+.video-section{padding:60px 24px;background:var(--brand-dark)}
+.video-inner{max-width:800px;margin:0 auto}
+.video-inner iframe{width:100%;aspect-ratio:16/9;border:none;display:block}
+.video-label{text-align:center;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-gold);margin-bottom:20px}
+
+/* ── MEDIA KIT / RESOURCES ── */
+.media-section{padding:80px 24px;background:var(--brand-light)}
+.media-inner{max-width:var(--container);margin:0 auto;text-align:center}
+.media-inner h2{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--brand-text);margin-bottom:4px}
+.media-inner .media-sub-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand-muted);margin-bottom:36px}
+.headshot-grid{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.headshot-grid .hs{width:160px;height:200px;background:var(--brand-white);border:1px solid #e0ddd6;overflow:hidden;transition:var(--transition)}
+.headshot-grid .hs:hover{box-shadow:var(--shadow-soft);transform:translateY(-3px)}
+.headshot-grid .hs img{width:100%;height:100%;object-fit:cover}
+.media-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.media-btns .btn{min-width:220px;text-align:center}
+
 /* ── CTA STRIP ── */
-.cta-strip{background:var(--brand-dark);color:var(--brand-white);padding:64px 24px;text-align:center}
-.cta-strip h2{font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--brand-white);margin-bottom:14px}
-.cta-strip h2 .crayon-hl{color:var(--brand-white)}
+.cta-strip{background:var(--brand-dark);color:var(--brand-white);padding:80px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,87,135,.12) 0%,transparent 60%);pointer-events:none}
+.cta-strip-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.cta-strip h2{font-size:clamp(28px,3.5vw,38px);font-weight:900;color:var(--brand-gold);margin-bottom:16px;letter-spacing:-.02em}
 .cta-strip p{font-size:16px;color:rgba(255,255,255,0.7);max-width:620px;margin:0 auto 28px}
 .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* ── FOOTER ── */
 .footer{background:#0a0a0a;color:rgba(255,255,255,0.55);padding:40px 24px;text-align:center;font-size:13px}
 .footer a{color:var(--brand-gold);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+/* ── STICKY BOTTOM BANNER ── */
+#book-banner{position:fixed;bottom:0;left:0;width:100%;background:var(--brand-dark);z-index:999;box-shadow:0 -4px 20px rgba(0,0,0,0.2);transition:transform .3s ease}
+#book-banner.hidden{transform:translateY(100%)}
+.banner-inner{max-width:var(--container);margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.banner-text{color:rgba(255,255,255,0.7);font-size:14px;font-weight:500;display:flex;align-items:center;gap:10px}
+.banner-text strong{color:var(--brand-gold);font-family:'Montserrat',sans-serif;font-weight:700}
+.banner-actions{display:flex;gap:12px;align-items:center}
+.banner-book{display:inline-block;background:var(--brand-gold);color:var(--brand-dark);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;padding:10px 24px;text-decoration:none;letter-spacing:.02em;transition:var(--transition);border:2px solid var(--brand-gold);white-space:nowrap}
+.banner-book:hover{background:transparent;color:var(--brand-gold)}
+.banner-close{background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer;padding:4px 8px;transition:color .2s}
+.banner-close:hover{color:white}
 
 @media(max-width:900px){
   .header-nav{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .story-split{grid-template-columns:1fr}
   .talk-card{grid-template-columns:1fr;gap:16px;text-align:left}
   .talk-cta{justify-self:start}
   .format-strip{grid-template-columns:1fr 1fr}
-  .hero-stats{gap:28px}
+  .quote-strip-inner{grid-template-columns:1fr;text-align:center}
+  .banner-text span{display:none}
+  .banner-inner{justify-content:center}
+  body{margin-bottom:52px}
 }
 </style>
 </head>
@@ -126,24 +202,71 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   </nav>
 </div></header>
 
-<!-- ═══════════ HERO ═══════════ -->
+<!-- ═══════════ HERO (with quote card reintegrated) ═══════════ -->
 <section class="hero"><div class="hero-inner">
-  <div class="hero-eyebrow">Speaking &middot; Keynotes &middot; Workshops</div>
-  <h1>Stories That <span class="crayon-hl" style="background:rgba(232,103,74,0.3)">Move People</span> to Action<em>Kay Lipp brings lived experience, filmmaking, and research to stages worldwide.</em></h1>
-  <p class="hero-text">From Fortune 500 leadership summits to youth conferences and healthcare convenings, Kay delivers talks that stick. Choose the talk that fits your audience, or bring Kay in for a custom experience.</p>
-  <div class="cta-actions" style="justify-content:center">
-    <a href="#talks" class="btn">Explore Talks</a>
-    <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-light">Book Kay</a>
+  <div>
+    <div class="hero-eyebrow">Speaking &middot; Keynotes &middot; Workshops</div>
+    <h1>Stories That <span class="crayon-hl crayon-hl-crayon">Move People</span> to Action<em>Kay Lipp brings lived experience, filmmaking, and research to stages worldwide.</em></h1>
+    <p class="hero-text">From Fortune 500 leadership summits to youth conferences and healthcare convenings, Kay delivers talks that stick. Choose the talk that fits your audience, or bring Kay in for a custom experience.</p>
+    <div class="hero-actions">
+      <a href="#talks" class="btn">Explore Talks</a>
+      <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-light">Book Kay</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">150+</div><div class="label">Keynotes</div></div>
+      <div class="hero-stat"><div class="num">5,000+</div><div class="label">Largest Audience</div></div>
+      <div class="hero-stat"><div class="num">100+</div><div class="label">Films Created</div></div>
+      <div class="hero-stat"><div class="num">10+</div><div class="label">Years Speaking</div></div>
+    </div>
   </div>
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="num">150+</div><div class="label">Keynotes Delivered</div></div>
-    <div class="hero-stat"><div class="num">5,000+</div><div class="label">Largest Audience</div></div>
-    <div class="hero-stat"><div class="num">10+</div><div class="label">Years Speaking</div></div>
-    <div class="hero-stat"><div class="num">22x</div><div class="label">More Memorable</div></div>
-  </div>
+  <div><div class="hero-card">
+    <div class="hero-quote">&ldquo;When we embrace mental health as an everybody and every-industry issue, and create space to tell our stories, we build stronger teams, systems, and communities.&rdquo;</div>
+    <div class="hero-quote-attr">&mdash; Amanda &ldquo;Kay&rdquo; Lipp</div>
+  </div></div>
 </div></section>
 
 <div class="intro-band"><p>One speaker, many adaptations. Each talk is tailored to your audience, your goals, and your event format.</p></div>
+
+<!-- ═══════════ ORIGIN STORY ═══════════ -->
+<section class="section section-white"><div class="section-inner"><div class="story-split">
+  <div class="story-img"><img src="https://amandalipp.com/wp-content/uploads/2026/02/width_800-2.jpg" alt="Kay speaking"></div>
+  <div class="story-copy">
+    <span class="eyebrow">My Background</span>
+    <h2>It Started With a <span class="crayon-hl">Box of Crayons</span></h2>
+    <p>For me, it began my freshman year of college, when I experienced a crisis and spent three months cycling between ICU, inpatient, and outpatient services. I learned how the system works from the inside out.</p>
+    <p>At one of my lowest points, a thoughtful nurse handed me a box of crayons. That small act reminded me that creativity and kindness could still exist inside pain. It changed the course of my life.</p>
+    <div class="qi">&ldquo;That moment led to my core message: Think Outside the Crayon Box. A reminder that small acts can have big impact.&rdquo;</div>
+    <p>Since then, I&rsquo;ve made it my mission to turn lived experience into innovative tools, serve on boards that shape policy, and make inspiring films about tough topics.</p>
+    <a href="https://amandalipp.com/about/" class="btn btn-sm btn-outline">About Kay</a>
+  </div>
+</div></div></section>
+
+<!-- ═══════════ PARTNERS ═══════════ -->
+<section class="logo-section">
+  <div class="logo-section-inner">
+    <h2>Trusted <span class="crayon-hl">Partners</span> &amp; Collaborators</h2>
+    <p class="logo-sub">Organizations that have trusted Kay to speak, film, and consult</p>
+    <div class="logo-grid">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200.png" alt="Partner">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_800.jpg" alt="Partner" style="height:36px">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-3.png" alt="Partner">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_199.png" alt="Partner" class="logo-wide">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-10.png" alt="Partner">
+      <img src="https://amandalipp.com/wp-content/uploads/2024/01/SOM_logo.png" alt="Stanford Medicine" style="height:36px">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-2.png" alt="Partner" class="logo-wide">
+      <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_200-9.png" alt="Partner">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TESTIMONIAL 1 ═══════════ -->
+<div class="quote-strip"><div class="quote-strip-inner">
+  <div>
+    <blockquote>&ldquo;Kay was truly amazing and inspirational. After hearing her story, she makes you realize the need to look at life and frankly the world in a different light.&rdquo;</blockquote>
+    <cite>&mdash; Craig Mengert, CEO, TriZetto</cite>
+  </div>
+  <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_800-3-Photoroom.png" alt="TriZetto" class="quote-logo">
+</div></div>
 
 <!-- ═══════════ TALKS LIST ═══════════ -->
 <section id="talks" class="section section-light"><div class="section-inner">
@@ -175,7 +298,7 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
       <span class="talk-badge">Keynote</span>
       <div class="talk-body">
         <h3>Daring to Live (and Lead) Differently</h3>
-        <p>Vanlife as a metaphor for authentic leadership &mdash; designing life on purpose instead of by default.</p>
+        <p>Vanlife as a metaphor for authentic leadership. Designing life on purpose instead of by default.</p>
       </div>
       <span class="talk-cta">View details</span>
     </a>
@@ -208,19 +331,88 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   </div>
 </div></section>
 
+<!-- ═══════════ GOLD STRIP (little things) ═══════════ -->
+<div class="gold-strip"><p>The little things make a <span class="crayon-hl crayon-hl-strong">difference</span>. Each audience member receives a box of crayons: a powerful and playful symbol of what&rsquo;s possible.</p></div>
+
+<!-- ═══════════ VIDEO / SPEAKER REEL ═══════════ -->
+<section class="video-section">
+  <div class="video-label">Watch Kay in Action</div>
+  <div class="video-inner">
+    <iframe src="https://www.youtube.com/embed/uNxMJ2HENJY?controls=1&rel=0" title="Kay Lipp Speaker Reel" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- ═══════════ TESTIMONIAL 2 ═══════════ -->
+<div class="quote-strip"><div class="quote-strip-inner">
+  <div>
+    <blockquote>&ldquo;Even a year later I have people come up to me to tell me about what an amazingly powerful and engaging presentation she provided. The blend of education, personal story, and inspirational hope building was perfect for our event.&rdquo;</blockquote>
+    <cite>&mdash; Barry Johnson, Deputy Director, Transitions Mental Health Association</cite>
+  </div>
+</div></div>
+
+<!-- ═══════════ MEDIA KIT / HEADSHOTS ═══════════ -->
+<section id="media" class="media-section">
+  <div class="media-inner">
+    <span class="eyebrow" style="text-align:center;display:block">Resources</span>
+    <h2><span class="crayon-hl">Headshots</span> &amp; Media</h2>
+    <p class="media-sub-label">For press, event programs, and promotional materials</p>
+    <div class="headshot-grid">
+      <div class="hs"><img src="https://amandalipp.com/wp-content/uploads/2026/03/Lipp-headshot-1.webp" alt="Kay Lipp headshot 1"></div>
+      <div class="hs"><img src="https://amandalipp.com/wp-content/uploads/2026/03/Lipp-headshot-2.webp" alt="Kay Lipp headshot 2"></div>
+      <div class="hs"><img src="https://amandalipp.com/wp-content/uploads/2026/03/Lipp-headshot-3.webp" alt="Kay Lipp headshot 3"></div>
+    </div>
+    <div class="media-btns">
+      <a href="https://amandalipp.com/wp-content/uploads/2026/03/Lipp-photo-2-scaled.jpg" class="btn btn-outline">Bio &amp; Intro &raquo;</a>
+      <a href="https://amandalipp.com/wp-content/uploads/2026/03/Lipp-photo-2-scaled.jpg" class="btn btn-outline">Speaker Info Sheet &raquo;</a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ CTA ═══════════ -->
-<section class="cta-strip">
-  <h2>Ready to bring <span class="crayon-hl" style="background:rgba(232,103,74,0.35)">a story-led talk</span> to your stage?</h2>
-  <p>Tell us about your event and audience. Kay will recommend the right talk and format.</p>
+<section class="cta-strip"><div class="cta-strip-inner">
+  <h2>Ready to Think Outside the <span class="crayon-hl crayon-hl-strong">Crayon Box</span>?</h2>
+  <p>Tell us about your event and audience. Kay will recommend the right talk and format, whether it&rsquo;s a Fortune 500 summit, a school district convening, or a youth advocacy event.</p>
   <div class="cta-actions">
     <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Book Kay</a>
     <a href="index" class="btn btn-light">Back to Home</a>
   </div>
-</section>
+</div></section>
 
 <footer class="footer">
-  <p>&copy; Lipp Studios &middot; <a href="https://amandalipp.com">amandalipp.com</a></p>
+  <p><a href="https://amandalipp.com">amandalipp.com</a> &nbsp;&middot;&nbsp; <a href="mailto:amanda@amandalipp.com">amanda@amandalipp.com</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@lippstudios">YouTube</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/amandalipp/">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/akaylipp/">Instagram</a></p>
+  <p style="margin-top:8px">&copy; Kay Lipp. All Rights Reserved. Website by Lipp Studios.</p>
 </footer>
+
+<!-- STICKY BOOK BANNER -->
+<div id="book-banner">
+  <div class="banner-inner">
+    <div class="banner-text">
+      <strong>Think Outside the Crayon Box</strong>
+      <span>Book Kay for your next event</span>
+    </div>
+    <div class="banner-actions">
+      <a href="https://amandalipp.com/have-a-project-in-mind/" class="banner-book">Book Kay &rarr;</a>
+      <button class="banner-close" onclick="closeBanner()" title="Close">&times;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function closeBanner(){
+  document.getElementById('book-banner').style.display='none';
+  document.body.style.marginBottom='0';
+}
+let lastST=0;
+window.addEventListener('scroll',function(){
+  const b=document.getElementById('book-banner');
+  if(!b||b.style.display==='none')return;
+  let st=window.pageYOffset;
+  if(st>lastST&&st>200)b.classList.add('hidden');
+  else b.classList.remove('hidden');
+  lastST=st<=0?0:st;
+  if(st+window.innerHeight>=document.documentElement.scrollHeight-100)b.classList.remove('hidden');
+});
+</script>
 
 </body>
 </html>
