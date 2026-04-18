@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Got This! Youth Leadership &amp; Advocacy | Kay Lipp</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--brand-blue:#035787;--brand-burgundy:#5f0d23;--brand-dark:#141414;--brand-gold:#d6b13f;--brand-light:#f3f3f0;--brand-white:#ffffff;--brand-text:#1a1a1a;--brand-muted:#5f6368;--brand-teal:#1f6f78;--brand-crayon:#e8674a;--container:1180px;--shadow-soft:0 8px 24px rgba(0,0,0,0.08);--transition:0.3s ease}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Open Sans',Arial,Helvetica,sans-serif;color:var(--brand-text);background:var(--brand-white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-height:1.2}
+.btn{display:inline-block;background:var(--brand-gold);color:var(--brand-text);font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;line-height:1;padding:14px 26px;border:1px solid #8c7420;text-decoration:none;box-shadow:2px 2px 0 rgba(0,0,0,0.15);transition:var(--transition);cursor:pointer;letter-spacing:0.02em}
+.btn:hover{background:var(--brand-burgundy);color:var(--brand-white);border-color:var(--brand-burgundy)}
+.btn-light{background:transparent;color:var(--brand-white);border:2px solid rgba(255,255,255,0.5);box-shadow:none}.btn-light:hover{background:var(--brand-white);color:var(--brand-dark);border-color:var(--brand-white)}
+.btn-sm{padding:10px 18px;font-size:12px}
+.crayon-hl{position:relative;display:inline;padding:4px 10px;background:rgba(214,177,63,0.45);margin:-2px -4px}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--brand-dark);padding:0 24px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.header-inner{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
+.header-logo img{height:36px;display:block}
+.header-nav{display:flex;gap:28px;align-items:center}
+.header-nav a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:13px;font-weight:600;letter-spacing:0.02em;transition:color 0.2s}.header-nav a:hover{color:var(--brand-gold)}
+.header-nav a.active{color:var(--brand-gold)}
+.header-nav .btn{padding:10px 20px;font-size:12px;box-shadow:none;border-color:var(--brand-gold)}
+.breadcrumb{background:#1c1c1c;padding:80px 24px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.breadcrumb-inner{max-width:var(--container);margin:0 auto;padding:16px 0;font-size:13px;color:rgba(255,255,255,0.55)}
+.breadcrumb-inner a{color:rgba(255,255,255,0.75);text-decoration:none}.breadcrumb-inner a:hover{color:var(--brand-gold)}
+.hero{position:relative;padding:60px 24px 80px;background:var(--brand-dark);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(214,177,63,0.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(232,103,74,0.1) 0%,transparent 50%);pointer-events:none}
+.hero-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-gold);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--brand-gold)}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--brand-gold);letter-spacing:-0.02em;margin-bottom:20px}
+.hero-text{font-size:16px;color:rgba(255,255,255,0.78);max-width:560px;margin-bottom:28px;line-height:1.75}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:36px}
+.hero-quote{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;font-style:italic;color:var(--brand-white);line-height:1.5;margin-bottom:16px}
+.hero-quote-attr{font-size:13px;color:var(--brand-gold);font-weight:600}
+.section{padding:80px 24px}.section-light{background:var(--brand-light)}.section-white{background:var(--brand-white)}
+.section-inner{max-width:var(--container);margin:0 auto}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-blue);margin-bottom:10px;display:block}
+.section-title{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--brand-text);letter-spacing:-0.02em;margin-bottom:12px}
+.section-subtitle{font-size:16px;color:var(--brand-muted);max-width:640px;margin-bottom:48px;line-height:1.75}
+.overview{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.desc h3{font-size:22px;font-weight:800;color:var(--brand-text);margin-bottom:16px}
+.desc p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:14px}
+.desc .qi{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;font-style:italic;color:var(--brand-blue);border-left:3px solid var(--brand-crayon);padding-left:16px;margin:20px 0}
+.meta-card{background:var(--brand-dark);padding:36px;color:white}
+.meta-card h4{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand-gold);margin-bottom:20px}
+.mc-item{border-top:1px solid rgba(255,255,255,0.08);padding:14px 0}
+.mc-item:first-of-type{border-top:none;padding-top:0}
+.mc-label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.55);margin-bottom:4px}
+.mc-val{font-size:14px;color:var(--brand-white)}
+.takeaways-section{margin-top:56px;background:var(--brand-white);padding:48px;border:1px solid #e0ddd6}
+.takeaways-section h3{font-size:22px;font-weight:800;margin-bottom:22px}
+.takeaways-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.takeaway{padding:20px;background:var(--brand-light);border-left:3px solid var(--brand-crayon)}
+.takeaway h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--brand-text)}
+.takeaway p{font-size:14px;color:var(--brand-muted);margin:0;line-height:1.65}
+.testimonial-block{background:var(--brand-dark);color:var(--brand-white);padding:48px;margin-top:48px;text-align:center}
+.testimonial-block blockquote{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:700;font-style:italic;line-height:1.45;max-width:780px;margin:0 auto 18px}
+.testimonial-block cite{font-size:13px;color:var(--brand-gold);font-style:normal;font-weight:600;letter-spacing:0.04em}
+.cta-strip{background:var(--brand-dark);color:var(--brand-white);padding:64px 24px;text-align:center}
+.cta-strip h2{font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--brand-white);margin-bottom:14px}
+.cta-strip p{font-size:16px;color:rgba(255,255,255,0.7);max-width:620px;margin:0 auto 28px}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.footer{background:#0a0a0a;color:rgba(255,255,255,0.55);padding:40px 24px;text-align:center;font-size:13px}
+.footer a{color:var(--brand-gold);text-decoration:none}
+@media(max-width:900px){.header-nav{display:none}.hero-inner{grid-template-columns:1fr}.overview{grid-template-columns:1fr}.takeaways-grid{grid-template-columns:1fr}.testimonial-block blockquote{font-size:18px}}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-inner">
+  <a href="https://amandalipp.com" class="header-logo"><img src="https://amandalipp.com/wp-content/uploads/2021/04/logo1.png" alt="Amanda Lipp"></a>
+  <nav class="header-nav">
+    <a href="index">Home</a>
+    <a href="speaking.html" class="active">Speaking</a>
+    <a href="index#resources">Resources</a>
+    <a href="index#portfolio">Case Studies</a>
+    <a href="index#media">Media Kit</a>
+    <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Book Kay</a>
+  </nav>
+</div></header>
+
+<div class="breadcrumb"><div class="breadcrumb-inner">
+  <a href="index">Home</a> &rsaquo; <a href="speaking.html">Speaking</a> &rsaquo; <span>You Got This! Youth Leadership &amp; Advocacy</span>
+</div></div>
+
+<section class="hero"><div class="hero-inner">
+  <div>
+    <div class="hero-eyebrow">Keynote &middot; Youth &amp; Young Adult</div>
+    <h1>You Got This! <span class="crayon-hl" style="background:rgba(232,103,74,0.3)">Youth Leadership</span> &amp; Advocacy</h1>
+    <p class="hero-text">For young adults navigating identity, mental health, and stepping into leadership roles. Kay meets young people where they are &mdash; and invites them to rise.</p>
+    <div class="hero-actions">
+      <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Book This Keynote</a>
+      <a href="speaking.html" class="btn btn-light">Back to Speaking</a>
+    </div>
+  </div>
+  <div><div class="hero-card">
+    <div class="hero-quote">&ldquo;You don&rsquo;t have to have it all figured out to <span class="crayon-hl" style="background:rgba(232,103,74,0.3)">lead</span>. You just have to start.&rdquo;</div>
+    <div class="hero-quote-attr">&mdash; Kay Lipp</div>
+  </div></div>
+</div></section>
+
+<section class="section section-white"><div class="section-inner">
+  <span class="eyebrow">The Talk</span>
+  <h2 class="section-title">A keynote for the <span class="crayon-hl">next generation</span></h2>
+
+  <div class="overview">
+    <div class="desc">
+      <h3>What it&rsquo;s about</h3>
+      <p>Young people are stepping into leadership earlier than ever &mdash; as peer advocates, student organizers, creators, and changemakers. And they&rsquo;re doing it while navigating identity, mental health, and a world that expects them to have answers.</p>
+      <p>Kay speaks from direct experience: from a mental health crisis at 18 to leading organizations, producing films, and keynoting across the country. This talk is permission, practical tools, and a roadmap.</p>
+      <div class="qi">&ldquo;You are not behind. You are becoming.&rdquo;</div>
+      <p>Designed for student leadership summits, college orientations, TAY programs, and youth advocacy events.</p>
+    </div>
+    <div class="meta-card">
+      <h4>At a Glance</h4>
+      <div class="mc-item"><div class="mc-label">Format</div><div class="mc-val">Keynote (30&ndash;60 min), Q&amp;A, or Workshop</div></div>
+      <div class="mc-item"><div class="mc-label">Audiences</div><div class="mc-val">High school, college, young professionals</div></div>
+      <div class="mc-item"><div class="mc-label">Includes</div><div class="mc-val">Story, tools, peer-ready activities</div></div>
+      <div class="mc-item"><div class="mc-label">Capacity</div><div class="mc-val">50 to 2,500+</div></div>
+      <div class="mc-item"><div class="mc-label">Virtual</div><div class="mc-val">Available hybrid or remote</div></div>
+      <div style="margin-top:24px"><a href="https://amandalipp.com/have-a-project-in-mind/" class="btn" style="width:100%;text-align:center;box-shadow:none;border-color:var(--brand-gold)">Book This Keynote</a></div>
+    </div>
+  </div>
+
+  <div class="takeaways-section">
+    <h3>What young leaders walk away with</h3>
+    <div class="takeaways-grid">
+      <div class="takeaway"><h4>Own their story</h4><p>Share with purpose, power, and psychological safety &mdash; without oversharing.</p></div>
+      <div class="takeaway"><h4>Lead with identity</h4><p>Integrate lived experience, culture, and values into their leadership style.</p></div>
+      <div class="takeaway"><h4>Build peer networks</h4><p>Start and sustain mental health advocacy in schools, orgs, and communities.</p></div>
+      <div class="takeaway"><h4>Use creative tools</h4><p>Film, illustration, social media &mdash; the medium is the message.</p></div>
+    </div>
+  </div>
+
+  <div class="testimonial-block">
+    <blockquote>&ldquo;This was the most impactful session of our entire conference. The students are still talking about it.&rdquo;</blockquote>
+    <cite>&mdash; Program Director, Youth Leadership Initiative</cite>
+  </div>
+</div></section>
+
+<section class="cta-strip">
+  <h2>Bring Kay to your youth event</h2>
+  <p>Summits, orientations, assemblies, advocacy days &mdash; Kay adapts to your audience.</p>
+  <div class="cta-actions">
+    <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Book This Keynote</a>
+    <a href="speaking.html" class="btn btn-light">Browse Other Talks</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; Lipp Studios &middot; <a href="https://amandalipp.com">amandalipp.com</a></p>
+</footer>
+
+</body>
+</html>
