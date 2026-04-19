@@ -211,6 +211,19 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 .footer a{color:var(--brand-gold);text-decoration:none}
 .footer a:hover{text-decoration:underline}
 
+/* ── STICKY BOTTOM BANNER ── */
+#book-banner{position:fixed;bottom:0;left:0;width:100%;background:var(--brand-dark);z-index:999;box-shadow:0 -4px 20px rgba(0,0,0,0.2);transition:transform .3s ease}
+#book-banner.hidden{transform:translateY(100%)}
+.banner-inner{max-width:var(--container);margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.banner-text{color:rgba(255,255,255,0.7);font-size:14px;font-weight:500;display:flex;align-items:center;gap:10px}
+.banner-text strong{color:var(--brand-gold);font-family:'Montserrat',sans-serif;font-weight:700}
+.banner-actions{display:flex;gap:12px;align-items:center}
+.banner-book{display:inline-block;background:var(--brand-gold);color:var(--brand-dark);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;padding:10px 24px;text-decoration:none;letter-spacing:.02em;transition:var(--transition);border:2px solid var(--brand-gold);white-space:nowrap}
+.banner-book:hover{background:transparent;color:var(--brand-gold)}
+.banner-close{background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer;padding:4px 8px;transition:color .2s}
+.banner-close:hover{color:white}
+body{margin-bottom:56px}
+
 @media(max-width:900px){
   .header-nav{display:none}
   .hero-inner{grid-template-columns:1fr}
@@ -228,6 +241,9 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 }
 @media(max-width:600px){
   .audience-grid,.flow,.related-grid{grid-template-columns:1fr}
+  .banner-text span{display:none}
+  .banner-inner{justify-content:center}
+  body{margin-bottom:52px}
 }
 </style>
 </head>
@@ -537,6 +553,20 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
   <p>&copy; Lipp Studios &middot; <a href="https://amandalipp.com">amandalipp.com</a></p>
 </footer>
 
+<!-- STICKY BOOK BANNER -->
+<div id="book-banner">
+  <div class="banner-inner">
+    <div class="banner-text">
+      <strong>Interactive Crayon Workshop</strong>
+      <span>Hands-on, playful, intentional</span>
+    </div>
+    <div class="banner-actions">
+      <a href="https://amandalipp.com/have-a-project-in-mind/" class="banner-book">Book This Workshop &rarr;</a>
+      <button class="banner-close" onclick="closeBanner()" title="Close">&times;</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // FAQ Accordion
 document.querySelectorAll('.faq-header').forEach(h=>{
@@ -552,6 +582,22 @@ document.querySelectorAll('.faq-header').forEach(h=>{
       b.style.maxHeight=b.scrollHeight+'px';
     }
   });
+});
+
+// Sticky banner
+function closeBanner(){
+  document.getElementById('book-banner').style.display='none';
+  document.body.style.marginBottom='0';
+}
+let lastST=0;
+window.addEventListener('scroll',function(){
+  const b=document.getElementById('book-banner');
+  if(!b||b.style.display==='none')return;
+  let st=window.pageYOffset;
+  if(st>lastST&&st>200)b.classList.add('hidden');
+  else b.classList.remove('hidden');
+  lastST=st<=0?0:st;
+  if(st+window.innerHeight>=document.documentElement.scrollHeight-100)b.classList.remove('hidden');
 });
 </script>
 
