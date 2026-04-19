@@ -107,9 +107,10 @@ h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-
 
 /* ── TALK CARDS ── */
 .talks-grid{display:grid;grid-template-columns:1fr;gap:24px}
-.talk-card{background:var(--brand-white);border:1px solid #e0ddd6;padding:36px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;transition:var(--transition);text-decoration:none;color:inherit;position:relative}
+.talk-card{background:var(--brand-white);border:1px solid #e0ddd6;padding:36px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;transition:var(--transition);text-decoration:none;color:inherit;position:relative;overflow:hidden}
 .talk-card:hover{border-color:var(--brand-dark);box-shadow:var(--shadow-soft);transform:translateY(-2px)}
 .talk-card.featured{border:2px solid var(--brand-dark);background:linear-gradient(135deg,var(--brand-white) 0%,#faf8f3 100%)}
+.talk-card.featured::after{content:'SIGNATURE';position:absolute;top:18px;right:-36px;background:var(--brand-gold);color:var(--brand-dark);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.12em;padding:5px 42px;transform:rotate(45deg);box-shadow:0 2px 8px rgba(0,0,0,0.12);z-index:2}
 .talk-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;padding:8px 14px;background:var(--brand-dark);color:var(--brand-gold);white-space:nowrap;align-self:flex-start}
 .talk-card.featured .talk-badge{background:var(--brand-gold);color:var(--brand-dark)}
 .talk-badge.workshop{background:var(--brand-teal);color:var(--brand-white)}
