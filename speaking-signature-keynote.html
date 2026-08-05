@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Think Outside the Crayon Box | Signature Keynote &middot; Kay Lipp</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand-blue:#035787;--brand-burgundy:#5f0d23;--brand-dark:#141414;--brand-gold:#d6b13f;
+  --brand-light:#f3f3f0;--brand-white:#ffffff;--brand-text:#1a1a1a;--brand-muted:#5f6368;
+  --brand-teal:#1f6f78;--brand-crayon:#e8674a;--container:1180px;
+  --shadow-soft:0 8px 24px rgba(0,0,0,0.08);--transition:0.3s ease
+}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Open Sans',Arial,Helvetica,sans-serif;color:var(--brand-text);background:var(--brand-white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:'Montserrat','Arial Black',Helvetica,sans-serif;line-height:1.2}
+
+.btn{display:inline-block;background:var(--brand-gold);color:var(--brand-text);font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;line-height:1;padding:14px 26px;border:1px solid #8c7420;text-decoration:none;box-shadow:2px 2px 0 rgba(0,0,0,0.15);transition:var(--transition);cursor:pointer;letter-spacing:0.02em}
+.btn:hover{background:var(--brand-burgundy);color:var(--brand-white);border-color:var(--brand-burgundy)}
+.btn-light{background:transparent;color:var(--brand-white);border:2px solid rgba(255,255,255,0.5);box-shadow:none}.btn-light:hover{background:var(--brand-white);color:var(--brand-dark);border-color:var(--brand-white)}
+.btn-sm{padding:10px 18px;font-size:12px}
+
+.crayon-hl{position:relative;display:inline;padding:4px 10px;background:rgba(214,177,63,0.45);margin:-2px -4px}
+.crayon-hl-blue{background:rgba(3,87,135,0.18)}
+.crayon-hl-teal{background:rgba(31,111,120,0.18)}
+.crayon-hl-crayon{background:rgba(232,103,74,0.28)}
+
+/* GOLD TORN EDGE (below gold strip) */
+.has-crayon-sep{position:relative;overflow:visible!important}
+.has-crayon-sep::before{content:'';position:absolute;left:0;top:0;width:100%;height:24px;transform:translateY(-50%);pointer-events:none;z-index:3;background:url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSI3NzAgODgwIDQ4MCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBmaWxsPSIjZDZiMTNmIj48Zz48Zz48Zz48cGF0aCBkPSJNMTI0OC40OSw4ODUuMzZjMC43LDAuMDgsMC40OC0wLjM2LDAuNTktMC40MkMxMjQ3Ljg5LDg4NC45NiwxMjQ4LjUyLDg4NS40NywxMjQ4LjQ5LDg4NS4zNnoiLz48cG9seWdvbiBwb2ludHM9IjEyMzYuOCw4ODUuNjggMTIzNy4wMiw4ODUuNTEgMTIzNS4yOCw4ODUuODUiLz48cGF0aCBkPSJNMTIyNS45Myw4ODUuMjNjMSwwLjc1LDMuOTUsMC4wMiw1Ljg4LDAuMzVsMC4zMSwwLjE4bDAuOS0wLjUzQzEyMzAuNjUsODg1LjE5LDEyMjcuNTgsODg1LjQ5LDEyMjUuOTMsODg1LjIzeiIvPjxwYXRoIGQ9Ik0xMjIwLjE3LDg4My41YzAuMzUsMC4yOS0xLjI2LDAuMjEsMS4zNSwwLjEyYy0wLjEzLTAuMDMtMC4xNy0wLjA1LTAuMjQtMC4wOEMxMjIxLjA0LDg4My41NSwxMjIwLjcyLDg4My41NCwxMjIwLjE3LDg4My41eiIvPjxwYXRoIGQ9Ik0xMjIxLjI4LDg4My41NUMxMjIyLjQyLDg4My41NiwxMjIwLjUzLDg4My4yOSwxMjIxLjI4LDg4My41NXoiLz48cGF0aCBkPSJNMTIxNS45Nyw4ODMuNTdsMS41Mi0wLjIxYy0wLjMxLTAuMTctMS42Ni0wLjI0LTEuMTUtMC4zNUMxMjE0Ljc4LDg4My4xMSwxMjE1LjEsODgzLjI4LDEyMTUuOTcsODgzLjU3eiIvPjxwYXRoIGQ9Ik0xMjE0LjUzLDg4NC4wNWwwLjc5LTAuMDhDMTIxNS4xOCw4ODMuOSwxMjE0Ljk3LDg4My44NywxMjE0LjUzLDg4NC4wNXoiLz48cGF0aCBkPSJNMTIxNi45OCw4ODMuNzlsLTEuNjcsMC4xOGMwLjIyLDAuMTIsMC4yMywwLjM1LDAuNzYtMC4wNkMxMjE1LjkzLDg4NC4xMiwxMjE2LjI3LDg4My45MiwxMjE2Ljk4LDg4My43OXoiLz48cGF0aCBkPSJNMTIxNy45Miw4ODMuOTJjMC44NCwwLjE4LDEuOTQsMC4zLDAuNDEsMC41MUMxMjIxLjIyLDg4NC40MSwxMjIwLjgxLDg4My45LDEyMTcuOTIsODgzLjkyeiIvPjxwYXRoIGQ9Ik0xMjI1LjM0LDg4NS45NGwxLjEyLDAuMjVsMC45OS0wLjJDMTIyNi45Niw4ODYuMDksMTIyNS4yOCw4ODUuNzIsMTIyNS4zNCw4ODUuOTR6Ii8+PHBhdGggZD0iTTEyMDYuNTYsODgzLjAyYy0wLjEsMC4xNSwwLjUsMC40MSwwLjYxLDAuNjFsMS4xMi0wLjE2QzEyMDcuNzIsODgzLjM2LDEyMDYuNjMsODgzLjI1LDEyMDYuNTYsODgzLjAyeiIvPjxwYXRoIGQ9Ik0xMjA3LjE3LDg4My42M2wtMS42NywwLjIzQzEyMDYuOTksODgzLjkyLDEyMDcuMjYsODgzLjgsMTIwNy4xNyw4ODMuNjN6Ii8+PHBvbHlnb24gcG9pbnRzPSIxMjE0LjI0LDg4NC44NCAxMjE2Ljk5LDg4NC4zNiAxMjEzLjcxLDg4NC44MyIvPjxwb2x5Z29uIHBvaW50cz0iMTIwMC4xOCw4ODIuOTMgMTIwMS4xMyw4ODIuNTkgMTE5OS40NCw4ODMuMSIvPjxwYXRoIGQ9Ik0xMTk1Ljk1LDg4Mi45NmMwLjctMC4yOS0wLjk2LTAuNS0wLjIyLTAuNjdjLTEuMTUsMC4wNS0yLjEzLDAuMy0zLjAyLDAuNTJDMTE5My42NSw4ODIuNjgsMTE5NC42NSw4ODIuNzIsMTE5NS45NSw4ODIuOTZ6Ii8+PHBhdGggZD0iTTExOTEuMjMsODgzLjEzYzAuNDctMC4wNywwLjk2LTAuMTksMS40OC0wLjMyQzExOTIuMjEsODgyLjg3LDExOTEuNzIsODgyLjk3LDExOTEuMjMsODgzLjEzeiIvPjxwYXRoIGQ9Ik0xMjAyLjY2LDg4My43NmMtMC4xMy0wLjA5LTAuMzctMC4zNC0xLjMxLTAuNDVsMC42NSwwLjQzQzEyMDIuMiw4ODMuNzUsMTIwMi40Miw4ODMuNzUsMTIwMi42Niw4ODMuNzZ6Ii8+PHBhdGggZD0iTTEyMDIuMDIsODgzLjc2bC0wLjAyLTAuMDFjLTAuNzEtMC4wMi0xLjIxLTAuMDMtMS40Mi0wLjA0QzEyMDAuNzYsODgzLjcyLDEyMDEuMTksODgzLjczLDEyMDIuMDIsODgzLjc2eiIvPjxwYXRoIGQ9Ik0xMjAyLjgyLDg4My43NmMtMC4wNiwwLTAuMTEsMC0wLjE3LDBDMTIwMi43Miw4ODMuOCwxMjAyLjc2LDg4My44MiwxMjAyLjgyLDg4My43NnoiLz48cGF0aCBkPSJNMTIwOS44Nyw4ODQuMzdjLTAuOTksMC4yMi0zLjAzLDAuNDQtMS4wNiwwLjg0QzEyMDkuNTIsODg0Ljk0LDEyMDguMzksODg0LjcxLDEyMDkuODcsODg0LjM3eiIvPjxwYXRoIGQ9Ik0xMjAzLjYzLDg4NC4zbDEuNzcsMC4xMmMtMC4wMy0wLjExLTAuMzUtMC4yOCwwLjE0LTAuMzlMMTIwMy42Myw4ODQuM3oiLz48cG9seWdvbiBwb2ludHM9IjEyMDIuNzYsODg0LjQzIDEyMDMuNjMsODg0LjMgMTIwMi45Nyw4ODQuMjYiLz48cGF0aCBkPSJNMTE5NC4yNiw4ODMuNTRjLTAuNzcsMC4xOC0xLjYsMC4yLTIuNTUsMC4yM2MxLjAxLDAuMDksMi4wNiwwLjEzLDMuMDYsMC4xNEMxMTk0LjkxLDg4My43NiwxMTk1LjM1LDg4My41MiwxMTk0LjI2LDg4My41NHoiLz48cGF0aCBkPSJNMTE5OC4wMyw4ODMuNjdjLTAuMDUsMC4wMS0wLjEyLDAuMDItMC4xNywwLjAyQzExOTcuOTcsODgzLjczLDExOTguMDUsODgzLjc1LDExOTguMDMsODgzLjY3eiIvPjxwYXRoIGQ9Ik0xMTgyLjQsODgzLjc2YzAuMDUsMC4wMywwLjEsMC4wNSwwLjE1LDAuMDhjMC4wMS0wLjAzLDAuMDItMC4wNSwwLjAzLTAuMDdMMTE4Mi40LDg4My43NnoiLz48cGF0aCBkPSJNMTE5NC45NCw4ODMuOThjMC43NiwwLjA5LDEuMjItMC4wMiwxLjY1LTAuMTVjLTAuNTcsMC4wNC0xLjE3LDAuMDctMS44MiwwLjA3QzExOTQuNzEsODgzLjk2LDExOTQuNyw4ODQsMTE5NC45NCw4ODMuOTh6Ii8+PHBhdGggZD0iTTExODguNjMsODgzLjMyYzAuNCwwLjA5LDAuODUsMC4xNywxLjMyLDAuMjRDMTE4OS41Niw4ODMuNDIsMTE4OC43Nyw4ODMuMjEsMTE4OC42Myw4ODMuMzJ6Ii8+PHBhdGggZD0iTTExOTcuNjEsODgzLjU4YzAuMDQtMC4wMSwwLjA3LTAuMDEsMC4xMS0wLjAyQzExOTcuNDcsODgzLjQ3LDExOTcuNSw4ODMuNTEsMTE5Ny42MSw4ODMuNTh6Ii8+PHBhdGggZD0iTTExOTcuNjEsODgzLjU4Yy0wLjM5LDAuMDYtMC43LDAuMTYtMS4wMSwwLjI1YzAuNDYtMC4wMywwLjktMC4wNywxLjI3LTAuMTNDMTE5Ny43Nyw4ODMuNjcsMTE5Ny42Nyw4ODMuNjIsMTE5Ny42MSw4ODMuNTh6Ii8+PHBhdGggZD0iTTExNzkuNTksODg2LjUyYzAuMTMtMC40LDIuMTMtMC43NywzLjg2LTAuMzVjMS43LTAuMywwLjU4LTEuNi0wLjktMi4zM2MtMC4wNSwwLjE3LTAuMDUsMC4zMy0xLjgsMC41N2MwLjYxLDAuMjEsMy44OSwwLjQ5LDIuNDEsMC44NmMtMi4zMiwwLjIxLTEuOS0wLjEzLTMuMDMtMC4zNGMwLjk2LDAuNDktMi45NCwwLjczLTIuNDQsMS40NmwyLjAzLTAuMjdDMTE3OS43Niw4ODYuMjMsMTE3OS4wMyw4ODYuNDIsMTE3OS41OSw4ODYuNTJ6Ii8+PHBhdGggZD0iTTExODUuODksODgzLjg3bDAuNzItMC4wNWMtMC44Mi0wLjA3LTEuNDEtMC4yMi0yLjQ5LTAuNTNjLTEuMiwwLjItMS40NSwwLjM1LTEuNTMsMC40OGwzLjU1LDAuMDRMMTE4NS44OSw4ODMuODd6Ii8+PHBhdGggZD0iTTExODkuODQsODgzLjgyYy0wLjU2LDAuNDMtMi4yOSwwLjYxLTEuMjMsMS4wOGMyLjExLTAuMDIsMS40OC0wLjM2LDIuNzUtMC41NGMtMy40MSwwLjEsMC45OC0wLjI0LTEuNDktMC40OWMwLjY3LTAuMDcsMS4yNy0wLjA5LDEuODQtMC4xMWMtMC42MS0wLjA1LTEuMjEtMC4xMi0xLjc3LTAuMmMwLjAzLDAuMDEsMC4wNSwwLjAyLDAuMDgsMC4wM2wwLjAyLDBsMCwwLjAxYzAuMTUsMC4wNSwwLjIsMC4wOSwwLjAzLDAuMDZjLTAuMDEsMC4wMS0wLjA1LDAuMDEtMC4wNywwLjAxQzExODkuOTcsODgzLjcyLDExODkuOTEsODgzLjc3LDExODkuODQsODgzLjgyYy0wLjk5LTAuMDktMC4xNi0wLjExLDAuMTUtMC4xNmMwLjAxLTAuMDIsMC4wNC0wLjA0LDAuMDQtMC4wNmwtMC4wMS0wLjAxbC0zLjQyLDAuMjNDMTE4Ny4zMyw4ODMuODcsMTE4OC4yNCw4ODMuODcsMTE4OS44NCw4ODMuODJ6Ii8+PHBhdGggZD0iTTEyMDYuOTgsODg2LjExYy0wLjExLTAuMDQtMC4xLTAuMDctMC4xMS0wLjFDMTIwNi42NSw4ODYuMDYsMTIwNi41Niw4ODYuMDksMTIwNi45OCw4ODYuMTF6Ii8+PHBhdGggZD0iTTEyMDUuNTcsODg1LjgzYzAuMjUtMC4wNiwwLjQ2LTAuMjIsMS4yNy0wLjE3YzAuNywwLjE0LTAuMDEsMC4yMSwwLjAzLDAuMzVjMC40OS0wLjExLDEuNzEtMC4yOCwwLjE4LTAuNTJsLTAuMjQsMC4wNWMtMS4zNy0wLjE4LTMuMTMtMC43My0yLjg5LTAuNzlDMTIwNC4zMSw4ODUuMTYsMTIwNC42Niw4ODUuNDMsMTIwNS41Nyw4ODUuODN6Ii8+PHBhdGggZD0iTTExOTcuNjEsODg0LjkxbC0yLjg1LDAuMmwxLjQ1LDAuMzhsLTAuMDctMC4yMkMxMTk3Ljc2LDg4NS4zNiwxMTk3LjQxLDg4NS4wOCwxMTk3LjYxLDg4NC45MXoiLz48cG9seWdvbiBwb2ludHM9IjExODIuMDcsODgzLjU1IDExODIuNDUsODgzLjA5IDExODAuODEsODgzLjc0Ii8+PHBvbHlnb24gcG9pbnRzPSIxMTc4LjM3LDg4My42MiAxMTc4LjUxLDg4My4yMiAxMTc3LjUzLDg4My40NyIvPjxwYXRoIGQ9Ik05NjkuODQsODg4LjY0bC0wLjg0LDAuMDlDOTY5LjQsODg4LjcxLDk2OS42Niw4ODguNjgsOTY5Ljg0LDg4OC42NHoiLz48cGF0aCBkPSJNOTc1Ljg5LDg4OC44NWwwLjE1LTAuMTlDOTc1Ljc3LDg4OC43Niw5NzUuNjUsODg4LjgzLDk3NS44OSw4ODguODV6Ii8+PHBhdGggZD0iTTEwODcuNjQsODg0Ljk5Yy0xLjIyLTAuMzYtMi41OC0wLjkyLTIuNDMtMC40OGwwLjM4LDAuNDNDMTA4Ni40Myw4ODQuODYsMTA4Ny4wOCw4ODQuOSwxMDg3LjY0LDg4NC45OXoiLz48cGF0aCBkPSJNMTAyNS41MSw4ODcuNTNjMC4xMSwwLjA0LDAuMjQsMC4wOSwwLjM1LDAuMTRjMC4zLTAuMTUsMC41OC0wLjI4LDAuODMtMC40MUMxMDI2LjM0LDg4Ny4zNCwxMDI1Ljk0LDg4Ny40MywxMDI1LjUxLDg4Ny41M3oiLz48cGF0aCBkPSJNMTAyNC42Myw4ODkuMzFsLTEuNi0wLjNDMTAyMy4zOSw4ODkuMTIsMTAyMy45MSw4ODkuMjEsMTAyNC42Myw4ODkuMzF6Ii8+PHBhdGggZD0iTTkzNi44NCw4ODguMDJsLTAuOTgsMC40MkM5MzcuMzgsODg4LjQ3LDkzNi43MSw4ODguMjMsOTM2Ljg0LDg4OC4wMnoiLz48cGF0aCBkPSJNMTE0MC41MSw4ODQuM2MtMS4wNS0wLjE1LTEuODktMC4yMS0yLjYyLTAuMjFDMTEzOS4xNSw4ODQuMzEsMTE0MC4xOCw4ODQuNjcsMTE0MC41MSw4ODQuM3oiLz48cGF0aCBkPSJNOTcyLjM2LDg4NC4xMWMtMC41MSwwLjA2LTAuNzMsMC4xNS0wLjcyLDAuMjRDOTcyLjE3LDg4NC4zLDk3Mi40Nyw4ODQuMjIsOTcyLjM2LDg4NC4xMXoiLz48cGF0aCBkPSJNMTEzNC44NSw4ODQuMTRjMC4xOSwwLjA0LDAuMzcsMC4wNiwwLjU2LDAuMDljMC43Ny0wLjA5LDEuNTQtMC4xNiwyLjQ4LTAuMTVDMTEzNi45NCw4ODMuOTIsMTEzNS44Nyw4ODMuODIsMTEzNC44NSw4ODQuMTR6Ii8+PHBhdGggZD0iTTgxNy4zLDg4OS42N2MtMC4wOS0wLjAxLTAuMTktMC4wMi0wLjI3LTAuMDRDODE3LjAxLDg4OS43LDgxNy4xMyw4ODkuNjksODE3LjMsODg5LjY3eiIvPjxwYXRoIGQ9Ik03ODIuNCw4ODYuMTVjMC4zNC0wLjAxLDAuODksMC4wNCwxLjQxLDAuMDVDNzgzLjU2LDg4Ni4xNiw3ODMuMTMsODg2LjE1LDc4Mi40LDg4Ni4xNXoiLz48cGF0aCBkPSJNMTE2My40OSw4ODMuNThDMTE2NC4yNyw4ODMuNTQsMTE2My42MSw4ODMuNTMsMTE2My40OSw4ODMuNTh6Ii8+PHBhdGggZD0iTTExNjcuMzIsODg1LjI1Yy0wLjE3LDAuMDUtMC4yOSwwLjExLTAuMzEsMC4yMUMxMTY3LjA3LDg4NS4zNiwxMTY3LjE4LDg4NS4yOSwxMTY3LjMyLDg4NS4yNXoiLz48cGF0aCBkPSJNMTEyNy4xLDg4Ni45OWMtMC4wMiwwLTAuMDQsMC0wLjA3LDBDMTEyNy4yNiw4ODcuMDcsMTEyNy4yMiw4ODcuMDUsMTEyNy4xLDg4Ni45OXoiLz48cGF0aCBkPSJNMTE2NC42Nyw4ODMuNzZjLTAuMy0wLjA1LTAuNjQtMC4wOS0xLTAuMTJDMTE2My44Myw4ODMuNjgsMTE2NC4xMyw4ODMuNzIsMTE2NC42Nyw4ODMuNzZ6Ii8+PHBhdGggZD0iTTExNjQuNTEsODgzLjU2YzAuMjcsMC4wMSwwLjQ4LDAuMDIsMC42OSwwLjAzQzExNjUuMjksODgzLjUyLDExNjUuMiw4ODMuNDcsMTE2NC41MSw4ODMuNTZ6Ii8+PHBhdGggZD0iTTExNjIuMzksODgzLjYyYzAuNDUtMC4wMSwwLjg3LDAsMS4yNywwLjAzYy0wLjE1LTAuMDMtMC4yMi0wLjA1LTAuMTgtMC4wN0MxMTYzLjI2LDg4My41OSwxMTYyLjkzLDg4My42LDExNjIuMzksODgzLjYyeiIvPjxwYXRoIGQ9Ik04ODEuMzIsODg2LjQ3Yy0wLjA1LTAuMDEtMC4xMS0wLjAyLTAuMTctMC4wNEM4ODAuMzcsODg2LjYyLDg4MC43MSw4ODYuNTksODgxLjMyLDg4Ni40N3oiLz48cGF0aCBkPSJNMTA2Ny4yNyw4ODkuNjFjMC4wNCwwLDAuMDYtMC4wMiwwLjA5LTAuMDJjLTAuMDQsMC0wLjA4LTAuMDEtMC4xMi0wLjAyTDEwNjcuMjcsODg5LjYxeiIvPjxwYXRoIGQ9Ik0xMDY0LjQ1LDg4OS45NGMxLjItMC41NCwxLjg4LTAuNDgsMi43OS0wLjM2bC0wLjkzLTEuMjVMMTA2NC40NSw4ODkuOTR6Ii8+PHBhdGggZD0iTTk1Ny42OSw4ODguMjhjLTIuNTctMC42Ny01LjA0LTAuMDMtNi40NiwwLjI3Yy0wLjk4LTAuMjMsMC44Mi0wLjk5LTIuMDEtMC44NmMtMy45OCwwLjEzLDAuNzIsMS4wMi0xLjY3LDEuMDlsLTEuNzEtMC43NmMtMy4wNiwwLjQyLTUuMzMtMC4wOS03LjktMC4yNmMtMC41OCwwLjA0LTAuODcsMC4xMS0xLjAxLDAuMThjLTIuNzMtMC4zNy01Ljc1LDAuNTctNy44MSwwLjNjMC40OS0wLjE0LTEuMTctMC40Ni0xLjQyLTAuNjNsLTMuNzMsMC4zOWMxLjY1LTAuMTYsMS41OC0wLjU3LDEuODktMC45NmMtMS4xNywwLjAzLTEuNzIsMC4yNC0yLjUxLDAuMjhjMC40OS0wLjE0LDAuOTgtMC4yOCwwLjM2LTAuNDZsLTMuOTIsMC42M2MwLjIzLDAuMDcsMC42OCwwLjEsMS4wNiwwLjEyYy0wLjk4LDAtMy4wOSwwLjI0LTQuNDktMC4xYzAuMTItMC4xNSwwLjYxLTAuMywwLjczLTAuNDVjMS4xNywwLjQ1LDEuODQsMC4wOCwyLjQ1LTAuMjJjLTIuNywwLjA1LTAuNjctMC4xMS0xLjk3LTAuNGMtMS45MSwwLTIuNjksMC41My0yLjE5LDAuODhjLTIuMTUtMC4xNy0yLjgzLTAuMjctNS4wMywwLjE0bDAuNDItMC41NWwtMi4wMiwwLjE3bDEuNjQtMC42N2MtMy44Ny0wLjM3LTAuNzEsMC45NC01LjAxLDAuNjRsLTAuMDEtMC40OGMtMS42NSwwLjE5LTIuMjIsMS4wMS0zLjUxLDAuNDRjLTEuNiwwLjMsMi43NSwwLjY3LTEuMDIsMC43OWMtMC42Ny0wLjI1LTIuMS0wLjQyLTMuMTktMC41MWMtMS4yLDAuMjMsMC45MiwwLjU2LDEuNjksMC40OWMtNS42OSwwLjI4LTMuNTUtMS42Mi04LjYzLTAuOTNjMS43NSwwLjMyLTEuNDQsMC45NSwyLjY4LDAuODljLTEuOTcsMC4zLTMuODgtMC42NS01LjkzLTAuMWwxLjMzLTAuNjNjLTAuNzQsMC0xLjU3LDAuMjMtMS45NywwLjMybDAuMTYtMC40OGMtMi41MiwwLjg3LTQuNzMtMC4zMi02LjIyLDAuOGMxLjAzLTAuODgtMS44OSwwLjA4LTIuOTEtMC4yM2MyLjA4LTAuNjQsNS45OS0wLjA5LDYuMjUtMC44OWMtMC45OC0wLjIyLTEuODQsMC4xOC0yLjc4LTAuMDRjMC42NS0wLjEzLDEuNjEtMC4zNiwxLjg1LTAuNTJjLTMuMjItMC4zOS01LjAzLDAuNTctNi45OCwwLjgxbDMuNDQtMC4yNWMtMC4yNiwwLjgtMS41NSwwLjE2LTIuNSwwLjhjLTEuNzMtMC4zOS0zLjA2LDAuMjYtNC40NywwLjAyYzAuMzcsMCwwLjQtMC4wOCwwLjc3LTAuMDljLTMuNzUsMC4xLTQuODItMS4xNy02LjMxLTEuMTVjLTEuNDctMC4wNy00LjIzLDAuNDMtMy4yMiwwLjc0Yy0xLjE5LDAuMjUsNC45Ny0wLjM2LDIuODYsMC43MmMtMi4xNy0xLjEzLTQuMzksMC41NS05LjA4LTAuMTRjMi4wMy0wLjQ4LTEuMjItMC42MywwLjYtMWMtMi4yMiwwLjE2LTIuMywwLjM0LTMuMjgsMC43bC0wLjY4LTAuMzVjLTIuODgsMC45MS0wLjY2LDAuNzUtNS4wNSwxLjMyYzEuNDctMC4zMy0xLjc4LTAuNDktMC42Ni0wLjc4Yy0xLjIyLDAuMDEtMi40MSwwLjE2LTMuMjksMC40MWwwLjE2LTAuMDZjLTQuNDUsMC4zMy0zLjY2LTAuMzYtNy43LDAuMThsMC40MSwwLjIxYy01LjMxLDAuNzYtMTEuOTcsMC41OS0xNy40MywxLjIybDEuOTQsMC4wN2MtMC41OS0wLjA4LTMuNjYsMC41Ny01LjM5LDAuMzNjMC4zNC0wLjA0LDAuOTItMC4xOCwxLjI0LTAuMTdjLTAuMDYtMC4yNS0wLjc1LTAuNTgtMi4wNy0wLjU2bC0wLjQ4LDAuNDFsLTAuNTUtMC4yNmMtMi4wMSwwLjEyLDAuNjIsMC41MS0xLjM5LDAuNjNjLTEuMjQtMS4wMi04LjY5LDAuMzktMTAuNDgtMC41MWMtMS4zNCwwLjg2LDMuODMtMC4wNywyLjM2LDAuNzJjLTAuNjItMC4wOC0wLjkxLTAuMjItMi4yMi0wLjIybDAuNDgsMC40NWMtNi4xNCwwLjAxLTguNDktMC4zMi0xMy45Ni0wLjIzbDAuMjItMC4xYy0xLjk1LTAuMjItMy0wLjE0LTMuODgsMC4yNGMtMC40LTAuMjMsMS4wMS0wLjMxLDAuMjYtMC41MmMtMy41LDEuMDktNi44MS0xLjIxLTguOTQtMC42YzAuMTgtMC40Ni0wLjgyLTEuMDMtMS42MS0xLjU1Yy0wLjc5LTAuNTItMS4zNy0xLjA0LTAuNDItMS4yOGwtMS4zOC0wLjA3YzAuNTItMC41Myw0LjMsMC40Nyw1LjE0LTAuMTJjMS40MiwwLjMxLDIuODUsMC42Niw0LjI5LDAuOTRjLTAuMTItMC4yNCwwLjYxLTAuNTctMC4wOS0wLjY4YzEuMDcsMC4wMywyLjAxLDAuMDMsMC42Mi0wLjM2YzUuMTQsMS4wNCwxMC40NiwxLDE1LjcyLDAuNzJjNS4yNy0wLjI4LDEwLjUzLTAuNzksMTUuNzItMC42OWMwLjctMC4xLDAuMjgtMC4zLDAtMC40M2MxLjk0LDAuNDksMS44LTAuNDMsMi44NC0wLjU4bDIuODQsMC43MWMxLjEyLTAuMzMsMC4yMi0wLjU0LDAuMjktMC43MmM1LjI5LTAuNDksMTAuNTEsMC4yLDE0Ljc1LTAuNDVjMS4zNywwLjI3LTAuMywwLjcyLDEuNSwwLjc3Yy0yLjQ3LTAuODMsNS4yMi0wLjU5LDMuNjUtMS4xOGMxLjc3LDAuOTEsNi40NywwLjAxLDUuNzMsMS4zN2MyLjE1LDAuMDIsMS43Ni0wLjYyLDEuMTQtMC43MmMyLjUtMC4wMiw0LjUxLTAuMDcsNi41NC0wLjU1YzEuMzgsMC4yNywxMS40LTAuNjMsMTMuNjUsMC4zM2MtMS41My0wLjYyLDAuMTEtMC4zNCwxLjU2LTAuNjZsLTEuMzMtMC41NWwzLjI5LTAuMDFjMC42Ny0wLjA3LDAuODYtMC4wNSwwLjg2LDBjMC41NiwwLjAyLTAuMTMsMC4zNCwxLjI5LDAuNDVjMi4yNC0wLjAxLDIuMzQtMC4zMywzLjU3LTAuNjVsLTAuMzQtMC4wOGwxLjUyLTAuMDhjMS4xMiwwLTMuOTQsMC42NS0wLjI5LDAuODhjMC4wNS0wLjE2LDIuMTgtMC45NiwzLjE3LTAuNTZjLTEuODYsMC0xLjYyLDAuNC0wLjkzLDAuNTZsMi42MS0wLjAxbC0wLjg3LTAuNzJjNy40OS0wLjA4LDE1LjI5LDAuMzUsMjMuMjgsMC4yOGMtMC4xMSwwLjY0LDUuNjYsMC4wMyw0Ljk0LDAuOTdsLTAuMzEtMC4wOWMtMS45NiwwLjA5LDAuNTcsMC43NCwyLjE2LDAuNjRjLTEuNjctMC4zLDMtMC45NC0xLjA2LTEuMDhsMy4xNC0wLjQ0YzEuNzUtMS44LDguMzgsMC4yLDEzLjE1LTAuMzFjLTAuMzQsMC4wNy0wLjQzLDAuMTYtMC40NywwLjIyYzQuMjQtMC41MSw5LjQ4LDAuNjYsMTAuNDcsMC40MWwwLjM2LDAuNTFjMy42My0wLjY2LDQuMDctMC43Myw4LjM3LTAuMjdjLTAuMDYsMC4wOC0wLjU2LDAuMiwwLjEyLDAuMzNjMS4wNS0wLjMzLDIuMTEtMC42Niw1LjA1LTAuNDZsLTAuMTMsMC4xNWw0LjYxLDAuMDljLTAuMDksMS41Myw3LjkzLTAuNjUsOS4yNSwxLjA0YzAuOTItMC40Miw0LjI5LTAuNDQsNS44LTAuNjFjMC4wMSwwLjA3LDAuMSwwLjE0LDAuMzUsMC4yMWMxLjc5LTAuNzcsNS4xLDAuNCw3LjA2LDAuMzdjMS4yOC0wLjE2LDAuNzQtMC40NCwwLjE5LTAuNzFjMi41MSwwLjcyLDctMC41NSw3LjkxLTAuMjVjMS44NSwwLjExLDAuNjgsMC42LDEuMTgsMC45NWMyLjc2LTAuMDgtMC40My0xLjM5LDMuMjUtMC43Yy0wLjQzLDAuMDYtMS4yMywwLjA5LTAuOTIsMC4xOWMxLjQxLDAuMTYsMy44OSwxLjk3LDUuMzEsMS42NWwtMC45Mi0wLjI5YzIuNTgtMC4zNCw2LjA2LDEuMzgsNi41LDAuMzVsLTAuMjMtMC40OGM0LjQyLDAuNzEsMS44OC0wLjE1LDYuMzcsMC40OGwtMC4wNiwwLjA4YzEuOTYtMC4wNiwzLjAxLDAuNTYsMy45OS0wLjJsLTAuNjctMC4xMWMyLjQzLTAuMDIsMi42NSwwLjA0LDUuMTMsMC4xMWMwLjI5LTAuMDcsMS40OS0wLjE3LDEuODMsMGMwLjEyLTAuNjMsNS43NS0wLjIyLDYuODYtMC4xN2MtMS45NiwwLjA3LTEuMDQsMC4zNi0wLjQ4LDAuNjJjMS4xNi0wLjUxLDEuOTYtMC41NSwzLjU2LTAuMTZjMC4yNC0wLjgsMC41Ny0xLjY0LDMuNzItMS42NmMtMC40OSwwLjEyLTEuMjYsMC4xOC0wLjk0LDAuMzRjMC4zMiwwLjE3LDEuMDYtMC4wMSwxLjMtMC4wNmMwLjMxLDAuMTctMC43LDAuMjktMC4zNSwwLjU3YzIuMTQtMC43NCwzLjY5LTAuMDIsNi43OC0wLjI3Yy0wLjk4LDAuMjMtMC4xNCwwLjM5LDAuMjEsMC42N2MwLjI1LTAuOSw0LjIzLDAuODEsMy4wNi0wLjM2YzYuMDUsMC43NCwxNS4zNywwLjEsMTcuNzMsMC44NWMwLjY0LDAuMzMsMi4zMi0wLjIxLDMuMzgtMC4yMmwtMC4xNCwwLjRjMi45NS0wLjcyLDIuMy0wLjI3LDUuNzYtMWMtMS40NCwwLjQ3LTAuODQsMC42OSwwLjYxLDEuMDZsMi4zOC0wLjgzbDAuNDcsMC42MWMwLjk4LTAuMjQsMi4wNy0wLjE1LDMuMTYtMC4wNmMtMC41MywwLjAxLTAuMjQsMC4wNi0wLjIxLDAuMTdjMC41Mi0wLjg1LDQuNzgtMC43Nyw1LjQzLTEuMThjMS4wNywwLjgyLDIuODUtMC4yMywzLjY0LDAuNTRjMC4zNS0wLjEyLDAuOC0wLjIyLDEuMjktMC4zYy0wLjUyLTAuMzYtMC43MS0wLjc2LDAuMjUtMC41OWMwLjA4LTAuMDEsMC4xNS0wLjAxLDAuMjMtMC4wMmwwLjQyLDAuNDhjMC45OC0wLjEyLDEuOTgtMC4xOCwyLjYzLTAuMmMtMC4zLTAuMDQtMC42NC0wLjEzLTEtMC4yM2MwLjQyLDAuMDcsMC44MSwwLjE2LDEuMTksMC4yM2MwLjEzLDAsMC4yNiwwLDAuMzUsMGMtMC4wNiwwLjAxLTAuMTMsMC4wMi0wLjIxLDAuMDNjMC42LDAuMTEsMS4yMiwwLjE2LDIuMDctMC4wMmMzLjQzLDAuNyw3LjYtMS4wOSwxMS4zOS0wLjEzYy0wLjU3LTAuMS0xLjM3LTAuMTMtMS41OCwwLjA0YzMuMTYtMC4wOSw2LjMxLDAuNTYsOC4zLDAuMTZsLTAuMTUtMC40NWMyLjMxLTAuMjQsNC4xLTAuNDEsNS45Ny0wLjQxbDAuMDktMC41MWMyLjcxLDAuMTUsOC41Mi0wLjc4LDEwLjIxLDAuMjRjMC42Ni0wLjQyLDMuNzYsMC4wNSw1LjMtMC4xMWwwLjQsMC4zOGMyLjAxLDAuMDksMy4yNS0wLjA3LDQuNDUtMC4yMWM0LjEsMC43NCw3Ljg2LTAuMTQsMTEuNDMtMC4xNGwwLjA0LDAuMTFsMy42Mi0wLjM0Yy0wLjk0LDAuMzcsMC43MS0wLjI2LDEuOC0wLjE4YzEuMTUtMC4yMSwzLjAyLTAuMTQsNC4zOCwwLjFsMi4zMS0wLjAyYy0yLjU2LDAuMywwLjE5LDAuNTYsMC4zNCwxbDEuNDctMC4zOGMwLjYsMC4yMS0wLjk0LDAuMzcsMC4xNSwwLjQ1YzAuOTgtMC4yNSwzLjktMC4yNyw0LjgxLTAuNzVjLTAuMTUtMC4xMS0wLjUtMC4yMS0wLjk0LTAuM2MtMC4xMiwwLjAzLTAuMTIsMC4wMi0wLjA0LTAuMDFjLTAuMDQtMC4wMS0wLjA2LTAuMDEtMC4xLTAuMDJjMC4wNSwwLjAxLDAuMDcsMC4wMSwwLjEyLDAuMDFjMC4xMi0wLjA1LDAuMzItMC4xMiwwLjQtMC4xOGMxLjg0LDAuMDgsMS4xNi0wLjEsMS4wOS0wLjNjMi4wOSwwLjY4LDMuMjUsMC4xOCw0Ljg2LDFjLTIuMTctMC45MSw0Ljc4LTAuMDUsMy40Mi0wLjkyYzEuNTYsMC43LDEuMDYsMC4wMiwyLjA2LDAuNjJjLTIuMTktMC4xOC00LjM2LDAuNDktNi4xMSwwLjgybDEuNzMsMC40MWMtMS4xMiwwLjgxLTMuODgtMC4yNi00LjkxLDAuMDJjMC42OS0wLjIsMi4yNS0wLjAzLDIuMzEsMC4xNWwtMC40Ny0wLjYxYy0yLjQ3LTAuMjEtNC40MywwLjI5LTYuMTgsMC42MWMxLjY2LDAuMTgtMiwwLjM5LTAuNzksMC44MWwxLjMtMC4wOWMwLjYsMC4yMS0wLjY2LDAuNDEtMS4zOSwwLjZjLTQuMTMtMC4zOS0xMS42OCwwLjEyLTEzLjE3LTAuMzNjMC44NSwwLjE0LDIuMzktMC4wMiwzLjEzLTAuMjFsLTEuOTQtMC4yMmMxLjU3LTAuMDUsMi44MiwwLjQ3LDUuMTQsMC4yNGMtMC40LTAuMzgsMS4yOC0wLjk0LTAuNDktMS40NWMtNC40NS0wLjU0LTMuNjMsMS4wNy04Ljk4LDEuMDJjLTAuNDksMC4xMywxLjExLTAuNjUtMS43NC0wLjRjLTMuNTcsMC40Ni02LjE4LDEuMzktNi4xNiwyLjIzYzEuNS0wLjI3LDQuNTEtMC44Miw0Ljk4LTAuMjJjLTEuNSwwLjI4LTQuMSwwLjQ3LTQuMjIsMC44N2MtMS41Ny0wLjY4LDIuODQtMC4yNiwwLjc4LTAuODFjLTEuMDYsMC4wNC0xLjUxLDAuMjgtMiwwLjRjMC43LTAuMzEtMC45Ni0wLjQ4LTEuMjgtMC42M2MtMy40MywwLjA2LTUuNC0wLjIyLTkuMDgtMC4yMWMtMC4yLTAuMS0wLjYtMC4zMi0wLjUtMC40OWMtMS43OSwwLjIzLTQuMzMsMS4zMy0zLjY2LDEuNzZjLTIuMTEsMC4wNy0yLjIyLTAuMjctNC4wMS0wLjA0YzIuODcsMC41OC0wLjU2LTAuMS0wLjg2LDAuNTljLTEuODMsMC4xMS0wLjY1LTAuMzItMS40OS0wLjQ2Yy0wLjMsMC4wOC0xLjAzLDAuMzItMS4wOCwwLjVjLTEuMTMtMC41LDIuMTYtMS4zOCwwLjgzLTEuOTZjLTAuOTItMC4zNi00Ljg3LTAuOTgtNS4xNS0xLjAzYy0wLjg2LDAuNTktMC41NywyLjk2LDAuNzUsMy43Yy0wLjEzLDAuNC0xLjc0LTAuNC0yLjU1LTAuNDNjLTIuMzQtMC42MS0zLjU1LDAuNTUtNS40OSwwLjMzbDEuNDctMC4zOGMtMC4zMi0wLjE2LTMuMTcsMC4wOS0zLjYyLDAuMzNjLTAuMDgtMC4yMiwxLjQ2LTEuMTcsMC41Ny0xLjQzYy0zLjQ4LTAuMDctNi43NywxLjItNi41NCwxLjg3bDUuMzMtMC43NmMwLjE5LDAuNTYtMy43OCwwLjYxLTMuNTUsMS4yOGwtNC45Mi0wLjE1YzAuNjItMC4wMiwyLjUxLTAuMiwxLjc3LTAuNTFjLTIuMTEsMC4wNS0xLjA5LTAuMDktMi41MS0wLjMzYzIuNDEtMC43NCw2LjgyLTIuNiw4LjM5LTMuNDlsLTIuNTMsMC40MWwtMC42NC0wLjMyYy0zLjMsMC40OC02LjI2LDIuNy03LjEyLDMuMjljLTEuOS0wLjEyLTEuMjUtMS4zMy0wLjgtMS41NmMtMy43My0wLjAzLTMuNjcsMS43Mi03LjQ0LDEuNThsMS40MiwwLjI1Yy0wLjg5LDAuMTItNC4xMi0wLjEtMy43NywwLjEyYy0wLjc1LTAuMzEtMS40NC0xLjA2LTAuNjEtMS4yN2wtMy4zMywxLjE0YzAuNDktMC4xMiwwLjE2LTEuMDgsMC4zNy0xLjI1Yy0xLjM0LTAuMDMtMi4yOCwxLjEyLTEuNDMsMS4yN2MtMi42Mi0wLjY4LTEuOTctMC4zMS00LjA5LTEuMTFjLTAuNzcsMC4wNywwLjA3LDEuMDIsMC42NCwxLjEyYy0xLjc1LDAuMjctMi43NywwLjE1LTMuNiwwLjA0YzIuODktMC40MiwwLjc4LTIuMTUsMS4zMy0yLjg5bC02LjIsMi44N2MwLjIxLTAuMTcsMC43LTEuMDksMC42Ny0xLjJjLTAuNTIsMC44Ni03LjY0LDAuOTctMTEuMTIsMC44NGwwLjUyLTAuMDFjMC43MS0wLjI5LTIuMjktMC41My0zLjUxLTAuMjRjMC4yMS0wLjE3LDAuNDktMC4xMiwxLjAxLTAuMTJjLTIuMzItMC42NS0zLjAyLDEuMjgtNS4zOSwwLjUxYzIuMTUsMC4wOSwyLjU3LTAuMjUsMi40Ni0wLjU5Yy0xLjc2LDAuMy01Ljg0LTAuMDUtNC45OSwwLjk1Yy0xLjEzLTAuMjEtMi4xNS0wLjA5LTIuMDUtMC42bC00LjMzLDAuNTZjMC4zMi0wLjEsMC42LTAuMzktMC42Ni0wLjQ3YzIuNDMsMC4xNSw0Ljc4LTAuNzYsNi4wNS0wLjFjMC4wNy0wLjYyLTAuODQtMC45NSwwLjMyLTEuNDdjLTQuNjgsMC4yNy03LjI1LDEuMy0xMC4yMSwxLjk5bC00LjEyLTAuNDlsLTAuMTgsMC4yOGwtMC43MS0wLjcyYy0wLjUyLDAuMTYtMC44NSwwLjMtMC45NSwwLjIzYy0wLjA5LTAuMDYsMC4wNC0wLjE2LDAuMjQtMC4yNmMtMC40MywwLjAzLTAuODMsMC4wOS0xLjAzLDAuMTZjLTAuMTYtMC4zOCwwLjU4LTAuOCwxLjM2LTEuMThjMC4zNywwLjEzLDAuNzUsMC4yNywxLjEzLDAuNDFjMC44MS0wLjM1LDEuNC0wLjcxLDAuMjctMC45NmMtMC4xNiwwLjA0LTAuMzYsMC4wOS0wLjU4LDAuMTVjMC41Mi0wLjI2LDAuODQtMC40OCwwLjQ2LTAuNTlsLTMuMTUsMC4zMWMwLjM2LDAuMSwwLjg5LDAuMzEsMS41MSwwLjU1Yy0xLjk4LDAuNDQtNC4yNCwwLjk5LTIuNDgsMS40OWwtMi40LTAuNDVjLTIuODMsMC42Ny0yLjM0LDAuNTMtNS43OCwxLjAxYy0wLjE4LTAuMjUsMC43My0wLjQ1LDAuMTItMC42NGMtMi41MSwwLjc3LTYuMDktMS4wMi02LjY1LTAuMzNjLTIuMDIsMC4xNC0wLjg1LDAuNi0yLjE0LDAuNzdjMC4wNi0wLjA4LDAuMTktMC4yMy0wLjE5LTAuMjVsLTEuNTQsMC40OGMtMC42MS0wLjE5LDEuNDEtMC4zMy0wLjMxLTAuNThjLTIuOTUsMC4zMy00LjY4LDAuNTYtNy4xNCwwLjI2Yy0zLjUsMC4wNCwxLjQ4LDEuMDUtMS40OCwwLjg4Yy0wLjQzLTAuNDMtMC44LTAuOTMtMi42NC0xLjAzYy0wLjk4LDAuMjctMC44NiwwLjYtMi41MiwwLjc0bDAuMTItMC42NGMtMS41My0wLjAxLTIuNzYsMC4wOC0yLjc2LTAuNDFjLTEuMjYsMC4yNC0yLjEyLDAuMTctMi43OCwwLjA1Yy0yLjMzLDAuMjgsMS42OCwxLjM0LDIuMjIsMS42MWMtMi4yOC0wLjU0LTMuODYtMC4zLTUuMTUtMS4xbDIuMDMtMC4xMmMtNC4zLTAuOS00LjEyLDAuOC02LjA4LTAuNjFjMS40OCwwLjA5LDMuMjYtMC4yLDIuNC0wLjU3bC0yLjE1LDAuMjdjLTAuMjUtMC4xOCwxLjIzLTAuMDgsMC4yNS0wLjMxYy0wLjYxLDAuMTItMS44NywwLjQyLTIuNDMsMC42MWwwLjAzLTAuMDRsLTMuODcsMGMwLjczLDAuMDUsMC45Mi0wLjE4LDAuMTgtMC4yM2wtMi41NSwwLjI2YzAuNzgtMC4xNC0wLjAxLTAuMzYtMS4xNC0wLjVjLTMuMjYtMC4zLTIuNjYsMS4zNS01LjE3LDAuNjJjMC4zNywwLjAzLDAuNDMtMC4wNSwwLjgtMC4wM2wtMS4yOS0wLjMzYy0wLjMyLDEuMzYtNy42OS0wLjEzLTguMDEsMS4yMWMtMS44NC0wLjYyLTAuMTItMC4zMywyLjI5LTAuODlsLTEuOTYtMC40NkM5NTYuMTYsODg4LjI1LDk1Ni44Myw4ODguMzgsOTU3LjY5LDg4OC4yOHogTTk4Mi43OCw4ODguOTVjMC40MSwwLjMsMS41NiwwLjAxLDIuMTQtMC4wOEM5ODMuOTQsODg4LjY5LDk4My40NCw4ODguNDIsOTgyLjc4LDg4OC45NXogTTEwMjguMDMsODg4LjM4YzAuNzQsMC4xOSwxLjQsMC4yOCwxLjgzLDAuMTJDMTAyOS4xOCw4ODguMzcsMTAyOC41Nyw4ODguMzUsMTAyOC4wMyw4ODguMzh6IE0xMTU0Ljg0LDg4NC4xMmMwLjAyLTAuMDEsMC4wNC0wLjAyLDAuMDYtMC4wMkMxMTU0LjAxLDg4NC4wMiwxMTUzLjU2LDg4My45NSwxMTU0Ljg0LDg4NC4xMnogTTExNTYuMjMsODg0LjE4YzAuNjgsMC4wMiwxLjI3LDAuMDEsMS40Ni0wLjEyYzAuMTEsMC4wNywwLjEzLDAuMTMtMC4xMywwLjJDMTE1Ni43Niw4ODQuMzksMTE1Ni40Miw4ODQuMywxMTU2LjIzLDg4NC4xOHogTTg3My40MSw4ODMuNWwtMC41Mi0wLjEyQzg3Mi41Nyw4ODMuNTMsODcyLjI1LDg4My42Nyw4NzMuNDEsODgzLjV6Ii8+PHBhdGggZD0iTTEwMjQuNzUsODg5LjFjLTAuMTYtMC4wOC0wLjItMC4xNy0wLjI0LTAuMjZDMTAyNC4yOCw4ODguOTIsMTAyNC4yOCw4ODkuMDEsMTAyNC43NSw4ODkuMXoiLz48cGF0aCBkPSJNOTM3LjAyLDg4Ny45NGwtMC4wOS0wLjAxYy0wLjA1LDAuMDMtMC4wOCwwLjA2LTAuMDksMC4wOEw5MzcuMDIsODg3Ljk0eiIvPjxwYXRoIGQ9Ik0xMTE2LjU2LDg4OS4wOGMtMC41NS0wLjA2LTAuODUtMC4xNC0xLjA2LTAuMjNDMTExNS40Nyw4ODguOTYsMTExNS43Miw4ODkuMDYsMTExNi41Niw4ODkuMDh6Ii8+PHBhdGggZD0iTTExNzEuNiw4ODMuMjdsLTEuNywwLjE0YzAuODItMC4wMywxLjEyLDAuMDcsMS41MywwLjE1QzExNzEuNCw4ODMuNDQsMTE3MS4wNyw4ODMuMjgsMTE3MS42LDg4My4yN3oiLz48cGF0aCBkPSJNMTE4Ni4zNyw4ODYuMTdjMC4yNS0wLjA2LDAuNTMtMC4wMSwwLjc3LTAuMDdsLTAuMDctMC4yMkMxMTg2LjAyLDg4NS44OSwxMTg1LjI4LDg4Ni4wOCwxMTg2LjM3LDg4Ni4xN3oiLz48cGF0aCBkPSJNMTE3My4xOSw4ODQuODZjMC4xNCwwLjQsMS4yLDAuMjYsMi4zOSwwLjE3Yy0wLjA3LDAtMC4xNCwwLjAxLTAuMjEsMEMxMTc1LjcyLDg4NC40NiwxMTc0LjQ1LDg4NC42NiwxMTczLjE5LDg4NC44NnoiLz48cGF0aCBkPSJNMTE3NS44Niw4ODUuMDJjMC4zNy0wLjAyLDAuNzQtMC4wNCwxLjEtMC4wMkMxMTc3LjEsODg0Ljc3LDExNzYuNTEsODg0Ljk1LDExNzUuODYsODg1LjAyeiIvPjxwYXRoIGQ9Ik0xMTYwLjkxLDg4My45NGMwLjU3LDAuMSwwLjM1LTAuNTIsMC42Ny0wLjM2QzExNjIuMjEsODgzLjA1LDExNTcuODMsODg0LjI2LDExNjAuOTEsODgzLjk0eiIvPjxwb2x5Z29uIHBvaW50cz0iMTE3NC4xNyw4ODYuMTkgMTE3My43NCw4ODUuNjkgMTE3My4wNyw4ODYuMSIvPjxwYXRoIGQ9Ik0xMTY0Ljc3LDg4NS45MmwxLjksMC4xMmMtMC4wMy0wLjA4LDAuMjEtMC4xNCwwLjUxLTAuMThDMTE2Ni4wMSw4ODUuODUsMTE2NC43Miw4ODUuNzcsMTE2NC43Nyw4ODUuOTJ6Ii8+PHBhdGggZD0iTTExNjcuMTgsODg1Ljg2YzAuNjEsMCwxLjE5LTAuMDIsMS41My0wLjFDMTE2OC4zOCw4ODUuNzYsMTE2Ny42Nyw4ODUuNzksMTE2Ny4xOCw4ODUuODZ6Ii8+PHBvbHlnb24gcG9pbnRzPSIxMTcxLjU3LDg4Ni4zNiAxMTcxLjAxLDg4Ni4yNiAxMTY5LjY3LDg4Ni4yNCIvPjxwYXRoIGQ9Ik0xMTQ0LjM0LDg4Ni4xNGwtMi4wNywwLjE4Yy0wLjIxLDAuMTgsMC4zNiwwLjI3LDEuMTMsMC4xOUMxMTQzLjg5LDg4Ni4zOCwxMTQ0LjY2LDg4Ni4zLDExNDQuMzQsODg2LjE0eiIvPjxwYXRoIGQ9Ik0xMTUwLjYzLDg4Ny40Yy0wLjU2LTAuMDktMC42LTAuMjEtMC45Mi0wLjM3bC0wLjA1LDAuNjJMMTE1MC42Myw4ODcuNHoiLz48cGF0aCBkPSJNMTE0NC41OSw4ODcuNjVjLTAuMiwwLjE4LTMsMC41NS0wLjM3LDAuNDZDMTE0NC40Miw4ODcuOTQsMTE0Ni41LDg4Ny43NiwxMTQ0LjU5LDg4Ny42NXoiLz48cG9seWdvbiBwb2ludHM9IjExMTMuMzIsODg3LjQzIDExMTMuODUsODg3LjQxIDExMTMuNzYsODg2LjM5Ii8+PHBhdGggZD0iTTEwODUuNzksODkwLjJjMi40NiwwLjIzLDAuNTgtMC42MywyLjgtMC4zNWMwLjU4LTAuMjUtMS44Mi0wLjIzLTEuMjMtMC40NUMxMDg1Ljg5LDg4OS42NywxMDg1LjExLDg4OS41NCwxMDg1Ljc5LDg5MC4yeiIvPjxwYXRoIGQ9Ik0xMDg3LjM3LDg4OS40MWMwLjI0LTAuMDQsMC40OS0wLjA5LDAuNzYtMC4xNkMxMDg3LjcsODg5LjMxLDEwODcuNDksODg5LjM2LDEwODcuMzcsODg5LjQxeiIvPjxwYXRoIGQ9Ik03NzYuNzgsODg1LjEzYy0wLjUxLTAuMTEtMS4wMS0wLjI1LTEuNTEtMC4zOWwwLjk1LDAuNDdMNzc2Ljc4LDg4NS4xM3oiLz48cGF0aCBkPSJNNzczLjc0LDg4NS41MWwtMC4yNy0wLjY5bC0xLjAxLDAuNDZDNzcyLjgxLDg4NS4yOSw3NzMuNDksODg1LjMzLDc3My43NCw4ODUuNTF6Ii8+PHBhdGggZD0iTTk4OS4yNyw4OTAuM2wwLjEyLTAuMTVjLTAuMjQtMC4xOC0wLjYxLTAuMi0xLjM1LTAuMjRMOTg5LjI3LDg5MC4zeiIvPjxwb2x5Z29uIHBvaW50cz0iOTY3LjgzLDg4OS4yMSA5NjguMiw4ODkuMjQgOTY3LjUzLDg4OC42MyIvPjxwYXRoIGQ9Ik05NDkuODEsODg5LjMzYzAuNzMsMC4wNSwxLjU5LTAuMDUsMi4zMywwQzk1MC41Myw4ODkuMzgsOTQ5LjY0LDg4OC42LDk0OS44MSw4ODkuMzN6Ii8+PC9nPjwvZz48L2c+PC9zdmc+") center/100% 100% no-repeat}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--brand-dark);padding:0 24px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.header-inner{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
+.header-logo img{height:36px;display:block}
+.header-nav{display:flex;gap:28px;align-items:center}
+.header-nav a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:13px;font-weight:600;letter-spacing:0.02em;transition:color 0.2s}.header-nav a:hover{color:var(--brand-gold)}
+.header-nav a.active{color:var(--brand-gold)}
+.header-nav .btn{padding:10px 20px;font-size:12px;box-shadow:none;border-color:var(--brand-gold)}
+
+.breadcrumb{background:#1c1c1c;padding:80px 24px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.breadcrumb-inner{max-width:var(--container);margin:0 auto;padding:16px 0;font-size:13px;color:rgba(255,255,255,0.55)}
+.breadcrumb-inner a{color:rgba(255,255,255,0.75);text-decoration:none}
+.breadcrumb-inner a:hover{color:var(--brand-gold)}
+
+/* HERO with image */
+.hero{position:relative;padding:60px 24px 80px;background:var(--brand-dark);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(3,87,135,0.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(95,13,35,0.1) 0%,transparent 50%);pointer-events:none}
+.hero-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-gold);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--brand-gold)}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--brand-gold);letter-spacing:-0.02em;margin-bottom:20px}
+.hero-text{font-size:16px;color:rgba(255,255,255,0.78);max-width:560px;margin-bottom:28px;line-height:1.75}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-image-wrap{position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);aspect-ratio:4/3}
+.hero-image-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-image-badge{position:absolute;top:16px;left:16px;background:var(--brand-gold);color:var(--brand-dark);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:7px 13px;z-index:2}
+.hero-image-quote{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.92),transparent);padding:48px 24px 22px;z-index:2}
+.hero-image-quote p{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;font-style:italic;color:var(--brand-white);margin-bottom:6px;line-height:1.4}
+.hero-image-quote cite{font-style:normal;font-size:12px;color:var(--brand-gold);font-weight:600}
+
+/* SECTIONS */
+.section{padding:80px 24px}.section-light{background:var(--brand-light)}.section-white{background:var(--brand-white)}
+.section-inner{max-width:var(--container);margin:0 auto}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand-blue);margin-bottom:10px;display:block}
+.section-title{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--brand-text);letter-spacing:-0.02em;margin-bottom:12px}
+.section-subtitle{font-size:16px;color:var(--brand-muted);max-width:640px;margin-bottom:48px;line-height:1.75}
+
+/* THE TALK overview */
+.keynote-overview{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.keynote-desc h3{font-size:22px;font-weight:800;color:var(--brand-text);margin-bottom:16px}
+.keynote-desc p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:14px}
+.keynote-desc .qi{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;font-style:italic;color:var(--brand-blue);border-left:3px solid var(--brand-crayon);padding-left:16px;margin:20px 0}
+.keynote-meta-card{background:var(--brand-dark);padding:36px;color:white}
+.keynote-meta-card h4{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand-gold);margin-bottom:20px}
+.kmc-item{border-top:1px solid rgba(255,255,255,0.08);padding:14px 0}
+.kmc-item:first-of-type{border-top:none;padding-top:0}
+.kmc-label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.55);margin-bottom:4px}
+.kmc-val{font-size:14px;color:var(--brand-white)}
+
+/* GOLD STRIP (signature theme) */
+.gold-strip{background:var(--brand-gold);padding:28px 24px;text-align:center}
+.gold-strip p{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--brand-dark);max-width:var(--container);margin:0 auto;line-height:1.5}
+.gold-strip .crayon-hl{background:rgba(255,255,255,0.4)}
+
+/* LEARNING OBJECTIVES */
+.lo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.lo-card{background:var(--brand-white);border:1px solid #e0ddd6;padding:32px 28px;position:relative}
+.lo-num{font-family:'Montserrat',sans-serif;font-size:56px;font-weight:900;color:var(--brand-gold);opacity:0.28;line-height:1;letter-spacing:-0.04em;margin-bottom:6px}
+.lo-card h4{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:var(--brand-text);margin-bottom:12px;letter-spacing:-0.01em}
+.lo-card p{font-size:14px;color:var(--brand-muted);line-height:1.7}
+.lo-card.accent-gold{border-top:3px solid var(--brand-gold)}
+.lo-card.accent-crayon{border-top:3px solid var(--brand-crayon)}
+.lo-card.accent-blue{border-top:3px solid var(--brand-blue)}
+
+/* AUDIENCE TABS — folder-tab UX */
+.aud-tabs-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand-muted);margin:56px 0 14px}
+.aud-tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:0;position:relative;z-index:1}
+.aud-tab{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;padding:16px 22px 14px;border:1px solid #e0ddd6;border-bottom:none;background:var(--brand-light);color:var(--brand-muted);cursor:pointer;transition:var(--transition);position:relative;letter-spacing:0.02em;margin-right:-1px}
+.aud-tab:hover{background:#fafaf8;color:var(--brand-text)}
+.aud-tab.active{background:var(--brand-white);color:var(--brand-text);border-bottom-color:var(--brand-white);z-index:2;padding-top:19px}
+.aud-tab.active::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--brand-crayon)}
+.aud-tab.active::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--brand-white)}
+.aud-panels{border:1px solid #e0ddd6;background:var(--brand-white);margin-top:-1px}
+.aud-panel{display:none;padding:40px;position:relative}
+.aud-panel.active{display:block}
+.aud-panel-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.aud-subtitle{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand-crayon);margin-bottom:8px}
+.aud-left h3{font-size:26px;font-weight:800;color:var(--brand-text);margin-bottom:14px;letter-spacing:-0.01em}
+.aud-left p{font-size:15px;color:var(--brand-muted);margin-bottom:12px;line-height:1.75}
+.aud-right h4{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand-text);margin-bottom:14px}
+.aud-takeaways{list-style:none;padding:0;margin:0 0 20px}
+.aud-takeaways li{padding:10px 0 10px 24px;position:relative;font-size:14px;color:var(--brand-text);border-bottom:1px solid #f0ede6}
+.aud-takeaways li::before{content:'\2713';position:absolute;left:0;color:var(--brand-crayon);font-weight:900}
+.aud-testimonial{background:var(--brand-light);padding:18px;margin:18px 0}
+.aud-testimonial blockquote{font-style:italic;font-size:14px;color:var(--brand-text);margin-bottom:8px;line-height:1.6}
+.aud-testimonial cite{font-size:12px;color:var(--brand-muted);font-style:normal;font-weight:600}
+
+/* THE LITTLE THINGS detail */
+.lt-section{padding:80px 24px;background:var(--brand-white)}
+.lt-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.lt-image{position:relative;overflow:hidden;box-shadow:var(--shadow-soft)}
+.lt-image img{width:100%;height:auto;display:block}
+.lt-image .lt-badge{position:absolute;top:16px;right:16px;background:var(--brand-crayon);color:white;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:7px 11px}
+.lt-content .eyebrow{color:var(--brand-crayon)}
+.lt-content h2{font-size:clamp(26px,3vw,34px);font-weight:800;color:var(--brand-text);margin-bottom:16px;letter-spacing:-0.02em}
+.lt-content p{font-size:15px;color:var(--brand-muted);line-height:1.75;margin-bottom:14px}
+.lt-items{list-style:none;padding:0;margin:28px 0 0}
+.lt-items li{padding:16px 0 16px 52px;position:relative;border-top:1px solid #e8e4d8}
+.lt-items li:first-child{border-top:none;padding-top:4px}
+.lt-items li strong{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--brand-text);display:block;margin-bottom:4px;font-size:13px;text-transform:uppercase;letter-spacing:0.06em}
+.lt-items li span{font-size:14px;color:var(--brand-muted);line-height:1.6;display:block}
+.lt-items li::before{content:'';position:absolute;left:0;top:18px;width:32px;height:32px}
+.lt-items li:nth-child(1)::before{background:var(--brand-gold)}
+.lt-items li:nth-child(2)::before{background:var(--brand-crayon)}
+.lt-items li:nth-child(3)::before{background:var(--brand-blue)}
+
+/* CTA */
+.cta-strip{background:var(--brand-dark);color:var(--brand-white);padding:72px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(232,103,74,0.12) 0%,transparent 60%);pointer-events:none}
+.cta-strip-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.cta-strip h2{font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--brand-gold);margin-bottom:14px;letter-spacing:-0.02em}
+.cta-strip p{font-size:16px;color:rgba(255,255,255,0.7);max-width:620px;margin:0 auto 28px}
+.cta-strip .crayon-hl{color:var(--brand-white)}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+.footer{background:#0a0a0a;color:rgba(255,255,255,0.55);padding:40px 24px;text-align:center;font-size:13px}
+.footer a{color:var(--brand-gold);text-decoration:none}
+
+@media(max-width:900px){
+  .header-nav{display:none}
+  .hero-inner{grid-template-columns:1fr}
+  .keynote-overview{grid-template-columns:1fr}
+  .lo-grid{grid-template-columns:1fr}
+  .lt-inner{grid-template-columns:1fr}
+  .aud-panel-inner{grid-template-columns:1fr;padding:28px}
+  .aud-tabs{flex-direction:column}
+  .aud-tab{border-bottom:1px solid #e0ddd6;text-align:left}
+  .aud-tab.active::after{display:none}
+  .aud-tab.active{background:var(--brand-light)}
+}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="header-inner">
+  <a href="https://amandalipp.com" class="header-logo"><img src="https://amandalipp.com/wp-content/uploads/2021/04/logo1.png" alt="Amanda Lipp"></a>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="speaking.html" class="active">Speaking</a>
+    <a href="index#resources">Resources</a>
+    <a href="index#portfolio">Case Studies</a>
+    <a href="index#media">Media Kit</a>
+    <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Book Kay</a>
+  </nav>
+</div></header>
+
+<div class="breadcrumb"><div class="breadcrumb-inner">
+  <a href="index.html">Home</a> &rsaquo; <a href="speaking.html">Speaking</a> &rsaquo; <span>Think Outside the Crayon Box</span>
+</div></div>
+
+<!-- HERO -->
+<section class="hero"><div class="hero-inner">
+  <div>
+    <div class="hero-eyebrow">Signature Keynote</div>
+    <h1>Think Outside the <span class="crayon-hl" style="background:rgba(232,103,74,0.32)">Crayon Box</span> of Mental Health</h1>
+    <p class="hero-text">A story-driven and creative keynote using the &ldquo;crayon box method&rdquo; to change how audiences think about mental health, for themselves and in the workplace. One powerful talk, adapted for corporate, education, healthcare, or youth audiences.</p>
+    <div class="hero-actions">
+      <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Book This Keynote</a>
+      <a href="speaking.html" class="btn btn-light">Back to Speaking</a>
+    </div>
+  </div>
+  <div class="hero-image-wrap">
+    <img src="https://amandalipp.com/wp-content/uploads/2026/02/Screenshot-2026-01-31-at-3.43.46-PM.png" alt="Kay Lipp delivering the Crayon Box keynote">
+    <div class="hero-image-badge">On Stage</div>
+    <div class="hero-image-quote">
+      <p>&ldquo;The little things make a difference.&rdquo;</p>
+      <cite>Kay Lipp</cite>
+    </div>
+  </div>
+</div></section>
+
+<!-- THE TALK -->
+<section class="section section-white"><div class="section-inner">
+  <span class="eyebrow">The Talk</span>
+  <h2 class="section-title">One keynote, <span class="crayon-hl">adapted for your audience</span></h2>
+
+  <div class="keynote-overview">
+    <div class="keynote-desc">
+      <h3>What it&rsquo;s about</h3>
+      <p>In a world where shame and stigma around mental health can secretly suffocate success and happiness, changing the narrative is key. When vulnerability and adversity is seen as an opportunity to expand, rather than a weakness to overcome, it can create a ripple effect in organizations that is rooted in trust and authenticity. When we feel safe and seen, we unlock community, confidence, and innovation.</p>
+      <p>In this story-driven and creative presentation, Kay takes your audience through a series of powerful lessons that inspire us to think differently about mental health, for ourselves and in the workplace. Using her <span class="crayon-hl">&ldquo;crayon box method,&rdquo;</span> she uncovers the layers that are holding you back so you can thrive and then pay-it-forward.</p>
+      <div class="qi">&ldquo;As a filmmaker, Kay weaves in stories of people&rsquo;s journeys to illustrate the diversity of resilience: that everyone&rsquo;s path looks differently.&rdquo;</div>
+      <p>She uses crayons as a creative and fun metaphor to dig deep and think &ldquo;outside the box&rdquo; of mental health.</p>
+    </div>
+    <div class="keynote-meta-card">
+      <h4>At a Glance</h4>
+      <div class="kmc-item"><div class="kmc-label">Format</div><div class="kmc-val">Keynote (45&ndash;90 min), Workshop, or Breakout</div></div>
+      <div class="kmc-item"><div class="kmc-label">Audiences</div><div class="kmc-val">Corporate, Education, Healthcare, Youth</div></div>
+      <div class="kmc-item"><div class="kmc-label">Includes</div><div class="kmc-val">Film clips, crayon activities, live storytelling</div></div>
+      <div class="kmc-item"><div class="kmc-label">Personalized</div><div class="kmc-val">Pre-interviews with your team woven into the talk</div></div>
+      <div class="kmc-item"><div class="kmc-label">Takeaway</div><div class="kmc-val">Every audience member receives a box of crayons</div></div>
+      <div class="kmc-item"><div class="kmc-label">Virtual</div><div class="kmc-val">Available for hybrid or fully remote events</div></div>
+      <div style="margin-top:24px"><a href="https://amandalipp.com/have-a-project-in-mind/" class="btn" style="width:100%;text-align:center;box-shadow:none;border-color:var(--brand-gold)">Book This Keynote</a></div>
+    </div>
+  </div>
+
+  <div class="aud-tabs-label">Choose Your Audience Lens</div>
+  <div class="aud-tabs" id="audTabs">
+    <button class="aud-tab active" data-target="workplace">Mental Health in the Workplace</button>
+    <button class="aud-tab" data-target="schools">Mental Health in Schools</button>
+    <button class="aud-tab" data-target="healthcare">Lived Experience in Healthcare</button>
+    <button class="aud-tab" data-target="youth">Youth Leadership</button>
+  </div>
+
+  <div class="aud-panels" id="audPanels">
+
+    <div class="aud-panel active" data-audience="workplace">
+      <div class="aud-panel-inner">
+        <div class="aud-left">
+          <div class="aud-subtitle">For Corporate &amp; Workplace Events</div>
+          <h3>Mental Health in the <span class="crayon-hl crayon-hl-blue">Workplace</span></h3>
+          <p>Shame and stigma around mental health can secretly suffocate success and happiness at work. When vulnerability is seen as an opportunity to expand rather than a weakness to overcome, it creates a ripple effect rooted in trust and authenticity.</p>
+          <p>This adaptation speaks directly to HR leaders, ERG organizers, and executive teams navigating mental health as a workplace priority.</p>
+        </div>
+        <div class="aud-right">
+          <h4>Your Team Will Learn How To</h4>
+          <ul class="aud-takeaways">
+            <li>Translate shame and stigma into &ldquo;superpowers&rdquo; that guide a wellness-focused culture</li>
+            <li>Think like a filmmaker to build connection and trust across teams</li>
+            <li>Apply &ldquo;Think Big, Act Small&rdquo;: empathy and little actions that ripple through organizations</li>
+          </ul>
+          <div class="aud-testimonial">
+            <blockquote>&ldquo;Kay was truly amazing and inspirational. After hearing her story, she makes you realize the need to look at life and frankly the world in a different light.&rdquo;</blockquote>
+            <cite>&mdash; Craig Mengert, CEO, TriZetto</cite>
+          </div>
+          <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm">Book for Your Team</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-panel" data-audience="schools">
+      <div class="aud-panel-inner">
+        <div class="aud-left">
+          <div class="aud-subtitle">For Education &amp; School Districts</div>
+          <h3>Mental Health in <span class="crayon-hl crayon-hl-teal">Schools</span></h3>
+          <p>Students, educators, and administrators carry invisible weight. Kay helps school communities reframe mental health through storytelling and the crayon box method, giving everyone permission to think differently about what resilience looks like.</p>
+          <p>Adaptable for high schools, universities, teacher professional development, and student leadership programs.</p>
+        </div>
+        <div class="aud-right">
+          <h4>Educators &amp; Students Will Learn How To</h4>
+          <ul class="aud-takeaways">
+            <li>Translate stigma into &ldquo;superpowers&rdquo; that guide student empowerment</li>
+            <li>Think like a filmmaker to build connection in classrooms and staff rooms</li>
+            <li>Apply &ldquo;Think Big, Act Small&rdquo; to student wellbeing initiatives</li>
+          </ul>
+          <div class="aud-testimonial">
+            <blockquote>&ldquo;She presented a keynote for my regional mental health training center and she was amazing. She incorporated my comments into her presentation brilliantly.&rdquo;</blockquote>
+            <cite>&mdash; Ann Murphy, Co-Director, Rutgers University</cite>
+          </div>
+          <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm">Book for Your School</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-panel" data-audience="healthcare">
+      <div class="aud-panel-inner">
+        <div class="aud-left">
+          <div class="aud-subtitle">For Healthcare &amp; Clinical Settings</div>
+          <h3>Lived Experience in <span class="crayon-hl">Healthcare</span></h3>
+          <p>Healthcare systems are increasingly integrating lived experience into care models. Kay bridges the gap between clinical best practices and the human stories that make them land. Her work began in a psychiatric hospital, and she has spent years making films with clinicians and patients alike.</p>
+          <p>Built for grand rounds, clinician wellness programming, peer specialist teams, and healthcare leadership conferences.</p>
+        </div>
+        <div class="aud-right">
+          <h4>Clinicians Will Learn How To</h4>
+          <ul class="aud-takeaways">
+            <li>Translate shame and stigma into a guide for a wellness-focused culture of care</li>
+            <li>Use the three ingredients of &ldquo;thinking like a filmmaker&rdquo; in training and patient care</li>
+            <li>Apply &ldquo;Think Big, Act Small&rdquo; to the small acts that move systems of care</li>
+          </ul>
+          <div class="aud-testimonial">
+            <blockquote>&ldquo;Kay helped us think through the product we wanted to develop, allowing us space for creativity while guiding us with her expertise.&rdquo;</blockquote>
+            <cite>&mdash; Kate Hardy, Clinical Professor, Stanford Medicine</cite>
+          </div>
+          <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm">Book for Your Conference</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-panel" data-audience="youth">
+      <div class="aud-panel-inner">
+        <div class="aud-left">
+          <div class="aud-subtitle">For Youth &amp; Young Adult Programs</div>
+          <h3><span class="crayon-hl crayon-hl-crayon">Youth</span> Leadership</h3>
+          <p>Young people are leading the conversation on mental health. Kay empowers youth to own their stories and become advocates. At 19 she was the youngest board member of NAMI and went on to serve on Google&rsquo;s Mental Health Advisory Panel.</p>
+          <p>Built for high school and college audiences, youth leadership summits, and advocacy programs.</p>
+        </div>
+        <div class="aud-right">
+          <h4>Young Leaders Will Learn How To</h4>
+          <ul class="aud-takeaways">
+            <li>Discover the &ldquo;superpower&rdquo; behind their unique identity and mental health challenges</li>
+            <li>Think like a filmmaker: the three ingredients to building connection and trust</li>
+            <li>Apply &ldquo;Think Big, Act Small&rdquo;: little actions that pay-it-forward</li>
+          </ul>
+          <div class="aud-testimonial">
+            <blockquote>&ldquo;Even a year later I have people come up to me to tell me about what an amazingly powerful and engaging presentation she provided. The blend of education, personal story, and inspirational hope building was perfect for our event.&rdquo;</blockquote>
+            <cite>&mdash; Barry Johnson, Deputy Director, Transitions Mental Health Association</cite>
+          </div>
+          <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn btn-sm">Book for Youth Event</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div></section>
+
+<!-- GOLD STRIP: SIGNATURE THEME -->
+<div class="gold-strip"><p>The little things make a <span class="crayon-hl">difference</span>. Each audience member receives a box of crayons: a powerful and playful symbol of what&rsquo;s possible.</p></div>
+
+<!-- LEARNING OBJECTIVES -->
+<section class="section section-light has-crayon-sep"><div class="section-inner">
+  <span class="eyebrow">Learning Objectives</span>
+  <h2 class="section-title">What your audience <span class="crayon-hl">walks away with</span></h2>
+  <p class="section-subtitle">Three clear takeaways, regardless of sector. Tailored examples and framing are layered on top.</p>
+
+  <div class="lo-grid">
+    <div class="lo-card accent-gold">
+      <div class="lo-num">01</div>
+      <h4>Superpowers from stigma</h4>
+      <p>Discover how to translate shame and stigma into invisible &ldquo;superpowers&rdquo; that can serve as a guide to personal empowerment, and a wellness-focused culture.</p>
+    </div>
+    <div class="lo-card accent-crayon">
+      <div class="lo-num">02</div>
+      <h4>Think like a filmmaker</h4>
+      <p>Learn how to think like a filmmaker to build connection and trust. Discover the three ingredients to thinking like a filmmaker.</p>
+    </div>
+    <div class="lo-card accent-blue">
+      <div class="lo-num">03</div>
+      <h4>Think Big, Act Small</h4>
+      <p>A powerful combination of empathy and little actions that can make all the difference for ourselves and paying-it-forward.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- THE LITTLE THINGS -->
+<section class="lt-section"><div class="lt-inner">
+  <div class="lt-image">
+    <img src="https://amandalipp.com/wp-content/uploads/2026/02/width_800-4.jpg" alt="Kay with audience members and boxes of crayons">
+    <div class="lt-badge">Signature Touch</div>
+  </div>
+  <div class="lt-content">
+    <span class="eyebrow">Beyond the Keynote</span>
+    <h2>The little things <span class="crayon-hl crayon-hl-crayon">make a difference</span></h2>
+    <p>In every keynote, Kay goes the extra mile. She pre-interviews executive teams or audience members and thoughtfully incorporates their voices into the talk. She also weaves in short films of other people&rsquo;s journeys, creating a dynamic, engaging, and deeply memorable experience.</p>
+    <ul class="lt-items">
+      <li><strong>Pre-interviews</strong><span>Kay interviews members of your team or audience ahead of time and weaves their voices into the keynote.</span></li>
+      <li><strong>Short films woven in</strong><span>Real stories of people&rsquo;s journeys, illustrating the diversity of resilience across paths.</span></li>
+      <li><strong>A box of crayons for everyone</strong><span>A powerful and playful symbol of what&rsquo;s possible, sent home with every audience member.</span></li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta-strip"><div class="cta-strip-inner">
+  <h2>Ready to change the <span class="crayon-hl">narrative</span>?</h2>
+  <p>Tell Kay about your event, audience, and goals. Every keynote comes with pre-interviews, tailored films, and a box of crayons for every person in the room.</p>
+  <div class="cta-actions">
+    <a href="https://amandalipp.com/have-a-project-in-mind/" class="btn">Book This Keynote</a>
+    <a href="speaking.html" class="btn btn-light">Browse Other Talks</a>
+  </div>
+</div></section>
+
+<footer class="footer">
+  <p>&copy; Lipp Studios &middot; <a href="https://amandalipp.com">amandalipp.com</a></p>
+</footer>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('#audTabs .aud-tab');
+  var panels=document.querySelectorAll('#audPanels .aud-panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      var target=tab.getAttribute('data-target');
+      tabs.forEach(function(t){t.classList.remove('active')});
+      panels.forEach(function(p){p.classList.remove('active')});
+      tab.classList.add('active');
+      var panel=document.querySelector('.aud-panel[data-audience="'+target+'"]');
+      if(panel)panel.classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
