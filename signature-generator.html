@@ -49,6 +49,7 @@
     letter-spacing: 0.08em;
     color: var(--gray);
   }
+  .panel h2.section { margin-top: 26px; border-top: 1px solid #eceades; padding-top: 20px; }
   label {
     display: block;
     font-size: 12px;
@@ -133,20 +134,32 @@
   }
   .steps { font-size: 12px; color: var(--gray); line-height: 1.7; margin-top: 14px; }
   .steps b { color: var(--ink); }
-  .toggle-row { display: flex; gap: 16px; margin-top: 6px; }
+  .toggle-row { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 6px; }
   .radio {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 13px; font-weight: normal; margin: 0;
     cursor: pointer;
   }
   .radio input { accent-color: var(--blue); }
+  /* Style controls */
+  .swatches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .swatch {
+    width: 32px; height: 32px; border-radius: 7px;
+    border: 1px solid #d8d4c8; cursor: pointer; padding: 0;
+  }
+  .swatch:hover { outline: 2px solid var(--gold); }
+  input.color {
+    width: 100%; height: 40px; padding: 3px;
+    border: 1px solid #ccc8bc; border-radius: 6px;
+    background: #fff; cursor: pointer;
+  }
 </style>
 </head>
 <body>
 
 <header>
   <h1>Lipp Studios &mdash; Email Signature Generator</h1>
-  <p>Fill in your details, upload a headshot, then copy the signature into Gmail, Outlook, or Apple Mail.</p>
+  <p>Fill in your details, pick a look you like, then copy the signature into Gmail, Outlook, or Apple Mail.</p>
 </header>
 
 <div class="wrap">
@@ -162,7 +175,7 @@
       </div>
       <div>
         <label for="fPronouns">Pronouns <span class="opt">(optional)</span></label>
-        <input type="text" id="fPronouns" value="they/them">
+        <input type="text" id="fPronouns" value="they/she">
       </div>
     </div>
 
@@ -219,7 +232,43 @@
       <img id="photoPreview" alt="Headshot preview" src="">
       <div>
         <input type="file" id="fPhoto" accept="image/*" style="font-size:12px;">
-        <div class="hint">Any photo works &mdash; it's automatically center-cropped to a square so it never warps. For best results use a photo where the face is near the middle.</div>
+        <div class="hint">Any photo works &mdash; it's automatically cropped to the shape you pick below so it never warps. For best results use a photo where the face is near the middle.</div>
+      </div>
+    </div>
+
+    <!-- ===== STYLE & LAYOUT ===== -->
+    <h2 class="section">Style &amp; layout</h2>
+
+    <label>Size</label>
+    <div class="toggle-row">
+      <label class="radio"><input type="radio" name="size" value="sm"> Small</label>
+      <label class="radio"><input type="radio" name="size" value="md" checked> Medium</label>
+      <label class="radio"><input type="radio" name="size" value="lg"> Large</label>
+    </div>
+
+    <label>Layout</label>
+    <div class="toggle-row">
+      <label class="radio"><input type="radio" name="density" value="normal" checked> Normal</label>
+      <label class="radio"><input type="radio" name="density" value="compact"> Compact</label>
+    </div>
+
+    <label>Photo shape</label>
+    <div class="toggle-row">
+      <label class="radio"><input type="radio" name="photoFormat" value="round" checked> Round</label>
+      <label class="radio"><input type="radio" name="photoFormat" value="square"> Square</label>
+      <label class="radio"><input type="radio" name="photoFormat" value="rectangle"> Rectangle</label>
+    </div>
+
+    <label>Color theme <span class="opt">(quick presets)</span></label>
+    <div class="swatches" id="swatches"></div>
+    <div class="row2" style="margin-top:10px;">
+      <div>
+        <label for="accentColor" style="margin-top:2px;">Accent <span class="opt">(border &amp; divider)</span></label>
+        <input type="color" id="accentColor" value="#d6b13f" class="color">
+      </div>
+      <div>
+        <label for="highlightColor" style="margin-top:2px;">Highlight <span class="opt">(title &amp; links)</span></label>
+        <input type="color" id="highlightColor" value="#035787" class="color">
       </div>
     </div>
   </div>
@@ -254,24 +303,23 @@
 <script>
 (function () {
   // In-memory state only (no browser storage).
-  var photoData = ""; // data URI of the square-cropped headshot
-
-  // Tiny built-in placeholder avatar (gold silhouette) so preview never looks broken.
-  var placeholder = (function () {
-    var c = document.createElement('canvas');
-    c.width = c.height = 192;
-    var x = c.getContext('2d');
-    x.fillStyle = '#f3f3f0'; x.fillRect(0, 0, 192, 192);
-    x.fillStyle = '#d9d4c5';
-    x.beginPath(); x.arc(96, 74, 34, 0, 7); x.fill();              // head
-    x.beginPath(); x.arc(96, 172, 62, Math.PI, 0); x.fill();       // shoulders
-    return c.toDataURL('image/png');
-  })();
+  var photoData = "";     // data URI of the cropped headshot (matches chosen shape)
+  var originalImg = null; // the full uploaded image, re-cropped when the shape changes
 
   var ids = ['fName','fPronouns','fTitle','fEmail','fRole1','fOrg1','fUrl1','fRole2','fOrg2','fUrl2','fLinkedIn','fYouTube'];
 
+  // ---- Color theme presets: [accent, highlight] ----
+  var PRESETS = [
+    { name: 'Brand gold + blue', a: '#d6b13f', h: '#035787' },
+    { name: 'Burgundy',          a: '#5f0d23', h: '#5f0d23' },
+    { name: 'Teal',              a: '#1f6f78', h: '#1f6f78' },
+    { name: 'Crayon',            a: '#e8674a', h: '#c2410c' },
+    { name: 'Forest',            a: '#2f6f3e', h: '#2f6f3e' },
+    { name: 'Slate + blue',      a: '#141414', h: '#035787' }
+  ];
+
   // ---- Brand icons, recreated as SVG paths and rendered to PNG data URIs ----
-  // (Emails can't display raw SVG reliably, so we rasterize on a canvas at 2x.)
+  // (Emails can't display raw SVG reliably, so we rasterize on a canvas.)
   var ICON_PATHS = {
     linkedin: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z',
     youtube: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'
@@ -283,12 +331,28 @@
     var cacheKey = key + '|' + color;
     if (iconCache[cacheKey]) return iconCache[cacheKey];
     var c = document.createElement('canvas');
-    c.width = c.height = 32;                       // 2x of 16px display = retina-crisp
+    c.width = c.height = 40;                        // rendered crisp, scaled down in email
     var x = c.getContext('2d');
-    x.scale(32 / 24, 32 / 24);                     // paths are on a 24x24 grid
+    x.scale(40 / 24, 40 / 24);                      // paths are on a 24x24 grid
     x.fillStyle = color;
     x.fill(new Path2D(ICON_PATHS[key]));
     return (iconCache[cacheKey] = c.toDataURL('image/png'));
+  }
+
+  // ---- Placeholder avatar, drawn to match the chosen photo shape ----
+  var phCache = {};
+  function placeholderFor(format) {
+    if (phCache[format]) return phCache[format];
+    var w = format === 'rectangle' ? 152 : 192, h = 192;
+    var c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    var x = c.getContext('2d');
+    x.fillStyle = '#f3f3f0'; x.fillRect(0, 0, w, h);
+    x.fillStyle = '#d9d4c5';
+    var cx = w / 2;
+    x.beginPath(); x.arc(cx, 74, 34, 0, 7); x.fill();          // head
+    x.beginPath(); x.arc(cx, 172, 62, Math.PI, 0); x.fill();   // shoulders
+    return (phCache[format] = c.toDataURL('image/png'));
   }
 
   function radioVal(name) {
@@ -302,68 +366,102 @@
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  function orgLine(role, org, url) {
+  // ---- Layout metrics from Size / Layout / Photo shape ----
+  function metrics() {
+    var size = radioVal('size') || 'md';
+    var density = radioVal('density') || 'normal';
+    var format = radioVal('photoFormat') || 'round';
+
+    var S = {
+      sm: { p: 76,  name: 16, title: 12, org: 12, small: 11, pad: 16, gap: 8,  icon: 14 },
+      md: { p: 96,  name: 18, title: 13, org: 13, small: 12, pad: 20, gap: 10, icon: 16 },
+      lg: { p: 116, name: 22, title: 15, org: 14, small: 13, pad: 26, gap: 12, icon: 18 }
+    }[size];
+
+    var m = { photoW: S.p, photoH: S.p, name: S.name, title: S.title, org: S.org,
+              small: S.small, pad: S.pad, gap: S.gap, icon: S.icon, format: format };
+
+    if (format === 'rectangle') { m.photoW = Math.round(S.p * 0.80); m.photoH = Math.round(S.p * 1.08); }
+
+    if (density === 'compact') {
+      m.gap = Math.max(3, Math.round(m.gap * 0.45));
+      m.pad = Math.round(m.pad * 0.7);
+      m.photoW = Math.round(m.photoW * 0.82);
+      m.photoH = Math.round(m.photoH * 0.82);
+      m.name = Math.round(m.name * 0.92);
+      m.icon = Math.min(m.icon, 14);
+    }
+
+    m.radius = format === 'round' ? '50%' : Math.max(6, Math.round(m.photoH * 0.12)) + 'px';
+    return m;
+  }
+
+  function orgLine(role, org, url, color, font) {
     if (!org) return '';
     var inner = url
-      ? '<a href="' + esc(url) + '" style="color:#035787; text-decoration:none; font-weight:600;">' + esc(org) + '</a>'
-      : '<span style="color:#035787; font-weight:600;">' + esc(org) + '</span>';
+      ? '<a href="' + esc(url) + '" style="color:' + color + '; text-decoration:none; font-weight:600;">' + esc(org) + '</a>'
+      : '<span style="color:' + color + '; font-weight:600;">' + esc(org) + '</span>';
     var prefix = role ? esc(role) + ' @ ' : '';
-    return '<div style="font-size:13px; color:#1a1a1a; margin-top:4px;">' + prefix + inner + '</div>';
+    return '<div style="font-size:' + font + 'px; color:#1a1a1a; margin-top:4px;">' + prefix + inner + '</div>';
   }
 
   function buildSignature() {
+    var m = metrics();
+    var accent = v('accentColor') || '#d6b13f';
+    var hi = v('highlightColor') || '#035787';
+
     var name = v('fName') || 'Your Name';
     var pron = v('fPronouns');
     var title = v('fTitle');
     var email = v('fEmail');
     var li = v('fLinkedIn');
     var yt = v('fYouTube');
-    var img = photoData || placeholder;
+    var img = photoData || placeholderFor(m.format);
 
     var h = '';
     h += '<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial, Helvetica, sans-serif; border-collapse:collapse;"><tr>';
 
     // Photo
-    h += '<td valign="middle" style="padding:2px 20px 2px 0;">';
-    h += '<img src="' + img + '" width="96" height="96" alt="' + esc(name) + '" style="display:block; width:96px; height:96px; border-radius:50%; border:2px solid #d6b13f; background:#f3f3f0;">';
+    h += '<td valign="middle" style="padding:2px ' + m.pad + 'px 2px 0;">';
+    h += '<img src="' + img + '" width="' + m.photoW + '" height="' + m.photoH + '" alt="' + esc(name) + '" style="display:block; width:' + m.photoW + 'px; height:' + m.photoH + 'px; border-radius:' + m.radius + '; border:2px solid ' + accent + '; background:#f3f3f0; object-fit:cover;">';
     h += '</td>';
 
-    // Gold divider
-    h += '<td valign="middle" style="border-left:2px solid #d6b13f; padding:0; font-size:0; line-height:0;">&nbsp;</td>';
+    // Accent divider
+    h += '<td valign="middle" style="border-left:2px solid ' + accent + '; padding:0; font-size:0; line-height:0;">&nbsp;</td>';
 
     // Text block
-    h += '<td valign="middle" style="padding:2px 0 2px 20px; line-height:1.4;">';
-    h += '<div style="font-family:\'Montserrat\', Arial, Helvetica, sans-serif; font-size:18px; font-weight:800; color:#141414; letter-spacing:-0.01em; line-height:1.2;">'
+    h += '<td valign="middle" style="padding:2px 0 2px ' + m.pad + 'px; line-height:1.4;">';
+    h += '<div style="font-family:\'Montserrat\', Arial, Helvetica, sans-serif; font-size:' + m.name + 'px; font-weight:800; color:#141414; letter-spacing:-0.01em; line-height:1.2;">'
        + esc(name)
-       + (pron ? '&nbsp;<span style="font-weight:500; font-size:13px; color:#5f6368;">(' + esc(pron) + ')</span>' : '')
+       + (pron ? '&nbsp;<span style="font-weight:500; font-size:' + m.small + 'px; color:#5f6368;">(' + esc(pron) + ')</span>' : '')
        + '</div>';
     if (title) {
-      h += '<div style="font-family:Arial, Helvetica, sans-serif; font-size:13px; font-style:italic; font-weight:600; color:#035787; margin-top:3px;">' + esc(title) + '</div>';
+      h += '<div style="font-family:Arial, Helvetica, sans-serif; font-size:' + m.title + 'px; font-style:italic; font-weight:600; color:' + hi + '; margin-top:3px;">' + esc(title) + '</div>';
     }
 
-    var lines = orgLine(v('fRole1'), v('fOrg1'), v('fUrl1')) + orgLine(v('fRole2'), v('fOrg2'), v('fUrl2'));
+    var lines = orgLine(v('fRole1'), v('fOrg1'), v('fUrl1'), hi, m.org) + orgLine(v('fRole2'), v('fOrg2'), v('fUrl2'), hi, m.org);
     if (lines) {
-      h += '<div style="height:10px; line-height:10px; font-size:1px;">&nbsp;</div>' + lines.replace('margin-top:4px', 'margin-top:0');
+      h += '<div style="height:' + m.gap + 'px; line-height:' + m.gap + 'px; font-size:1px;">&nbsp;</div>' + lines.replace('margin-top:4px', 'margin-top:0');
     }
 
     if (email) {
-      h += '<div style="font-size:13px; margin-top:4px;"><a href="mailto:' + esc(email) + '" style="color:#1a1a1a; text-decoration:none;">' + esc(email) + '</a></div>';
+      h += '<div style="font-size:' + m.org + 'px; margin-top:4px;"><a href="mailto:' + esc(email) + '" style="color:#1a1a1a; text-decoration:none;">' + esc(email) + '</a></div>';
     }
 
     var useIcons = radioVal('socialStyle') === 'icons';
     var useBrand = radioVal('iconColor') === 'brand';
     if (li || yt) {
-      h += '<div style="height:10px; line-height:10px; font-size:1px;">&nbsp;</div>';
+      h += '<div style="height:' + m.gap + 'px; line-height:' + m.gap + 'px; font-size:1px;">&nbsp;</div>';
       if (useIcons) {
         var cells = [];
-        if (li) cells.push('<td valign="middle" style="padding:0 10px 0 0;"><a href="' + esc(li) + '" style="text-decoration:none;"><img src="' + iconDataUri('linkedin', useBrand ? BRAND_COLORS.linkedin : '#5f6368') + '" width="16" height="16" alt="LinkedIn" style="display:block; width:16px; height:16px; border:0;"></a></td>');
-        if (yt) cells.push('<td valign="middle"><a href="' + esc(yt) + '" style="text-decoration:none;"><img src="' + iconDataUri('youtube', useBrand ? BRAND_COLORS.youtube : '#5f6368') + '" width="16" height="16" alt="YouTube" style="display:block; width:16px; height:16px; border:0;"></a></td>');
+        if (li) cells.push('<td valign="middle" style="padding:0 10px 0 0;"><a href="' + esc(li) + '" style="text-decoration:none;"><img src="' + iconDataUri('linkedin', useBrand ? BRAND_COLORS.linkedin : '#5f6368') + '" width="' + m.icon + '" height="' + m.icon + '" alt="LinkedIn" style="display:block; width:' + m.icon + 'px; height:' + m.icon + 'px; border:0;"></a></td>');
+        if (yt) cells.push('<td valign="middle"><a href="' + esc(yt) + '" style="text-decoration:none;"><img src="' + iconDataUri('youtube', useBrand ? BRAND_COLORS.youtube : '#5f6368') + '" width="' + m.icon + '" height="' + m.icon + '" alt="YouTube" style="display:block; width:' + m.icon + 'px; height:' + m.icon + 'px; border:0;"></a></td>');
         h += '<table cellpadding="0" cellspacing="0" border="0"><tr>' + cells.join('') + '</tr></table>';
       } else {
         var socials = [];
         if (li) socials.push('<a href="' + esc(li) + '" style="color:#5f6368; text-decoration:underline;">LinkedIn</a>');
         if (yt) socials.push('<a href="' + esc(yt) + '" style="color:#5f6368; text-decoration:underline;">YouTube</a>');
-        h += '<div style="font-size:12px;">' + socials.join('&nbsp;&middot;&nbsp;') + '</div>';
+        h += '<div style="font-size:' + m.small + 'px;">' + socials.join('&nbsp;&middot;&nbsp;') + '</div>';
       }
     }
 
@@ -377,25 +475,38 @@
     document.getElementById('rawCode').value = sig;
   }
 
-  // Photo upload: center-crop to square on a canvas so it can never warp.
+  // Crop the uploaded image to the chosen shape's aspect ratio (never warps).
+  function cropPhoto() {
+    var format = radioVal('photoFormat') || 'round';
+    if (!originalImg) {
+      photoData = '';
+      document.getElementById('photoPreview').src = placeholderFor(format);
+      return;
+    }
+    var ratio = format === 'rectangle' ? (152 / 192) : 1;   // width / height
+    var im = originalImg, sr = im.width / im.height;
+    var sw, sh, sx, sy;
+    if (sr > ratio) { sh = im.height; sw = sh * ratio; sx = (im.width - sw) / 2; sy = 0; }
+    else {
+      sw = im.width; sh = sw / ratio; sx = 0;
+      // Bias the crop toward the top — faces live up there.
+      sy = Math.min((im.height - sh) / 2, im.height * 0.08);
+    }
+    var outH = 256, outW = Math.round(outH * ratio);
+    var c = document.createElement('canvas');
+    c.width = outW; c.height = outH;
+    c.getContext('2d').drawImage(im, sx, sy, sw, sh, 0, 0, outW, outH);
+    photoData = c.toDataURL('image/jpeg', 0.88);
+    document.getElementById('photoPreview').src = photoData;
+  }
+
   document.getElementById('fPhoto').addEventListener('change', function (e) {
     var file = e.target.files && e.target.files[0];
     if (!file) return;
     var reader = new FileReader();
     reader.onload = function (ev) {
       var im = new Image();
-      im.onload = function () {
-        var side = Math.min(im.width, im.height);
-        var sx = (im.width - side) / 2;
-        // Bias the crop toward the top third for portraits — faces live up there.
-        var sy = im.height > im.width ? Math.min((im.height - side) / 2, im.height * 0.08) : (im.height - side) / 2;
-        var c = document.createElement('canvas');
-        c.width = c.height = 192;
-        c.getContext('2d').drawImage(im, sx, sy, side, side, 0, 0, 192, 192);
-        photoData = c.toDataURL('image/jpeg', 0.88);
-        document.getElementById('photoPreview').src = photoData;
-        render();
-      };
+      im.onload = function () { originalImg = im; cropPhoto(); render(); };
       im.src = ev.target.result;
     };
     reader.readAsDataURL(file);
@@ -455,6 +566,7 @@
     toast('Downloaded');
   });
 
+  // Text inputs
   ids.forEach(function (id) {
     document.getElementById(id).addEventListener('input', render);
   });
@@ -468,7 +580,39 @@
     });
   });
 
-  document.getElementById('photoPreview').src = placeholder;
+  // Size + layout toggles
+  document.querySelectorAll('input[name="size"], input[name="density"]').forEach(function (r) {
+    r.addEventListener('change', render);
+  });
+
+  // Photo shape toggles — re-crop then re-render
+  document.querySelectorAll('input[name="photoFormat"]').forEach(function (r) {
+    r.addEventListener('change', function () { cropPhoto(); render(); });
+  });
+
+  // Color pickers
+  document.getElementById('accentColor').addEventListener('input', render);
+  document.getElementById('highlightColor').addEventListener('input', render);
+
+  // Build preset swatches
+  var swWrap = document.getElementById('swatches');
+  PRESETS.forEach(function (p) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'swatch';
+    b.title = p.name;
+    b.setAttribute('aria-label', p.name);
+    b.style.background = 'linear-gradient(135deg, ' + p.a + ' 0 50%, ' + p.h + ' 50% 100%)';
+    b.addEventListener('click', function () {
+      document.getElementById('accentColor').value = p.a;
+      document.getElementById('highlightColor').value = p.h;
+      render();
+    });
+    swWrap.appendChild(b);
+  });
+
+  // Initial state
+  document.getElementById('photoPreview').src = placeholderFor('round');
   render();
 })();
 </script>
