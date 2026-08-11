@@ -153,6 +153,8 @@
     border: 1px solid #ccc8bc; border-radius: 6px;
     background: #fff; cursor: pointer;
   }
+  input.range { width: 100%; margin-top: 8px; accent-color: var(--blue); cursor: pointer; }
+  .val { font-weight: normal; color: var(--blue); }
 </style>
 </head>
 <body>
@@ -258,6 +260,9 @@
       <label class="radio"><input type="radio" name="photoFormat" value="square"> Square</label>
       <label class="radio"><input type="radio" name="photoFormat" value="rectangle"> Rectangle</label>
     </div>
+
+    <label for="photoScale">Photo size <span class="opt">(independent of text size)</span> &mdash; <span class="val" id="photoScaleVal">100%</span></label>
+    <input type="range" id="photoScale" min="0.6" max="2" step="0.05" value="1" class="range">
 
     <label>Color theme <span class="opt">(quick presets)</span></label>
     <div class="swatches" id="swatches"></div>
@@ -391,6 +396,12 @@
       m.name = Math.round(m.name * 0.92);
       m.icon = Math.min(m.icon, 14);
     }
+
+    // Photo size slider — scales just the headshot, independent of text size.
+    var scaleEl = document.getElementById('photoScale');
+    var scale = scaleEl ? parseFloat(scaleEl.value) || 1 : 1;
+    m.photoW = Math.round(m.photoW * scale);
+    m.photoH = Math.round(m.photoH * scale);
 
     m.radius = format === 'round' ? '50%' : Math.max(6, Math.round(m.photoH * 0.12)) + 'px';
     return m;
@@ -593,6 +604,12 @@
   // Color pickers
   document.getElementById('accentColor').addEventListener('input', render);
   document.getElementById('highlightColor').addEventListener('input', render);
+
+  // Photo size slider
+  document.getElementById('photoScale').addEventListener('input', function () {
+    document.getElementById('photoScaleVal').textContent = Math.round(parseFloat(this.value) * 100) + '%';
+    render();
+  });
 
   // Build preset swatches
   var swWrap = document.getElementById('swatches');
